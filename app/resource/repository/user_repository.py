@@ -9,14 +9,12 @@ class UserRepository:
         # ここにユーザー作成のロジックを実装
         return {"message": "Create user repository"}
 
-    @inject
     async def email_exist(self, email: str) -> bool:
         async with get_db() as session:
             result = await session.execute(select(User).filter(User.email == email))
             user = result.scalars().first()
             return user is not None
         
-    @inject
     async def id_account_exist(self, id_account: str) -> bool:
         async with get_db() as session:
             result = await session.execute(select(User).filter(User.id_account == id_account))
