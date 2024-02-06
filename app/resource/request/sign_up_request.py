@@ -69,3 +69,10 @@ class EmailExistsRequest(BaseModel):
         title="メールアドレス",
         description="メールアドレス",
     )
+    
+class IdAccountExistsRequest(BaseModel):
+    id_account: str = Field(
+        ...,
+        title="アカウントID",
+        description="アカウントID",
+    )

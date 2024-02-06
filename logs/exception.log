@@ -982,3 +982,117 @@ anyio.WouldBlock
 Traceback (most recent call last):
 
 2024-02-06 06:15:55,022 - app.exception - ERROR - Request path: /email-exists, Method: POST
+2024-02-06 14:48:41,864 - app.exception - ERROR - Unhandled exception: 1 validation errors:
+  {'type': 'bool_type', 'loc': ('response',), 'msg': 'Input should be a valid boolean', 'input': None, 'url': 'https://errors.pydantic.dev/2.6/v/bool_type'}
+
+2024-02-06 14:48:41,869 - app.exception - ERROR - Reversed traceback: fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'bool_type', 'loc': ('response',), 'msg': 'Input should be a valid boolean', 'input': None, 'url': 'https://errors.pydantic.dev/2.6/v/bool_type'}
+
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 315, in app
+    content = await serialize_response(
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 782, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 762, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/app/app/resource/exception/handler.py", line 30, in dispatch
+    response = await call_next(request)
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+Traceback (most recent call last):
+
+2024-02-06 14:48:41,870 - app.exception - ERROR - Request path: /id-account-exists, Method: POST
+2024-02-06 14:48:58,041 - app.exception - ERROR - Unhandled exception: 1 validation errors:
+  {'type': 'bool_type', 'loc': ('response',), 'msg': 'Input should be a valid boolean', 'input': None, 'url': 'https://errors.pydantic.dev/2.6/v/bool_type'}
+
+2024-02-06 14:48:58,045 - app.exception - ERROR - Reversed traceback: fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'bool_type', 'loc': ('response',), 'msg': 'Input should be a valid boolean', 'input': None, 'url': 'https://errors.pydantic.dev/2.6/v/bool_type'}
+
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 315, in app
+    content = await serialize_response(
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 782, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 762, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/app/app/resource/exception/handler.py", line 30, in dispatch
+    response = await call_next(request)
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+Traceback (most recent call last):
+
+2024-02-06 14:48:58,046 - app.exception - ERROR - Request path: /id-account-exists, Method: POST

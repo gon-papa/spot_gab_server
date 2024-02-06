@@ -2,7 +2,8 @@ from fastapi import APIRouter, Request, Depends
 from app.resource.depends.depends import injection
 from injector import inject
 from app.resource.service.auth_service import AuthService
-from app.resource.request.sign_up_request import SignUpRequest, EmailExistsRequest
+from app.resource.request.sign_up_request import (EmailExistsRequest, IdAccountExistsRequest,
+    SignUpRequest)
 import injector
 
 router = APIRouter()
@@ -17,11 +18,14 @@ def get_di_service(_class):
 
 @router.post('/email-exists', tags=["auth"] ,response_model=bool)
 async def email_exists(request: EmailExistsRequest) -> bool:
-    mail = request.email
+    email = request.email
     service = get_di_service(AuthService)
-    result = await service.email_exist(mail)
+    result = await service.email_exist(email)
     return result
 
-# @router.post('/account-id-exists', tags=["auth"] ,response_model=dict)
-# async def account_id_exists(request: Request) -> dict:
-#     return get_di_service(AuthService).account_id_exists()
+@router.post('/id-account-exists', tags=["auth"] ,response_model=bool)
+async def id_account_exists(request: IdAccountExistsRequest) -> bool:
+    id_account = request.id_account
+    service = get_di_service(AuthService)
+    result = await service.id_account_exist(id_account)
+    return result
