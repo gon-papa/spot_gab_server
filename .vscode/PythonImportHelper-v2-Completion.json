@@ -58,6 +58,22 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "op",
         "importPath": "alembic",
         "description": "alembic",
@@ -382,6 +398,14 @@
         "documentation": {}
     },
     {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "injection",
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
@@ -463,6 +487,54 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "importPath": "app.resource.exception.handler",
+        "description": "app.resource.exception.handler",
+        "isExtraImport": true,
+        "detail": "app.resource.exception.handler",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedTracebackMiddleware",
+        "importPath": "app.resource.exception.handler",
+        "description": "app.resource.exception.handler",
+        "isExtraImport": true,
+        "detail": "app.resource.exception.handler",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
+        "label": "EmailExistsResponse",
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
+        "label": "IdAccountExistsResponse",
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
         "label": "BaseHTTPMiddleware",
         "importPath": "starlette.middleware.base",
         "description": "starlette.middleware.base",
@@ -493,6 +565,14 @@
         "importPath": "traceback",
         "description": "traceback",
         "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorJsonResponse",
+        "importPath": "app.resource.response.error_response",
+        "description": "app.resource.response.error_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.error_response",
         "documentation": {}
     },
     {
@@ -561,6 +641,54 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -583,14 +711,6 @@
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
         "detail": "app.resource.controller.auth_controller",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedTracebackMiddleware",
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
-        "isExtraImport": true,
-        "detail": "app.resource.exception.handler",
         "documentation": {}
     },
     {
@@ -913,7 +1033,7 @@
         "kind": 2,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/email-exists', tags=[\"auth\"] ,response_model=bool)\nasync def email_exists(request: EmailExistsRequest) -> bool:\n    email = request.email\n    service = get_di_service(AuthService)\n    result = await service.email_exist(email)",
+        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post(\n    '/email-exists',\n    tags=[\"auth\"],\n    response_model=EmailExistsResponse,\n    name=\"メールアドレスの存在確認\",",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -922,7 +1042,7 @@
         "kind": 5,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/email-exists', tags=[\"auth\"] ,response_model=bool)\nasync def email_exists(request: EmailExistsRequest) -> bool:\n    email = request.email",
+        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post(\n    '/email-exists',\n    tags=[\"auth\"],",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -949,7 +1069,7 @@
         "kind": 5,
         "importPath": "app.resource.exception.handler",
         "description": "app.resource.exception.handler",
-        "peekOfCode": "app_env = os.getenv(\"APP_ENV\", \"development\")\ndictConfig(LOGGING_CONFIG)\napp = FastAPI()\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    return JSONResponse(\n        status_code=exc.status_code,\n        content={\"message\": exc.detail}",
+        "peekOfCode": "app_env = os.getenv(\"APP_ENV\", \"development\")\ndictConfig(LOGGING_CONFIG)\napp = FastAPI()\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):",
         "detail": "app.resource.exception.handler",
         "documentation": {}
     },
@@ -958,7 +1078,7 @@
         "kind": 5,
         "importPath": "app.resource.exception.handler",
         "description": "app.resource.exception.handler",
-        "peekOfCode": "app = FastAPI()\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    return JSONResponse(\n        status_code=exc.status_code,\n        content={\"message\": exc.detail}\n    )\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):",
+        "peekOfCode": "app = FastAPI()\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):\n        try:",
         "detail": "app.resource.exception.handler",
         "documentation": {}
     },
@@ -967,7 +1087,7 @@
         "kind": 5,
         "importPath": "app.resource.exception.handler",
         "description": "app.resource.exception.handler",
-        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    return JSONResponse(\n        status_code=exc.status_code,\n        content={\"message\": exc.detail}\n    )\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):\n        try:\n            response = await call_next(request)",
         "detail": "app.resource.exception.handler",
         "documentation": {}
     },
@@ -985,7 +1105,7 @@
         "kind": 6,
         "importPath": "app.resource.repository.user_repository",
         "description": "app.resource.repository.user_repository",
-        "peekOfCode": "class UserRepository:\n    async def create_user(self) -> dict:\n        # ここにユーザー作成のロジックを実装\n        return {\"message\": \"Create user repository\"}\n    @inject\n    async def email_exist(self, email: str) -> bool:\n        async with get_db() as session:\n            result = await session.execute(select(User).filter(User.email == email))\n            user = result.scalars().first()\n            return user is not None",
+        "peekOfCode": "class UserRepository:\n    async def create_user(self) -> dict:\n        # ここにユーザー作成のロジックを実装\n        return {\"message\": \"Create user repository\"}\n    async def email_exist(self, email: str) -> bool:\n        async with get_db() as session:\n            result = await session.execute(select(User).filter(User.email == email))\n            user = result.scalars().first()\n            return user is not None\n    async def id_account_exist(self, id_account: str) -> bool:",
         "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
@@ -1014,6 +1134,51 @@
         "description": "app.resource.request.sign_up_request",
         "peekOfCode": "class IdAccountExistsRequest(BaseModel):\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",\n        description=\"アカウントID\",\n    )",
         "detail": "app.resource.request.sign_up_request",
+        "documentation": {}
+    },
+    {
+        "label": "EmailExistsResponse",
+        "kind": 6,
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "peekOfCode": "class EmailExistsResponse(JsonResponse):\n    class EmailExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: EmailExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")",
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
+        "label": "IdAccountExistsResponse",
+        "kind": 6,
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")",
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorJsonResponse",
+        "kind": 6,
+        "importPath": "app.resource.response.error_response",
+        "description": "app.resource.response.error_response",
+        "peekOfCode": "class ErrorJsonResponse(BaseModel):\n    status: int = Field(500, description=\"ステータスコード\")\n    error: str = Field(\"Internal Server Error\", description=\"エラーメッセージ\")\n    message: str = Field(\"Internal Server Error\", description=\"エラーメッセージ\")",
+        "detail": "app.resource.response.error_response",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "kind": 6,
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "peekOfCode": "class JsonResponse(BaseModel):\n    status: int = Field(200, description=\"ステータスコード\")\n    data: Any = Field(None, description=\"データ\")\n    message: Optional[str] = Field(\"ok\", description=\"メッセージ\")",
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "peekOfCode": "app = FastAPI()\nclass JsonResponse(BaseModel):\n    status: int = Field(200, description=\"ステータスコード\")\n    data: Any = Field(None, description=\"データ\")\n    message: Optional[str] = Field(\"ok\", description=\"メッセージ\")",
+        "detail": "app.resource.response.json_response",
         "documentation": {}
     },
     {
