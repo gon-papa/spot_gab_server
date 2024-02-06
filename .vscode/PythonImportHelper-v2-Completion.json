@@ -42,6 +42,30 @@
         "documentation": {}
     },
     {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "op",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
+        "documentation": {}
+    },
+    {
         "label": "op",
         "importPath": "alembic",
         "description": "alembic",
@@ -144,6 +168,14 @@
         "description": "sqlalchemy",
         "isExtraImport": true,
         "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "mysql",
+        "importPath": "sqlalchemy.dialects",
+        "description": "sqlalchemy.dialects",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.dialects",
         "documentation": {}
     },
     {
@@ -375,30 +407,6 @@
         "documentation": {}
     },
     {
-        "label": "Module",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "singleton",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "Binder",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
         "label": "Injector",
         "importPath": "injector",
         "description": "injector",
@@ -431,22 +439,6 @@
         "documentation": {}
     },
     {
-        "label": "AuthService",
-        "importPath": "app.resource.service.auth_service",
-        "description": "app.resource.service.auth_service",
-        "isExtraImport": true,
-        "detail": "app.resource.service.auth_service",
-        "documentation": {}
-    },
-    {
-        "label": "SignUpRequest",
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
-        "isExtraImport": true,
-        "detail": "app.resource.request.sign_up_request",
-        "documentation": {}
-    },
-    {
         "label": "EmailExistsRequest",
         "importPath": "app.resource.request.sign_up_request",
         "description": "app.resource.request.sign_up_request",
@@ -455,27 +447,19 @@
         "documentation": {}
     },
     {
-        "label": "UserRepository",
-        "importPath": "app.resource.repository.user_repository",
-        "description": "app.resource.repository.user_repository",
+        "label": "IdAccountExistsRequest",
+        "importPath": "app.resource.request.sign_up_request",
+        "description": "app.resource.request.sign_up_request",
         "isExtraImport": true,
-        "detail": "app.resource.repository.user_repository",
+        "detail": "app.resource.request.sign_up_request",
         "documentation": {}
     },
     {
-        "label": "UserRepository",
-        "importPath": "app.resource.repository.user_repository",
-        "description": "app.resource.repository.user_repository",
+        "label": "SignUpRequest",
+        "importPath": "app.resource.request.sign_up_request",
+        "description": "app.resource.request.sign_up_request",
         "isExtraImport": true,
-        "detail": "app.resource.repository.user_repository",
-        "documentation": {}
-    },
-    {
-        "label": "AuthModule",
-        "importPath": "app.resource.depends.auth_depends",
-        "description": "app.resource.depends.auth_depends",
-        "isExtraImport": true,
-        "detail": "app.resource.depends.auth_depends",
+        "detail": "app.resource.request.sign_up_request",
         "documentation": {}
     },
     {
@@ -512,6 +496,15 @@
         "documentation": {}
     },
     {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
         "label": "Base",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -541,15 +534,6 @@
         "description": "app.resource.model.users",
         "isExtraImport": true,
         "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
         "documentation": {}
     },
     {
@@ -585,6 +569,14 @@
         "documentation": {}
     },
     {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
         "label": "app.resource.controller.auth_controller",
         "kind": 6,
         "isExtraImport": true,
@@ -617,6 +609,24 @@
         "description": "app.config.logging_config",
         "peekOfCode": "LOGGING_CONFIG = {\n    'version': 1,\n    'disable_existing_loggers': False,\n    'formatters': {\n        'default': {\n            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',\n        },\n    },\n    'handlers': {\n        'access_log': {",
         "detail": "app.config.logging_config",
+        "documentation": {}
+    },
+    {
+        "label": "upgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
+        "description": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
+        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.add_column('users', sa.Column('refresh_token', sa.String(length=100), nullable=True, comment='リフレッシュトークン'))\n    op.alter_column('users', 'created_at',\n               existing_type=mysql.TIMESTAMP(),\n               type_=sa.DateTime(),\n               existing_comment='作成日時',\n               existing_nullable=False,\n               existing_server_default=sa.text('CURRENT_TIMESTAMP'))\n    op.alter_column('users', 'updated_at',",
+        "detail": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
+        "documentation": {}
+    },
+    {
+        "label": "downgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
+        "description": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
+        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.alter_column('users', 'updated_at',\n               existing_type=sa.DateTime(),\n               type_=mysql.TIMESTAMP(),\n               existing_comment='更新日時',\n               existing_nullable=False,\n               existing_server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))\n    op.alter_column('users', 'created_at',\n               existing_type=sa.DateTime(),",
+        "detail": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
         "documentation": {}
     },
     {
@@ -903,7 +913,7 @@
         "kind": 2,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/email-exists', tags=[\"auth\"] ,response_model=bool)\nasync def email_exists(request: EmailExistsRequest) -> bool:\n    mail = request.email\n    service = get_di_service(AuthService)\n    result = await service.email_exist(mail)",
+        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/email-exists', tags=[\"auth\"] ,response_model=bool)\nasync def email_exists(request: EmailExistsRequest) -> bool:\n    email = request.email\n    service = get_di_service(AuthService)\n    result = await service.email_exist(email)",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -912,17 +922,8 @@
         "kind": 5,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/email-exists', tags=[\"auth\"] ,response_model=bool)\nasync def email_exists(request: EmailExistsRequest) -> bool:\n    mail = request.email",
+        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/email-exists', tags=[\"auth\"] ,response_model=bool)\nasync def email_exists(request: EmailExistsRequest) -> bool:\n    email = request.email",
         "detail": "app.resource.controller.auth_controller",
-        "documentation": {}
-    },
-    {
-        "label": "AuthModule",
-        "kind": 6,
-        "importPath": "app.resource.depends.auth_depends",
-        "description": "app.resource.depends.auth_depends",
-        "peekOfCode": "class AuthModule(Module):\n    def configure(self, binder):\n        binder.bind(AuthService, to=AuthService, scope=singleton)",
-        "detail": "app.resource.depends.auth_depends",
         "documentation": {}
     },
     {
@@ -930,7 +931,7 @@
         "kind": 5,
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
-        "peekOfCode": "injection = Injector([\n    AuthModule()\n])",
+        "peekOfCode": "injection = Injector()",
         "detail": "app.resource.depends.depends",
         "documentation": {}
     },
@@ -1002,7 +1003,16 @@
         "kind": 6,
         "importPath": "app.resource.request.sign_up_request",
         "description": "app.resource.request.sign_up_request",
-        "peekOfCode": "class EmailExistsRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",\n        description=\"メールアドレス\",\n    )",
+        "peekOfCode": "class EmailExistsRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",\n        description=\"メールアドレス\",\n    )\nclass IdAccountExistsRequest(BaseModel):\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",",
+        "detail": "app.resource.request.sign_up_request",
+        "documentation": {}
+    },
+    {
+        "label": "IdAccountExistsRequest",
+        "kind": 6,
+        "importPath": "app.resource.request.sign_up_request",
+        "description": "app.resource.request.sign_up_request",
+        "peekOfCode": "class IdAccountExistsRequest(BaseModel):\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",\n        description=\"アカウントID\",\n    )",
         "detail": "app.resource.request.sign_up_request",
         "documentation": {}
     },
@@ -1011,7 +1021,7 @@
         "kind": 6,
         "importPath": "app.resource.service.auth_service",
         "description": "app.resource.service.auth_service",
-        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # async def sign_up(self) -> dict:\n    #     # ユーザー登録処理をここに実装\n    #     return await self.repository.create_user()\n    async def email_exist(self, email: str) -> bool:\n        return await self.repository.email_exist(email)",
+        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # async def sign_up(self) -> dict:\n    #     # ユーザー登録処理をここに実装\n    #     return await self.repository.create_user()\n    async def email_exist(self, email: str) -> bool:\n        return await self.repository.email_exist(email)\n    async def id_account_exist(self, id_account: str) -> bool:",
         "detail": "app.resource.service.auth_service",
         "documentation": {}
     },
@@ -1020,7 +1030,7 @@
         "kind": 5,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "app = FastAPI()\napp.add_middleware(EnhancedTracebackMiddleware)\n# app.add_middleware(SimplifiedTracebackMiddleware)\napp.include_router(auth_controller.router)",
+        "peekOfCode": "app = FastAPI()\napp.add_middleware(EnhancedTracebackMiddleware)\napp.include_router(auth_controller.router)",
         "detail": "app.main",
         "documentation": {}
     }

@@ -12,3 +12,6 @@ class AuthService:
     
     async def email_exist(self, email: str) -> bool:
         return await self.repository.email_exist(email)
+    
+    async def id_account_exist(self, id_account: str) -> bool:
+        return await self.repository.id_account_exist(id_account)
