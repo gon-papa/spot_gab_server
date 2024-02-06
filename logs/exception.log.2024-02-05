@@ -1,0 +1,36 @@
+2024-02-05 15:09:47,010 - app.exception - ERROR - Unhandled exception: 'str' object has no attribute 'get'
+2024-02-05 15:09:47,017 - app.exception - ERROR - Simplified traceback:   File "/app/app/resource/exception/handler.py", line 18, in dispatch
+    response = await call_next(request)
+  File "/app/app/resource/controller/auth_controller.py", line 17, in email_exists
+    email = request.json().get('email')
+
+2024-02-05 15:10:03,190 - app.exception - ERROR - Unhandled exception: 'EmailExistsRequest' object has no attribute 'get'
+2024-02-05 15:10:03,201 - app.exception - ERROR - Simplified traceback:   File "/app/app/resource/exception/handler.py", line 18, in dispatch
+    response = await call_next(request)
+  File "/app/app/resource/controller/auth_controller.py", line 17, in email_exists
+    email = request.get('email')
+
+2024-02-05 15:10:22,638 - app.exception - ERROR - Unhandled exception: 'UserRepository' object has no attribute 'email_exists'
+2024-02-05 15:10:22,645 - app.exception - ERROR - Simplified traceback:   File "/app/app/resource/exception/handler.py", line 18, in dispatch
+    response = await call_next(request)
+  File "/app/app/resource/controller/auth_controller.py", line 18, in email_exists
+    return get_di_service(AuthService).email_exists(email)
+  File "/app/app/resource/service/auth_service.py", line 13, in email_exists
+    return self.repository.email_exists(email)
+
+2024-02-05 15:12:55,103 - app.exception - ERROR - Unhandled exception: 'UserRepository' object has no attribute 'email_exists'
+2024-02-05 15:12:55,113 - app.exception - ERROR - Simplified traceback:   File "/app/app/resource/exception/handler.py", line 18, in dispatch
+    response = await call_next(request)
+  File "/app/app/resource/controller/auth_controller.py", line 18, in email_exists
+    return get_di_service(AuthService).email_exists(email)
+  File "/app/app/resource/service/auth_service.py", line 13, in email_exists
+    return self.repository.email_exists(email)
+
+2024-02-05 15:14:01,789 - app.exception - ERROR - Unhandled exception: 'UserRepository' object has no attribute 'email_exists'
+2024-02-05 15:14:01,795 - app.exception - ERROR - Simplified traceback:   File "/app/app/resource/exception/handler.py", line 18, in dispatch
+    response = await call_next(request)
+  File "/app/app/resource/controller/auth_controller.py", line 18, in email_exists
+    return get_di_service(AuthService).email_exists(email)
+  File "/app/app/resource/service/auth_service.py", line 14, in email_exists
+    return self.repository.email_exists(email)
+

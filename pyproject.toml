@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "spot-gab-api"
+version = "0.1.0"
+description = "spot-gab-api"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0.post1"
+sqlalchemy = "^2.0.25"
+aiomysql = "^0.2.0"
+alembic = "^1.13.1"
+python-dotenv = "^1.0.1"
+pymysql = "^1.1.0"
+sqlalchemy-utils = "^0.41.1"
+injector = "^0.21.0"
+pydantic-i18n = "^0.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
