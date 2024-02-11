@@ -1,0 +1,13 @@
+2024-02-11 01:11:31,658 - uvicorn.access - INFO - 172.18.0.1:56514 - "GET /docs HTTP/1.1" 200
+2024-02-11 01:11:31,817 - uvicorn.access - INFO - 172.18.0.1:56514 - "GET /openapi.json HTTP/1.1" 200
+2024-02-11 01:11:37,126 - uvicorn.access - INFO - 172.18.0.1:56542 - "POST /sign_in HTTP/1.1" 422
+2024-02-11 01:12:36,564 - uvicorn.access - INFO - 172.18.0.1:60694 - "POST /sign_in HTTP/1.1" 500
+2024-02-11 01:31:17,663 - uvicorn.access - INFO - 172.18.0.1:38046 - "GET /docs HTTP/1.1" 200
+2024-02-11 01:31:17,678 - uvicorn.access - INFO - 172.18.0.1:47428 - "POST /sign_in HTTP/1.1" 500
+2024-02-11 01:31:17,775 - uvicorn.access - INFO - 172.18.0.1:38046 - "GET /openapi.json HTTP/1.1" 200
+2024-02-11 05:15:39,680 - uvicorn.access - INFO - 172.18.0.1:43328 - "GET /docs HTTP/1.1" 200
+2024-02-11 05:15:39,820 - uvicorn.access - INFO - 172.18.0.1:43328 - "GET /openapi.json HTTP/1.1" 200
+2024-02-11 05:15:52,443 - uvicorn.access - INFO - 172.18.0.1:53536 - "GET /docs HTTP/1.1" 200
+2024-02-11 05:15:52,539 - uvicorn.access - INFO - 172.18.0.1:53536 - "GET /openapi.json HTTP/1.1" 200
+2024-02-11 05:16:00,803 - uvicorn.access - INFO - 172.18.0.1:45754 - "POST /email-exists HTTP/1.1" 200
+2024-02-11 05:16:10,836 - uvicorn.access - INFO - 172.18.0.1:42208 - "POST /email-exists HTTP/1.1" 200

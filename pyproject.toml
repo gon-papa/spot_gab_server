@@ -9,14 +9,15 @@ readme = "README.md"
 python = "^3.9"
 fastapi = "^0.109.0"
 uvicorn = "^0.27.0.post1"
-sqlalchemy = "^2.0.25"
-aiomysql = "^0.2.0"
-alembic = "^1.13.1"
+alembic = "^1.13.1" # マイグレーションツール
 python-dotenv = "^1.0.1"
-pymysql = "^1.1.0"
-sqlalchemy-utils = "^0.41.1"
 injector = "^0.21.0"
 pydantic-i18n = "^0.4.0"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+sqlmodel = "^0.0.14" # ORM
+sqlalchemy-utils = "^0.41.1"
+aiomysql = "^0.2.0"
 
 
 [build-system]

@@ -1,0 +1,10 @@
+2024-02-10 01:19:30,513 - uvicorn.access - INFO - 172.18.0.1:43230 - "GET /docs HTTP/1.1" 200
+2024-02-10 01:19:31,785 - uvicorn.access - INFO - 172.18.0.1:43246 - "GET /docs HTTP/1.1" 200
+2024-02-10 01:19:31,941 - uvicorn.access - INFO - 172.18.0.1:43246 - "GET /openapi.json HTTP/1.1" 200
+2024-02-10 14:40:57,272 - uvicorn.access - INFO - 172.18.0.1:36712 - "GET /docs HTTP/1.1" 200
+2024-02-10 14:40:57,488 - uvicorn.access - INFO - 172.18.0.1:36712 - "GET /openapi.json HTTP/1.1" 200
+2024-02-10 14:40:58,666 - uvicorn.access - INFO - 172.18.0.1:36728 - "GET /docs HTTP/1.1" 200
+2024-02-10 14:40:58,821 - uvicorn.access - INFO - 172.18.0.1:36728 - "GET /openapi.json HTTP/1.1" 200
+2024-02-10 16:15:26,387 - uvicorn.access - INFO - 172.18.0.1:42782 - "GET /docs HTTP/1.1" 200
+2024-02-10 16:15:26,499 - uvicorn.access - INFO - 172.18.0.1:42782 - "GET /openapi.json HTTP/1.1" 200
+2024-02-10 16:15:32,060 - uvicorn.access - INFO - 172.18.0.1:42780 - "POST /sign_in HTTP/1.1" 500

@@ -1,6 +1,7 @@
 import re
 from pydantic import BaseModel, Field, field_validator
 from datetime import date as Date
+from app.resource.request.common_validate import email_validator, password_validator
 
 class SignUpRequest(BaseModel):
     account_name: str = Field(
@@ -39,21 +40,11 @@ class SignUpRequest(BaseModel):
     
     @field_validator('email')
     def email_validator(cls, value):
-        email_regex = r'^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-        if not re.match(email_regex, value):
-            raise ValueError('メールアドレスが無効です。正しい形式で入力してください。')
-        return value
+        return email_validator(cls, value)
     
     @field_validator('password')
     def password_validator(cls, value):
-        if len(value) < 8:
-            raise ValueError('8文字以上である必要があります。')
-        if len(value) >= 20:
-            raise ValueError('最大100文字までです。')
-        # 半角英数字と記号のみ
-        if not re.match(r'^[@?$%!#0-9a-zA-Z]+$', value):
-            raise ValueError('パスワードは半角英数字と記号 @?$%!# のみです。')
-        return value
+        return password_validator(cls, value)
     
     @field_validator('birth_date')
     def birth_date_validator(cls, value):
@@ -76,3 +67,23 @@ class IdAccountExistsRequest(BaseModel):
         title="アカウントID",
         description="アカウントID",
     )
+    
+class LoginRequest(BaseModel):
+    email: str = Field(
+        ...,
+        title="メールアドレス",
+        description="メールアドレス",
+    )
+    password: str = Field(
+        ...,
+        title="パスワード",
+        description="パスワード",
+    )
+    
+    @field_validator('email')
+    def email_validator(cls, value):
+        return email_validator(cls, value)
+    
+    @field_validator('password')
+    def password_validator(cls, value):
+        return password_validator(cls, value)

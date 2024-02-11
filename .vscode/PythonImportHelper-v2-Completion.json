@@ -42,15 +42,7 @@
         "documentation": {}
     },
     {
-        "label": "Sequence",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -71,14 +63,6 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "op",
-        "importPath": "alembic",
-        "description": "alembic",
-        "isExtraImport": true,
-        "detail": "alembic",
         "documentation": {}
     },
     {
@@ -123,117 +107,116 @@
         "documentation": {}
     },
     {
-        "label": "Column",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "label": "sqlmodel",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
-        "label": "String",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
         "label": "Date",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
         "label": "DateTime",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
         "label": "Integer",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
         "label": "Boolean",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "text",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
         "label": "func",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
-        "label": "mysql",
-        "importPath": "sqlalchemy.dialects",
-        "description": "sqlalchemy.dialects",
+        "label": "UUID",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "sqlalchemy.dialects",
-        "documentation": {}
-    },
-    {
-        "label": "mysql",
-        "importPath": "sqlalchemy.dialects",
-        "description": "sqlalchemy.dialects",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.dialects",
-        "documentation": {}
-    },
-    {
-        "label": "sqlalchemy_utils",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sqlalchemy_utils",
-        "description": "sqlalchemy_utils",
-        "detail": "sqlalchemy_utils",
-        "documentation": {}
-    },
-    {
-        "label": "UUIDType",
-        "importPath": "sqlalchemy_utils",
-        "description": "sqlalchemy_utils",
-        "isExtraImport": true,
-        "detail": "sqlalchemy_utils",
-        "documentation": {}
-    },
-    {
-        "label": "uuid",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "uuid",
-        "description": "uuid",
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "uuid4",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
@@ -285,12 +268,20 @@
         "documentation": {}
     },
     {
-        "label": "app.resource.model",
-        "kind": 6,
-        "isExtraImport": true,
+        "label": "*",
         "importPath": "app.resource.model",
         "description": "app.resource.model",
+        "isExtraImport": true,
         "detail": "app.resource.model",
+        "documentation": {}
+    },
+    {
+        "label": "sqlalchemy_utils",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlalchemy_utils",
+        "description": "sqlalchemy_utils",
+        "detail": "sqlalchemy_utils",
         "documentation": {}
     },
     {
@@ -302,15 +293,15 @@
         "documentation": {}
     },
     {
-        "label": "create_async_engine",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
+        "label": "AsyncSession",
+        "importPath": "sqlmodel.ext.asyncio.session",
+        "description": "sqlmodel.ext.asyncio.session",
         "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
+        "detail": "sqlmodel.ext.asyncio.session",
         "documentation": {}
     },
     {
-        "label": "AsyncSession",
+        "label": "create_async_engine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
@@ -326,7 +317,7 @@
         "documentation": {}
     },
     {
-        "label": "declarative_base",
+        "label": "scoped_session",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
@@ -391,6 +382,38 @@
     },
     {
         "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -464,26 +487,58 @@
     },
     {
         "label": "EmailExistsRequest",
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "isExtraImport": true,
-        "detail": "app.resource.request.sign_up_request",
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
         "label": "IdAccountExistsRequest",
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "isExtraImport": true,
-        "detail": "app.resource.request.sign_up_request",
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
-        "label": "SignUpRequest",
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
+        "label": "LoginRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "isExtraImport": true,
-        "detail": "app.resource.request.sign_up_request",
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
         "documentation": {}
     },
     {
@@ -535,6 +590,14 @@
         "documentation": {}
     },
     {
+        "label": "LoginResponse",
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
         "label": "BaseHTTPMiddleware",
         "importPath": "starlette.middleware.base",
         "description": "starlette.middleware.base",
@@ -576,28 +639,43 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "Base",
-        "importPath": "app.db.db",
-        "description": "app.db.db",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "app.db.db",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "get_db",
-        "importPath": "app.db.db",
-        "description": "app.db.db",
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "app.db.db",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -609,11 +687,44 @@
         "documentation": {}
     },
     {
-        "label": "User",
+        "label": "get_db",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
         "isExtraImport": true,
         "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -689,11 +800,27 @@
         "documentation": {}
     },
     {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "email_validator",
+        "importPath": "app.resource.request.common_validate",
+        "description": "app.resource.request.common_validate",
+        "isExtraImport": true,
+        "detail": "app.resource.request.common_validate",
+        "documentation": {}
+    },
+    {
+        "label": "password_validator",
+        "importPath": "app.resource.request.common_validate",
+        "description": "app.resource.request.common_validate",
+        "isExtraImport": true,
+        "detail": "app.resource.request.common_validate",
         "documentation": {}
     },
     {
@@ -702,6 +829,30 @@
         "description": "app.resource.repository.user_repository",
         "isExtraImport": true,
         "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_user",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
         "documentation": {}
     },
     {
@@ -734,37 +885,19 @@
     {
         "label": "upgrade",
         "kind": 2,
-        "importPath": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
-        "description": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
-        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.add_column('users', sa.Column('refresh_token', sa.String(length=100), nullable=True, comment='リフレッシュトークン'))\n    op.alter_column('users', 'created_at',\n               existing_type=mysql.TIMESTAMP(),\n               type_=sa.DateTime(),\n               existing_comment='作成日時',\n               existing_nullable=False,\n               existing_server_default=sa.text('CURRENT_TIMESTAMP'))\n    op.alter_column('users', 'updated_at',",
-        "detail": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
+        "importPath": "app.db.migration.versions.8c17d0d9aded_users_create",
+        "description": "app.db.migration.versions.8c17d0d9aded_users_create",
+        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('users',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('uuid', sa.String(length=36), nullable=False, comment='UUID'),\n    sa.Column('account_name', sa.String(length=100), nullable=False, comment='アカウント名'),\n    sa.Column('id_account', sa.String(length=100), nullable=False, comment='アカウントID'),\n    sa.Column('email', sa.String(length=100), nullable=False, comment='メールアドレス'),\n    sa.Column('hashed_password', sa.String(length=100), nullable=False, comment='パスワード'),\n    sa.Column('is_active', sa.Boolean(), nullable=False, comment='アクティブフラグ True:ログイン中 False:ログアウト中'),",
+        "detail": "app.db.migration.versions.8c17d0d9aded_users_create",
         "documentation": {}
     },
     {
         "label": "downgrade",
         "kind": 2,
-        "importPath": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
-        "description": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
-        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.alter_column('users', 'updated_at',\n               existing_type=sa.DateTime(),\n               type_=mysql.TIMESTAMP(),\n               existing_comment='更新日時',\n               existing_nullable=False,\n               existing_server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))\n    op.alter_column('users', 'created_at',\n               existing_type=sa.DateTime(),",
-        "detail": "app.db.migration.versions.274393564dd4_users_add_refresh_token",
-        "documentation": {}
-    },
-    {
-        "label": "upgrade",
-        "kind": 2,
-        "importPath": "app.db.migration.versions.a9b68e4450aa_create_users",
-        "description": "app.db.migration.versions.a9b68e4450aa_create_users",
-        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('users',\n    sa.Column('id', sa.Integer(), nullable=False),\n    sa.Column('uuid', sqlalchemy_utils.types.uuid.UUIDType(binary=False)            , default=uuid.uuid4, nullable=False, comment='ID'),\n    sa.Column('account_name', sa.String(length=100), nullable=False, comment='アカウント名'),\n    sa.Column('id_account', sa.String(length=100), nullable=False, comment='アカウントID'),\n    sa.Column('email', sa.String(length=100), nullable=False, comment='メールアドレス'),\n    sa.Column('hashed_password', sa.String(length=100), nullable=False, comment='パスワード'),\n    sa.Column('is_active', sa.Boolean(), nullable=True, comment='アクティブフラグ True:ログイン中 False:ログアウト中'),",
-        "detail": "app.db.migration.versions.a9b68e4450aa_create_users",
-        "documentation": {}
-    },
-    {
-        "label": "downgrade",
-        "kind": 2,
-        "importPath": "app.db.migration.versions.a9b68e4450aa_create_users",
-        "description": "app.db.migration.versions.a9b68e4450aa_create_users",
+        "importPath": "app.db.migration.versions.8c17d0d9aded_users_create",
+        "description": "app.db.migration.versions.8c17d0d9aded_users_create",
         "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('users')\n    # ### end Alembic commands ###",
-        "detail": "app.db.migration.versions.a9b68e4450aa_create_users",
+        "detail": "app.db.migration.versions.8c17d0d9aded_users_create",
         "documentation": {}
     },
     {
@@ -880,7 +1013,7 @@
         "kind": 5,
         "importPath": "app.db.migration.env",
         "description": "app.db.migration.env",
-        "peekOfCode": "target_metadata = models.Base.metadata\n# other values from the config, defined by the needs of env.py,\n# can be acquired:\n# my_important_option = config.get_main_option(\"my_important_option\")\n# ... etc.\ndef render_item(type_, obj, autogen_context):\n    \"\"\"Apply custom rendering for selected items.\"\"\"\n    if type_ == \"type\" and isinstance(\n        obj, sqlalchemy_utils.types.uuid.UUIDType\n    ):",
+        "peekOfCode": "target_metadata = SQLModel.metadata\n# other values from the config, defined by the needs of env.py,\n# can be acquired:\n# my_important_option = config.get_main_option(\"my_important_option\")\n# ... etc.\ndef render_item(type_, obj, autogen_context):\n    \"\"\"Apply custom rendering for selected items.\"\"\"\n    if type_ == \"type\" and isinstance(\n        obj, sqlalchemy_utils.types.uuid.UUIDType\n    ):",
         "detail": "app.db.migration.env",
         "documentation": {}
     },
@@ -925,7 +1058,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "host = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(",
+        "peekOfCode": "host = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -934,7 +1067,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "port = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,",
+        "peekOfCode": "port = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -943,7 +1076,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "db_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,",
+        "peekOfCode": "db_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -952,7 +1085,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "pool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,",
+        "peekOfCode": "pool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -961,7 +1094,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "pool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,",
+        "peekOfCode": "pool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -970,7 +1103,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "pool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,",
+        "peekOfCode": "pool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -979,7 +1112,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "max_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,",
+        "peekOfCode": "max_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -988,7 +1121,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "logging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,",
+        "peekOfCode": "logging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -997,16 +1130,16 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "ASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nasync_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,\n    pool_pre_ping=True,",
+        "peekOfCode": "ASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,\n    pool_pre_ping=True,",
         "detail": "app.db.db",
         "documentation": {}
     },
     {
-        "label": "async_engine",
+        "label": "engine",
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "async_engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,\n    pool_pre_ping=True,\n)",
+        "peekOfCode": "engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,\n    pool_pre_ping=True,\n)",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1015,16 +1148,7 @@
         "kind": 5,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "AsyncSessionLocal = sessionmaker(\n    autocommit=False, autoflush=False, bind=async_engine, class_=AsyncSession, expire_on_commit=True,\n)\nBase = declarative_base()\n@asynccontextmanager\nasync def get_db():\n    async with AsyncSessionLocal() as session:\n        yield session",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "Base",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "Base = declarative_base()\n@asynccontextmanager\nasync def get_db():\n    async with AsyncSessionLocal() as session:\n        yield session",
+        "peekOfCode": "AsyncSessionLocal = scoped_session(\n    sessionmaker(\n        autocommit=False, autoflush=False, bind=engine, class_=AsyncSession, expire_on_commit=True,\n    )\n)\n@asynccontextmanager\nasync def get_db():\n    async with AsyncSessionLocal() as session:\n        yield session",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1033,7 +1157,7 @@
         "kind": 2,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post(\n    '/email-exists',\n    tags=[\"auth\"],\n    response_model=EmailExistsResponse,\n    name=\"メールアドレスの存在確認\",",
+        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/sign_in', tags=[\"auth\"] ,response_model=LoginResponse)\nasync def sign_in(request: LoginRequest) -> LoginResponse:\n    email = request.email\n    password = request.password\n    return get_di_service(AuthService).sign_in(email, password)",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -1042,7 +1166,7 @@
         "kind": 5,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post(\n    '/email-exists',\n    tags=[\"auth\"],",
+        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post('/sign_in', tags=[\"auth\"] ,response_model=LoginResponse)\nasync def sign_in(request: LoginRequest) -> LoginResponse:\n    email = request.email",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -1092,11 +1216,11 @@
         "documentation": {}
     },
     {
-        "label": "User",
+        "label": "Users",
         "kind": 6,
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
-        "peekOfCode": "class User(Base):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    hashed_password: str\n    is_active: bool\n    birth_date: Date\n    other_user_invitation_code: str",
+        "peekOfCode": "class Users(SQLModel, table=True):\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    uuid: str = Field(default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=False, unique=True, comment=\"UUID\"))\n    account_name: str = Field(sa_column=Column(String(100), nullable=False, comment=\"アカウント名\"))\n    id_account: str = Field(sa_column=Column(String(100), nullable=False, unique=True, comment=\"アカウントID\"))\n    email: str = Field(sa_column=Column(String(100), nullable=False, unique=True, comment=\"メールアドレス\"))\n    hashed_password: str = Field(sa_column=Column(String(100), nullable=False, comment=\"パスワード\"))\n    is_active: bool = Field(sa_column=Column(Boolean, nullable=False, comment=\"アクティブフラグ True:ログイン中 False:ログアウト中\"))\n    birth_date: date = Field(sa_column=Column(Date, nullable=False, comment=\"生年月日\"))\n    other_user_invitation_code: str = Field(default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=True, comment=\"他ユーザー招待コード\"))",
         "detail": "app.resource.model.users",
         "documentation": {}
     },
@@ -1105,35 +1229,62 @@
         "kind": 6,
         "importPath": "app.resource.repository.user_repository",
         "description": "app.resource.repository.user_repository",
-        "peekOfCode": "class UserRepository:\n    async def create_user(self) -> dict:\n        # ここにユーザー作成のロジックを実装\n        return {\"message\": \"Create user repository\"}\n    async def email_exist(self, email: str) -> bool:\n        async with get_db() as session:\n            result = await session.execute(select(User).filter(User.email == email))\n            user = result.scalars().first()\n            return user is not None\n    async def id_account_exist(self, id_account: str) -> bool:",
+        "peekOfCode": "class UserRepository:\n    async def create_user(self) -> dict:\n        # ここにユーザー作成のロジックを実装\n        return {\"message\": \"Create user repository\"}\n    # emailの存在確認\n    async def email_exist(self, email: str) -> bool:\n        async with get_db() as session:\n            result = await session.execute(select(Users).filter(Users.email == email))\n            user = result.scalars().first()\n            return user is not None",
         "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
     {
         "label": "SignUpRequest",
         "kind": 6,
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "peekOfCode": "class SignUpRequest(BaseModel):\n    account_name: str = Field(\n        ...,\n        title=\"アカウント名\",\n        description=\"アカウント名\",\n    )\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",\n        description=\"アカウントID\",",
-        "detail": "app.resource.request.sign_up_request",
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
         "label": "EmailExistsRequest",
         "kind": 6,
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "peekOfCode": "class EmailExistsRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",\n        description=\"メールアドレス\",\n    )\nclass IdAccountExistsRequest(BaseModel):\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",",
-        "detail": "app.resource.request.sign_up_request",
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
         "label": "IdAccountExistsRequest",
         "kind": 6,
-        "importPath": "app.resource.request.sign_up_request",
-        "description": "app.resource.request.sign_up_request",
-        "peekOfCode": "class IdAccountExistsRequest(BaseModel):\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",\n        description=\"アカウントID\",\n    )",
-        "detail": "app.resource.request.sign_up_request",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "peekOfCode": "class IdAccountExistsRequest(BaseModel):\n    id_account: str = Field(\n        ...,\n        title=\"アカウントID\",\n        description=\"アカウントID\",\n    )\nclass LoginRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",",
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequest",
+        "kind": 6,
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "peekOfCode": "class LoginRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",\n        description=\"メールアドレス\",\n    )\n    password: str = Field(\n        ...,\n        title=\"パスワード\",\n        description=\"パスワード\",",
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "email_validator",
+        "kind": 2,
+        "importPath": "app.resource.request.common_validate",
+        "description": "app.resource.request.common_validate",
+        "peekOfCode": "def email_validator(cls, value):\n    email_regex = r'^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n    if not re.match(email_regex, value):\n        raise ValueError('メールアドレスが無効です。正しい形式で入力してください。')\n    return value\ndef password_validator(cls, value):\n        if len(value) < 8:\n            raise ValueError('8文字以上である必要があります。')\n        if len(value) >= 20:\n            raise ValueError('最大100文字までです。')",
+        "detail": "app.resource.request.common_validate",
+        "documentation": {}
+    },
+    {
+        "label": "password_validator",
+        "kind": 2,
+        "importPath": "app.resource.request.common_validate",
+        "description": "app.resource.request.common_validate",
+        "peekOfCode": "def password_validator(cls, value):\n        if len(value) < 8:\n            raise ValueError('8文字以上である必要があります。')\n        if len(value) >= 20:\n            raise ValueError('最大100文字までです。')\n        # 半角英数字と記号のみ\n        if not re.match(r'^[@?$%!#0-9a-zA-Z]+$', value):\n            raise ValueError('パスワードは半角英数字と記号 @?$%!# のみです。')\n        return value",
+        "detail": "app.resource.request.common_validate",
         "documentation": {}
     },
     {
@@ -1141,7 +1292,7 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class EmailExistsResponse(JsonResponse):\n    class EmailExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: EmailExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")",
+        "peekOfCode": "class EmailExistsResponse(JsonResponse):\n    class EmailExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: EmailExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass LoginResponse(JsonResponse):\n    class LoginResponseItem(BaseModel):",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1150,7 +1301,16 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")",
+        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass LoginResponse(JsonResponse):\n    class LoginResponseItem(BaseModel):\n        user: Users = Field(None, description=\"ログインユーザー情報\")\n    data: LoginResponseItem = Field(None, description=\"ログイン情報\")",
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
+        "label": "LoginResponse",
+        "kind": 6,
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "peekOfCode": "class LoginResponse(JsonResponse):\n    class LoginResponseItem(BaseModel):\n        user: Users = Field(None, description=\"ログインユーザー情報\")\n    data: LoginResponseItem = Field(None, description=\"ログイン情報\")",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1186,8 +1346,62 @@
         "kind": 6,
         "importPath": "app.resource.service.auth_service",
         "description": "app.resource.service.auth_service",
-        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # async def sign_up(self) -> dict:\n    #     # ユーザー登録処理をここに実装\n    #     return await self.repository.create_user()\n    async def email_exist(self, email: str) -> bool:\n        return await self.repository.email_exist(email)\n    async def id_account_exist(self, id_account: str) -> bool:",
+        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # async def sign_up(self) -> dict:\n    #     # ユーザー登録処理をここに実装\n    #     return await self.repository.create_user()\n    async def sign_in(self, email: str, password: str) -> dict:\n        # ユーザー認証処理をここに実装\n        return await get_user(user_repository=self.repository, email=email)",
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "kind": 6,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)\n    if user is None:\n        return None",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)\n    if user is None:\n        return None\n    return user",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "get_user",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)\n    if user is None:\n        return None\n    return user",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "pwd_context",
+        "kind": 5,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)",
+        "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {

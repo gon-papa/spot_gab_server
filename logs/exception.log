@@ -1,0 +1,114 @@
+2024-02-11 01:12:36,555 - app.exception - ERROR - Unhandled exception: 1 validation errors:
+  {'type': 'dict_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary', 'input': <coroutine object AuthService.sign_in at 0xffff8ab49940>, 'url': 'https://errors.pydantic.dev/2.6/v/dict_type'}
+
+2024-02-11 01:12:36,562 - app.exception - ERROR - Reversed traceback: fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'dict_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary', 'input': <coroutine object AuthService.sign_in at 0xffff8ab49940>, 'url': 'https://errors.pydantic.dev/2.6/v/dict_type'}
+
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 315, in app
+    content = await serialize_response(
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 782, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 762, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/app/app/resource/exception/handler.py", line 29, in dispatch
+    response = await call_next(request)
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+Traceback (most recent call last):
+
+2024-02-11 01:12:36,563 - app.exception - ERROR - Request path: /sign_in, Method: POST
+2024-02-11 01:31:17,668 - app.exception - ERROR - Unhandled exception: 1 validation errors:
+  {'type': 'model_attributes_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': <coroutine object AuthService.sign_in at 0xffff837bb640>, 'url': 'https://errors.pydantic.dev/2.6/v/model_attributes_type'}
+
+2024-02-11 01:31:17,673 - app.exception - ERROR - Reversed traceback: fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'model_attributes_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': <coroutine object AuthService.sign_in at 0xffff837bb640>, 'url': 'https://errors.pydantic.dev/2.6/v/model_attributes_type'}
+
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 315, in app
+    content = await serialize_response(
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 782, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/routing.py", line 762, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/app/app/resource/exception/handler.py", line 29, in dispatch
+    response = await call_next(request)
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+  File "/usr/local/lib/python3.9/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+anyio.WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+  File "/usr/local/lib/python3.9/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+Traceback (most recent call last):
+
+2024-02-11 01:31:17,676 - app.exception - ERROR - Request path: /sign_in, Method: POST
