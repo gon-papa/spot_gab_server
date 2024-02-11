@@ -1,19 +1,21 @@
-from fastapi import APIRouter, Request, Depends
+from fastapi import FastAPI, APIRouter, HTTPException
 from app.resource.depends.depends import injection
 from injector import inject
 from app.resource.service.auth_service import AuthService
 from app.resource.request.auth_request import (
     EmailExistsRequest,
     IdAccountExistsRequest,
-    LoginRequest
+    SignInRequest
 )
 import injector
 from fastapi.security import OAuth2PasswordBearer
 from app.resource.exception.handler import logger
 from app.resource.response.json_response import JsonResponse
 from app.resource.response.auth_response import (EmailExistsResponse, IdAccountExistsResponse,
-    LoginResponse)
-from app.resource.request.auth_request import LoginRequest
+    SignInResponse)
+from app.app import app
+from app.resource.response.error_response import ErrorJsonResponse
+from app.resource.model.users import UserRead
 
 router = APIRouter()
 
@@ -25,11 +27,34 @@ def get_di_service(_class):
 # async def sign_up(request: SignUpRequest) -> dict:
 #     return get_di_service(AuthService).sign_up()
 
-@router.post('/sign_in', tags=["auth"] ,response_model=LoginResponse)
-async def sign_in(request: LoginRequest) -> LoginResponse:
-    email = request.email
-    password = request.password
-    return get_di_service(AuthService).sign_in(email, password)
+@router.post(
+    '/sign_in',
+    tags=["auth"],
+    response_model=SignInResponse,
+    name="サインイン",
+    description="サインイン",
+    operation_id="sign_in",
+    responses = {
+        403: {
+            "model": ErrorJsonResponse,
+            "description": "Forbidden - Invalid email or password",
+        },
+        500: {
+            "model": ErrorJsonResponse,
+            "description": "Internal Server Error",
+        }
+    }
+)
+async def sign_in(request: SignInRequest) -> SignInResponse:
+    try:
+        email = request.email
+        password = request.password
+        user = await get_di_service(AuthService).sign_in(email, password)
+        if user is None:
+            raise HTTPException(status_code=403, detail="Invalid email or password")
+    except Exception as e:
+        raise e
+    return SignInResponse(status=200, data={"user": UserRead.model_validate(user)})
 
 @router.post(
     '/email-exists',
