@@ -1,4 +1,6 @@
 from app.resource.repository.user_repository import UserRepository
+from app.resource.service_domain.auth_service_domain import get_user
+
 from injector import inject
 
 class AuthService:
@@ -9,6 +11,10 @@ class AuthService:
     # async def sign_up(self) -> dict:
     #     # ユーザー登録処理をここに実装
     #     return await self.repository.create_user()
+    
+    async def sign_in(self, email: str, password: str) -> dict:
+        # ユーザー認証処理をここに実装
+        return await get_user(user_repository=self.repository, email=email)
     
     async def email_exist(self, email: str) -> bool:
         return await self.repository.email_exist(email)

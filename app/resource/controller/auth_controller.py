@@ -2,12 +2,18 @@ from fastapi import APIRouter, Request, Depends
 from app.resource.depends.depends import injection
 from injector import inject
 from app.resource.service.auth_service import AuthService
-from app.resource.request.sign_up_request import (EmailExistsRequest, IdAccountExistsRequest,
-    SignUpRequest)
+from app.resource.request.auth_request import (
+    EmailExistsRequest,
+    IdAccountExistsRequest,
+    LoginRequest
+)
 import injector
+from fastapi.security import OAuth2PasswordBearer
 from app.resource.exception.handler import logger
 from app.resource.response.json_response import JsonResponse
-from app.resource.response.auth_response import EmailExistsResponse, IdAccountExistsResponse
+from app.resource.response.auth_response import (EmailExistsResponse, IdAccountExistsResponse,
+    LoginResponse)
+from app.resource.request.auth_request import LoginRequest
 
 router = APIRouter()
 
@@ -18,6 +24,12 @@ def get_di_service(_class):
 # @router.post('/sign_up', tags=["auth"] ,response_model=dict)
 # async def sign_up(request: SignUpRequest) -> dict:
 #     return get_di_service(AuthService).sign_up()
+
+@router.post('/sign_in', tags=["auth"] ,response_model=LoginResponse)
+async def sign_in(request: LoginRequest) -> LoginResponse:
+    email = request.email
+    password = request.password
+    return get_di_service(AuthService).sign_in(email, password)
 
 @router.post(
     '/email-exists',

@@ -1,7 +1,10 @@
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlmodel import SQLModel, create_engine
+from sqlmodel.ext.asyncio.session import AsyncSession
+from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy.orm import sessionmaker, scoped_session
+
 import os
 
 load_dotenv()
@@ -21,7 +24,7 @@ logging = bool(os.getenv("SQL_LOGGING"))
 
 ASYNC_DB_URL = f"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8"
 
-async_engine = create_async_engine(
+engine = create_async_engine(
     ASYNC_DB_URL,
     echo=logging,
     echo_pool=logging,
@@ -32,11 +35,11 @@ async_engine = create_async_engine(
     pool_pre_ping=True,
 )
 
-AsyncSessionLocal = sessionmaker(
-    autocommit=False, autoflush=False, bind=async_engine, class_=AsyncSession, expire_on_commit=True,
+AsyncSessionLocal = scoped_session(
+    sessionmaker(
+        autocommit=False, autoflush=False, bind=engine, class_=AsyncSession, expire_on_commit=True,
+    )
 )
-
-Base = declarative_base()
 
 @asynccontextmanager
 async def get_db():

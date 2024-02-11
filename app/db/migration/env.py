@@ -3,10 +3,11 @@ from dotenv import load_dotenv
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
+from sqlmodel import SQLModel
 
 # import app.resource.model.users
 
-import app.resource.model as models
+from app.resource.model import *
 import sqlalchemy_utils
 import os
 
@@ -39,7 +40,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = models.Base.metadata
+target_metadata = SQLModel.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
