@@ -1,8 +1,8 @@
 """users_create
 
-Revision ID: 8c17d0d9aded
+Revision ID: b3670e6e5079
 Revises: 
-Create Date: 2024-02-11 05:10:46.434696
+Create Date: 2024-02-11 07:08:14.258716
 
 """
 from typing import Sequence, Union
@@ -13,7 +13,7 @@ import sqlmodel
 
 
 # revision identifiers, used by Alembic.
-revision: str = '8c17d0d9aded'
+revision: str = 'b3670e6e5079'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -32,7 +32,7 @@ def upgrade() -> None:
     sa.Column('birth_date', sa.Date(), nullable=False, comment='生年月日'),
     sa.Column('other_user_invitation_code', sa.String(length=36), nullable=True, comment='他ユーザー招待コード'),
     sa.Column('refresh_token', sa.String(length=100), nullable=True, comment='リフレッシュトークン'),
-    sa.Column('deleted_at', sa.Date(), nullable=True, comment='削除日時とフラグ'),
+    sa.Column('deleted_at', sa.DateTime(), nullable=True, comment='削除日時とフラグ'),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id'),

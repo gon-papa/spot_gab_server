@@ -8,15 +8,14 @@ import traceback
 from dotenv import load_dotenv
 import os
 from app.resource.response.error_response import ErrorJsonResponse
+from app.app import app
 
 load_dotenv()
 # 環境設定を取得
 app_env = os.getenv("APP_ENV", "development")
 
 dictConfig(LOGGING_CONFIG)
-app = FastAPI()
 logger = logging.getLogger("app.exception")
-
 # カスタムエラーハンドラの追加
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):

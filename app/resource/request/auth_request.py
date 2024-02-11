@@ -68,7 +68,7 @@ class IdAccountExistsRequest(BaseModel):
         description="アカウントID",
     )
     
-class LoginRequest(BaseModel):
+class SignInRequest(BaseModel):
     email: str = Field(
         ...,
         title="メールアドレス",
