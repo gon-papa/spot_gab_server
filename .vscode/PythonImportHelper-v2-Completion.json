@@ -26,6 +26,15 @@
         "documentation": {}
     },
     {
+        "label": "typing",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "typing",
+        "description": "typing",
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Sequence",
         "importPath": "typing",
         "description": "typing",
@@ -50,6 +59,14 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -59,6 +76,22 @@
     },
     {
         "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -268,6 +301,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "app.resource.model",
         "description": "app.resource.model",
@@ -333,14 +374,6 @@
         "documentation": {}
     },
     {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -349,7 +382,7 @@
         "documentation": {}
     },
     {
-        "label": "HTTPException",
+        "label": "Depends",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -382,6 +415,14 @@
     },
     {
         "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -429,7 +470,31 @@
         "documentation": {}
     },
     {
-        "label": "injection",
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
         "isExtraImport": true,
@@ -437,44 +502,11 @@
         "documentation": {}
     },
     {
-        "label": "injector",
-        "kind": 6,
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
         "isExtraImport": true,
-        "importPath": "injector",
-        "description": "injector",
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "inject",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "Injector",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "inject",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "inject",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
+        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -483,6 +515,14 @@
         "description": "app.resource.service.auth_service",
         "isExtraImport": true,
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "SignUpRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
@@ -510,59 +550,19 @@
         "documentation": {}
     },
     {
-        "label": "OAuth2PasswordBearer",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
+        "label": "SignUpRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "isExtraImport": true,
-        "detail": "fastapi.security",
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
-        "label": "OAuth2PasswordBearer",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
+        "label": "SignUpRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
         "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "OAuth2PasswordRequestForm",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
-        "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
-        "isExtraImport": true,
-        "detail": "app.resource.exception.handler",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedTracebackMiddleware",
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
-        "isExtraImport": true,
-        "detail": "app.resource.exception.handler",
-        "documentation": {}
-    },
-    {
-        "label": "JsonResponse",
-        "importPath": "app.resource.response.json_response",
-        "description": "app.resource.response.json_response",
-        "isExtraImport": true,
-        "detail": "app.resource.response.json_response",
-        "documentation": {}
-    },
-    {
-        "label": "JsonResponse",
-        "importPath": "app.resource.response.json_response",
-        "description": "app.resource.response.json_response",
-        "isExtraImport": true,
-        "detail": "app.resource.response.json_response",
+        "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
     {
@@ -590,30 +590,6 @@
         "documentation": {}
     },
     {
-        "label": "app",
-        "importPath": "app.app",
-        "description": "app.app",
-        "isExtraImport": true,
-        "detail": "app.app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "app.app",
-        "description": "app.app",
-        "isExtraImport": true,
-        "detail": "app.app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "app.app",
-        "description": "app.app",
-        "isExtraImport": true,
-        "detail": "app.app",
-        "documentation": {}
-    },
-    {
         "label": "ErrorJsonResponse",
         "importPath": "app.resource.response.error_response",
         "description": "app.resource.response.error_response",
@@ -630,7 +606,23 @@
         "documentation": {}
     },
     {
-        "label": "UserRead",
+        "label": "JsonResponse",
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
         "isExtraImport": true,
@@ -646,7 +638,23 @@
         "documentation": {}
     },
     {
+        "label": "SignInUser",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
         "label": "UserRead",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "SignInUser",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
         "isExtraImport": true,
@@ -659,6 +667,102 @@
         "description": "app.resource.model.users",
         "isExtraImport": true,
         "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_active_user",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate_user",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "create_refresh_token",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "create_expire_at",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "crate_user_claim",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "Injector",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "inject",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "inject",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "inject",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
         "documentation": {}
     },
     {
@@ -695,7 +799,39 @@
         "documentation": {}
     },
     {
+        "label": "app",
+        "importPath": "app.app",
+        "description": "app.app",
+        "isExtraImport": true,
+        "detail": "app.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app.app",
+        "description": "app.app",
+        "isExtraImport": true,
+        "detail": "app.app",
+        "documentation": {}
+    },
+    {
         "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -727,11 +863,44 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "uuid4",
         "importPath": "uuid",
         "description": "uuid",
         "isExtraImport": true,
         "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -748,15 +917,6 @@
         "description": "app.db.db",
         "isExtraImport": true,
         "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
         "documentation": {}
     },
     {
@@ -872,11 +1032,19 @@
         "documentation": {}
     },
     {
-        "label": "get_user",
-        "importPath": "app.resource.service_domain.auth_service_domain",
-        "description": "app.resource.service_domain.auth_service_domain",
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
         "isExtraImport": true,
-        "detail": "app.resource.service_domain.auth_service_domain",
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
         "documentation": {}
     },
     {
@@ -888,12 +1056,29 @@
         "documentation": {}
     },
     {
+        "label": "secrets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "secrets",
+        "description": "secrets",
+        "detail": "secrets",
+        "documentation": {}
+    },
+    {
         "label": "app.resource.controller.auth_controller",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
         "detail": "app.resource.controller.auth_controller",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedTracebackMiddleware",
+        "importPath": "app.resource.exception.handler",
+        "description": "app.resource.exception.handler",
+        "isExtraImport": true,
+        "detail": "app.resource.exception.handler",
         "documentation": {}
     },
     {
@@ -917,19 +1102,19 @@
     {
         "label": "upgrade",
         "kind": 2,
-        "importPath": "app.db.migration.versions.b3670e6e5079_users_create",
-        "description": "app.db.migration.versions.b3670e6e5079_users_create",
+        "importPath": "app.db.migration.versions.42f38a70cb6e_users_create",
+        "description": "app.db.migration.versions.42f38a70cb6e_users_create",
         "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('users',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('uuid', sa.String(length=36), nullable=False, comment='UUID'),\n    sa.Column('account_name', sa.String(length=100), nullable=False, comment='アカウント名'),\n    sa.Column('id_account', sa.String(length=100), nullable=False, comment='アカウントID'),\n    sa.Column('email', sa.String(length=100), nullable=False, comment='メールアドレス'),\n    sa.Column('hashed_password', sa.String(length=100), nullable=False, comment='パスワード'),\n    sa.Column('is_active', sa.Boolean(), nullable=False, comment='アクティブフラグ True:ログイン中 False:ログアウト中'),",
-        "detail": "app.db.migration.versions.b3670e6e5079_users_create",
+        "detail": "app.db.migration.versions.42f38a70cb6e_users_create",
         "documentation": {}
     },
     {
         "label": "downgrade",
         "kind": 2,
-        "importPath": "app.db.migration.versions.b3670e6e5079_users_create",
-        "description": "app.db.migration.versions.b3670e6e5079_users_create",
+        "importPath": "app.db.migration.versions.42f38a70cb6e_users_create",
+        "description": "app.db.migration.versions.42f38a70cb6e_users_create",
         "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('users')\n    # ### end Alembic commands ###",
-        "detail": "app.db.migration.versions.b3670e6e5079_users_create",
+        "detail": "app.db.migration.versions.42f38a70cb6e_users_create",
         "documentation": {}
     },
     {
@@ -1185,21 +1370,21 @@
         "documentation": {}
     },
     {
-        "label": "get_di_service",
-        "kind": 2,
-        "importPath": "app.resource.controller.auth_controller",
-        "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "def get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post(\n    '/sign_in',\n    tags=[\"auth\"],\n    response_model=SignInResponse,\n    name=\"サインイン\",",
-        "detail": "app.resource.controller.auth_controller",
-        "documentation": {}
-    },
-    {
         "label": "router",
         "kind": 5,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "router = APIRouter()\n@inject\ndef get_di_service(_class):\n    return injection.get(_class)\n# @router.post('/sign_up', tags=[\"auth\"] ,response_model=dict)\n# async def sign_up(request: SignUpRequest) -> dict:\n#     return get_di_service(AuthService).sign_up()\n@router.post(\n    '/sign_in',\n    tags=[\"auth\"],",
+        "peekOfCode": "router = APIRouter()\n@router.post(\n    '/sign_up',\n    tags=[\"auth\"],\n    response_model=SignInResponse,\n    name=\"サインアップ\",\n    description=\"サインアップ\",\n    operation_id=\"sign_up\",\n    responses = {\n        400: {",
         "detail": "app.resource.controller.auth_controller",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "kind": 2,
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "peekOfCode": "def get_di_class(_class):\n    return injection.get(_class)",
+        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -1207,7 +1392,7 @@
         "kind": 5,
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
-        "peekOfCode": "injection = Injector()",
+        "peekOfCode": "injection = Injector()\n@inject\ndef get_di_class(_class):\n    return injection.get(_class)",
         "detail": "app.resource.depends.depends",
         "documentation": {}
     },
@@ -1252,7 +1437,16 @@
         "kind": 6,
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
-        "peekOfCode": "class UserRead(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    is_active: bool\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    refresh_token: str",
+        "peekOfCode": "class UserRead(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    is_active: bool\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    deleted_at: Optional[datetime] = None",
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "SignInUser",
+        "kind": 6,
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "peekOfCode": "class SignInUser(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    token: Optional[str] = None\n    refresh_token: str",
         "detail": "app.resource.model.users",
         "documentation": {}
     },
@@ -1261,7 +1455,7 @@
         "kind": 6,
         "importPath": "app.resource.repository.user_repository",
         "description": "app.resource.repository.user_repository",
-        "peekOfCode": "class UserRepository:\n    async def create_user(self) -> dict:\n        # ここにユーザー作成のロジックを実装\n        return {\"message\": \"Create user repository\"}\n    # emailの存在確認\n    async def email_exist(self, email: str) -> bool:\n        async with get_db() as session:\n            result = await session.execute(select(Users).filter(Users.email == email))\n            user = result.scalars().first()\n            return user is not None",
+        "peekOfCode": "class UserRepository:\n    # ユーザー作成\n    async def create_user(self, user:Users) -> Users:\n         async with get_db() as session:\n            session.add(user)\n            await session.commit()\n            await session.refresh(user)\n            return user\n    # emailの存在確認\n    async def email_exist(self, email: str) -> bool:",
         "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
@@ -1333,7 +1527,7 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):\n        user: UserRead = Field(None, description=\"ログインユーザー情報\")\n    data: SignInResponseItem = Field(None, description=\"ログイン情報\")",
+        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):\n        user: SignInUser = Field(None, description=\"サインインユーザー情報\")\n    data: SignInResponseItem = Field(None, description=\"サインインユーザー情報\")",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1342,7 +1536,7 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):\n        user: UserRead = Field(None, description=\"ログインユーザー情報\")\n    data: SignInResponseItem = Field(None, description=\"ログイン情報\")",
+        "peekOfCode": "class SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):\n        user: SignInUser = Field(None, description=\"サインインユーザー情報\")\n    data: SignInResponseItem = Field(None, description=\"サインインユーザー情報\")",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1369,8 +1563,17 @@
         "kind": 6,
         "importPath": "app.resource.service.auth_service",
         "description": "app.resource.service.auth_service",
-        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # async def sign_up(self) -> dict:\n    #     # ユーザー登録処理をここに実装\n    #     return await self.repository.create_user()\n    async def sign_in(self, email: str, password: str) -> dict:\n        # ユーザー認証処理をここに実装\n        return await get_user(user_repository=self.repository, email=email)",
+        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # サインアップ\n    async def sign_up(self, request:SignUpRequest) -> SignInUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:\n            raise HTTPException(status_code=400, detail=\"Email already registered\")",
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "TokenData",
+        "kind": 6,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "class TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))",
+        "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {
@@ -1378,7 +1581,7 @@
         "kind": 6,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:",
+        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1387,7 +1590,7 @@
         "kind": 2,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "def verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)\n    if user is None:\n        return None",
+        "peekOfCode": "def verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n# リフレッシュトークン作成\ndef create_refresh_token()-> str:\n    return secrets.token_urlsafe(64)\n# リフレッシュトークンの有効期限作成\ndef create_expire_at()-> datetime:",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1396,16 +1599,52 @@
         "kind": 2,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "def get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)\n    if user is None:\n        return None\n    return user",
+        "peekOfCode": "def get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n# リフレッシュトークン作成\ndef create_refresh_token()-> str:\n    return secrets.token_urlsafe(64)\n# リフレッシュトークンの有効期限作成\ndef create_expire_at()-> datetime:\n    day = int(os.getenv('REFRESH_TOKEN_EXPIRE_DAY'))\n    create_expire_at = datetime.now() + timedelta(days=day)\n    return create_expire_at",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {
-        "label": "get_user",
+        "label": "create_refresh_token",
         "kind": 2,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "def get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)\n    if user is None:\n        return None\n    return user",
+        "peekOfCode": "def create_refresh_token()-> str:\n    return secrets.token_urlsafe(64)\n# リフレッシュトークンの有効期限作成\ndef create_expire_at()-> datetime:\n    day = int(os.getenv('REFRESH_TOKEN_EXPIRE_DAY'))\n    create_expire_at = datetime.now() + timedelta(days=day)\n    return create_expire_at\n# 認証チェック\n# emailとpasswordが一致するユーザーを取得\nasync def authenticate_user(email: str, password: str)-> Union[Users, bool]:",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "create_expire_at",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def create_expire_at()-> datetime:\n    day = int(os.getenv('REFRESH_TOKEN_EXPIRE_DAY'))\n    create_expire_at = datetime.now() + timedelta(days=day)\n    return create_expire_at\n# 認証チェック\n# emailとpasswordが一致するユーザーを取得\nasync def authenticate_user(email: str, password: str)-> Union[Users, bool]:\n    repository = get_di_class(UserRepository)\n    user = await repository.get_user_by_email(email)\n    if user is None:",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "crate_user_claim",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def crate_user_claim(user: Users)-> dict:\n    access_token_data = {\n        \"sub\": user.uuid, # 一意の識別子\n        \"aud\": \"user\", # role\n        \"exp\": datetime.now(timezone.utc) + timedelta(minutes=expired_minutes), # 有効期限\n    }\n    return access_token_data\n# アクセストークン作成\ndef create_access_token(data: dict):\n    to_encode = data.copy()",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def create_access_token(data: dict):\n    to_encode = data.copy()\n    encoded_jwt = jwt.encode(to_encode, secret_key, algorithm=algorithm)\n    return encoded_jwt\n# アクセストークン解析\nasync def get_current_user(token: str = Depends(oauth2_scheme))-> Optional[Users]:\n    credentials_exception = HTTPException(\n        status_code=status.HTTP_401_UNAUTHORIZED,\n        detail=\"Could not validate credentials\",\n        headers={\"WWW-Authenticate\": \"Bearer\"},",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\nclass TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1414,7 +1653,7 @@
         "kind": 5,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1423,7 +1662,34 @@
         "kind": 5,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n#user取得\ndef get_user(user_repository:UserRepository, email: str)-> Users:\n    user = user_repository.get_user_by_email(email)",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "secret_key",
+        "kind": 5,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "secret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n# リフレッシュトークン作成",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "algorithm",
+        "kind": 5,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "algorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n# リフレッシュトークン作成\ndef create_refresh_token()-> str:",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "expired_minutes",
+        "kind": 5,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "expired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n# リフレッシュトークン作成\ndef create_refresh_token()-> str:\n    return secrets.token_urlsafe(64)",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
