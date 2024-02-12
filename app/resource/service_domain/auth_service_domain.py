@@ -81,27 +81,26 @@ def create_access_token(data: dict):
 
 # アクセストークン解析
 async def get_current_user(token: str = Depends(oauth2_scheme))-> Optional[Users]:
-    credentials_exception = HTTPException(
+    try:
+        payload = jwt.decode(token, secret_key, algorithms=[algorithm], audience="user")
+        uuid: str = payload.get("sub")
+        if uuid is None:
+            credentials_exception(None)
+    except JWTError as e:
+        credentials_exception(e)
+    user = await get_di_class(UserRepository).get_user_by_uuid(uuid)
+    if user is None:
+        credentials_exception(None)
+    return user
+
+# 解析失敗時の例外
+def credentials_exception(e: Union[JWTError, None]):
+    logger.error(e)
+    raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    logger.error(token)
-    try:
-        payload = jwt.decode(token, secret_key, algorithms=[algorithm])
-        uuid: str = payload.get("sub")
-        if uuid is None:
-            logger.error("uuid is none")
-            raise credentials_exception
-    except JWTError:
-        logger.error("jwt error")
-        logger.error(str(JWTError))
-        raise credentials_exception
-    user = get_di_class(UserRepository).get_user_by_uuid(uuid)
-    if user is None:
-        logger.error("user is none")
-        raise credentials_exception
-    return user
 
 # ユーザー認証
 async def get_current_active_user(current_user: Users = Depends(get_current_user))-> Users:
