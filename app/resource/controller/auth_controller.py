@@ -49,7 +49,7 @@ async def sign_up(request: SignUpRequest) -> SignInResponse:
 @router.post(
     '/sign_in',
     tags=["auth"],
-    response_model=SignInResponse,
+    response_model=dict,
     name="サインイン",
     description="サインイン",
     operation_id="sign_in",
@@ -64,14 +64,14 @@ async def sign_up(request: SignUpRequest) -> SignInResponse:
         }
     },
 )
-async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInResponse:
+async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> dict:
     try:
         email = request.username
         password = request.password
         user = await get_di_class(AuthService).sign_in(email, password)
     except Exception as e:
         raise e
-    return SignInResponse(status=200, data={"user": user})
+    return {"access_token": user.token, "token_type": "bearer"}
 
 @router.post(
     '/sign_out',
@@ -79,7 +79,17 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
     response_model=JsonResponse,
     name="サインアウト",
     description="サインアウト",
-    operation_id="sign_out"
+    operation_id="sign_out",
+    responses={
+        400: {
+            "model": ErrorJsonResponse,
+            "description": "Inactive user",
+        },
+        401: {
+            "model": ErrorJsonResponse,
+            "description": "Not authenticated",
+        }
+    },
 )
 async def sign_out(current_user: Users = Depends(get_current_active_user)) -> JsonResponse:
     try:

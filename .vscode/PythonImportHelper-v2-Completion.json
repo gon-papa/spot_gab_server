@@ -1635,7 +1635,16 @@
         "kind": 2,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "def create_access_token(data: dict):\n    to_encode = data.copy()\n    encoded_jwt = jwt.encode(to_encode, secret_key, algorithm=algorithm)\n    return encoded_jwt\n# アクセストークン解析\nasync def get_current_user(token: str = Depends(oauth2_scheme))-> Optional[Users]:\n    credentials_exception = HTTPException(\n        status_code=status.HTTP_401_UNAUTHORIZED,\n        detail=\"Could not validate credentials\",\n        headers={\"WWW-Authenticate\": \"Bearer\"},",
+        "peekOfCode": "def create_access_token(data: dict):\n    to_encode = data.copy()\n    encoded_jwt = jwt.encode(to_encode, secret_key, algorithm=algorithm)\n    return encoded_jwt\n# アクセストークン解析\nasync def get_current_user(token: str = Depends(oauth2_scheme))-> Optional[Users]:\n    try:\n        payload = jwt.decode(token, secret_key, algorithms=[algorithm], audience=\"user\")\n        uuid: str = payload.get(\"sub\")\n        if uuid is None:",
+        "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "credentials_exception",
+        "kind": 2,
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "peekOfCode": "def credentials_exception(e: Union[JWTError, None]):\n    logger.error(e)\n    raise HTTPException(\n        status_code=status.HTTP_401_UNAUTHORIZED,\n        detail=\"Could not validate credentials\",\n        headers={\"WWW-Authenticate\": \"Bearer\"},\n    )\n# ユーザー認証\nasync def get_current_active_user(current_user: Users = Depends(get_current_user))-> Users:\n    if not current_user.is_active:",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
