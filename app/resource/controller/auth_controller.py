@@ -1,31 +1,50 @@
-from fastapi import FastAPI, APIRouter, HTTPException
-from app.resource.depends.depends import injection
-from injector import inject
+from fastapi import APIRouter, Depends
+from fastapi.security import OAuth2PasswordRequestForm
+from app.resource.depends.depends import get_di_class
 from app.resource.service.auth_service import AuthService
 from app.resource.request.auth_request import (
+    SignUpRequest,
     EmailExistsRequest,
     IdAccountExistsRequest,
     SignInRequest
 )
-import injector
-from fastapi.security import OAuth2PasswordBearer
-from app.resource.exception.handler import logger
-from app.resource.response.json_response import JsonResponse
-from app.resource.response.auth_response import (EmailExistsResponse, IdAccountExistsResponse,
-    SignInResponse)
-from app.app import app
+from app.resource.response.auth_response import (
+    EmailExistsResponse,
+    IdAccountExistsResponse,
+    SignInResponse
+)
 from app.resource.response.error_response import ErrorJsonResponse
-from app.resource.model.users import UserRead
+from app.resource.response.json_response import JsonResponse
+from app.resource.model.users import Users
+from app.resource.service_domain.auth_service_domain import get_current_active_user
 
 router = APIRouter()
 
-@inject
-def get_di_service(_class):
-    return injection.get(_class)
-
-# @router.post('/sign_up', tags=["auth"] ,response_model=dict)
-# async def sign_up(request: SignUpRequest) -> dict:
-#     return get_di_service(AuthService).sign_up()
+@router.post(
+    '/sign_up',
+    tags=["auth"],
+    response_model=SignInResponse,
+    name="サインアップ",
+    description="サインアップ",
+    operation_id="sign_up",
+    responses = {
+        400: {
+            "model": ErrorJsonResponse,
+            "description": "Email or Account ID already registered",
+        },
+        500: {
+            "model": ErrorJsonResponse,
+            "description": "Internal Server Error",
+        }
+    },
+)
+async def sign_up(request: SignUpRequest) -> SignInResponse:
+    try:
+        user = await get_di_class(AuthService).sign_up(request)
+    except Exception as e:
+        raise e
+    return SignInResponse(status=200, data={"user": user})
+        
 
 @router.post(
     '/sign_in',
@@ -35,26 +54,39 @@ def get_di_service(_class):
     description="サインイン",
     operation_id="sign_in",
     responses = {
-        403: {
+        401: {
             "model": ErrorJsonResponse,
-            "description": "Forbidden - Invalid email or password",
+            "description": "Unauthorized",
         },
         500: {
             "model": ErrorJsonResponse,
             "description": "Internal Server Error",
         }
-    }
+    },
 )
-async def sign_in(request: SignInRequest) -> SignInResponse:
+async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInResponse:
     try:
-        email = request.email
+        email = request.username
         password = request.password
-        user = await get_di_service(AuthService).sign_in(email, password)
-        if user is None:
-            raise HTTPException(status_code=403, detail="Invalid email or password")
+        user = await get_di_class(AuthService).sign_in(email, password)
     except Exception as e:
         raise e
-    return SignInResponse(status=200, data={"user": UserRead.model_validate(user)})
+    return SignInResponse(status=200, data={"user": user})
+
+@router.post(
+    '/sign_out',
+    tags=["auth"],
+    response_model=JsonResponse,
+    name="サインアウト",
+    description="サインアウト",
+    operation_id="sign_out"
+)
+async def sign_out(current_user: Users = Depends(get_current_active_user)) -> JsonResponse:
+    try:
+        result = await get_di_class(AuthService).sign_out(current_user)
+    except Exception as e:
+        raise e
+    return JsonResponse(status=200, data={"result": result})
 
 @router.post(
     '/email-exists',
@@ -67,7 +99,7 @@ async def sign_in(request: SignInRequest) -> SignInResponse:
 async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
     try:
         email = request.email
-        service = get_di_service(AuthService)
+        service = get_di_class(AuthService)
         result = await service.email_exist(email)
         return EmailExistsResponse(status=200, data={"exists": result})
     except Exception as e:
@@ -83,6 +115,6 @@ async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
 )
 async def id_account_exists(request: IdAccountExistsRequest) -> IdAccountExistsResponse:
     id_account = request.id_account
-    service = get_di_service(AuthService)
+    service = get_di_class(AuthService)
     result = await service.id_account_exist(id_account)
     return IdAccountExistsResponse(status=200, data={"exists": result})
