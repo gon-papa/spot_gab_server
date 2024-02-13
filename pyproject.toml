@@ -19,6 +19,7 @@ sqlmodel = "^0.0.14" # ORM
 sqlalchemy-utils = "^0.41.1"
 aiomysql = "^0.2.0"
 python-multipart = "^0.0.9"
+pytest = "^8.0.0"
 
 
 [build-system]
