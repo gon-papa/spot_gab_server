@@ -71,3 +71,14 @@ class UserRepository:
             await session.refresh(user)
             return user
         
+    # リフレッシュトークンからユーザー取得
+    async def get_user_by_refresh_token(self, refresh_token: str) -> Optional[Users]:
+        async with get_db() as session:
+            result = await session.execute(select(Users).filter(
+                    Users.refresh_token == refresh_token,
+                    Users.expires_at > datetime.utcnow()
+                )
+            )
+            user = result.scalars().first()
+            return user
+        
