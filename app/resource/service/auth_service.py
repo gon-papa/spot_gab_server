@@ -67,6 +67,26 @@ class AuthService:
             return False
         return True
     
+    # リフレッシュトークンユーザー認証
+    async def get_refresh_token(self, token: str)-> SignInUser:
+        user = await self.repository.get_user_by_refresh_token(token)
+        if user is None:
+            raise HTTPException(status_code=401, detail="Unauthorized")
+        if not user.is_active:
+            raise HTTPException(status_code=400, detail="Inactive user")
+        if user.deleted_at is not None:
+            raise HTTPException(status_code=400, detail="Deleted user")
+        # アクセストークン作成
+        claim = crate_user_claim(user)
+        token = create_access_token(claim)
+        # リフレッシュトークンの有効期限作成
+        refresh_token = create_refresh_token()
+        expires_at = create_expire_at()
+        user = await self.repository.active_update(user.id, refresh_token, expires_at)
+        user = SignInUser.model_validate(user)
+        user.token = token
+        return user   
+    
     # email存在チェック
     async def email_exist(self, email: str) -> bool:
         return await self.repository.email_exist(email)

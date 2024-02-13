@@ -6,7 +6,7 @@ from app.resource.request.auth_request import (
     SignUpRequest,
     EmailExistsRequest,
     IdAccountExistsRequest,
-    SignInRequest
+    RefreshTokenRequest
 )
 from app.resource.response.auth_response import (
     EmailExistsResponse,
@@ -97,6 +97,31 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
     except Exception as e:
         raise e
     return JsonResponse(status=200, data={"result": result})
+
+@router.post(
+    '/refresh_token',
+    tags=["auth"],
+    response_model=SignInResponse,
+    name="トークンリフレッシュ",
+    description="トークンリフレッシュ",
+    operation_id="refresh_token",
+    responses={
+        401: {
+            "model": ErrorJsonResponse,
+            "description": "Unauthorized",
+        },
+        500: {
+            "model": ErrorJsonResponse,
+            "description": "Internal Server Error",
+        }
+    },
+)
+async def refresh_token(request: RefreshTokenRequest) -> SignInResponse:
+    try:
+        user = await get_di_class(AuthService).get_refresh_token(request.refresh_token)
+    except Exception as e:
+        raise e
+    return SignInResponse(status=200, data={"user": user})
 
 @router.post(
     '/email-exists',

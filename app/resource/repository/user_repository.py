@@ -13,7 +13,7 @@ import typing
 class UserRepository:
     # ユーザー作成
     async def create_user(self, user:Users) -> Users:
-         async with get_db() as session:
+        async with get_db() as session:
             session.add(user)
             await session.commit()
             await session.refresh(user)
@@ -46,7 +46,8 @@ class UserRepository:
             result = await session.execute(select(Users).filter(Users.uuid == uuid))
             user = result.scalars().first()
             return user
-        
+    
+    # サインイン時にユーザーをアクティブ状態に更新(リフレッシュトークンと有効期限も更新)
     async def active_update(self, id: int, refresh_token: str, exp: datetime) -> Users:
         async with get_db() as session:
             result = await session.execute(select(Users).where(Users.id == id))
@@ -58,7 +59,8 @@ class UserRepository:
             await session.commit()
             await session.refresh(user)
             return user
-        
+
+    # サインアウト時にユーザーを非アクティブ状態に更新(リフレッシュトークンと有効期限も削除)
     async def inactive_update(self, user: Users) -> Users:
         async with get_db() as session:
             user.is_active = False
@@ -67,5 +69,16 @@ class UserRepository:
             session.add(user)
             await session.commit()
             await session.refresh(user)
+            return user
+        
+    # リフレッシュトークンからユーザー取得
+    async def get_user_by_refresh_token(self, refresh_token: str) -> Optional[Users]:
+        async with get_db() as session:
+            result = await session.execute(select(Users).filter(
+                    Users.refresh_token == refresh_token,
+                    Users.expires_at > datetime.utcnow()
+                )
+            )
+            user = result.scalars().first()
             return user
         

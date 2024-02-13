@@ -68,22 +68,9 @@ class IdAccountExistsRequest(BaseModel):
         description="アカウントID",
     )
     
-class SignInRequest(BaseModel):
-    email: str = Field(
+class RefreshTokenRequest(BaseModel):
+    refresh_token: str = Field(
         ...,
-        title="メールアドレス",
-        description="メールアドレス",
+        title="リフレッシュトークン",
+        description="リフレッシュトークン",
     )
-    password: str = Field(
-        ...,
-        title="パスワード",
-        description="パスワード",
-    )
-    
-    @field_validator('email')
-    def email_validator(cls, value):
-        return email_validator(cls, value)
-    
-    @field_validator('password')
-    def password_validator(cls, value):
-        return password_validator(cls, value)
