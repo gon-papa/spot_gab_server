@@ -50,7 +50,7 @@ def create_refresh_token()-> str:
 # リフレッシュトークンの有効期限作成
 def create_expire_at()-> datetime:
     day = int(os.getenv('REFRESH_TOKEN_EXPIRE_DAY'))
-    create_expire_at = datetime.now() + timedelta(days=day)
+    create_expire_at = datetime.utcnow() + timedelta(days=day)
     return create_expire_at
 
 # 認証チェック
@@ -69,7 +69,7 @@ def crate_user_claim(user: Users)-> dict:
     access_token_data = {
         "sub": user.uuid, # 一意の識別子
         "aud": "user", # role
-        "exp": datetime.now(timezone.utc) + timedelta(minutes=expired_minutes), # 有効期限
+        "exp": datetime.utcnow() + timedelta(minutes=expired_minutes), # 有効期限
     }
     return access_token_data
 

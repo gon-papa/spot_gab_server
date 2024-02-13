@@ -16,8 +16,8 @@ class Users(SQLModel, table=True):
     refresh_token: str = Field(sa_column=Column(String(100), nullable=True, comment="リフレッシュトークン"))
     expires_at: datetime = Field(sa_column=Column(DateTime, nullable=True, comment="リフレッシュトークン有効期限"))
     deleted_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment="削除日時とフラグ"))
-    created_at: datetime = Field(default_factory=datetime.now, sa_column=Column(DateTime, nullable=True, default=datetime.now))
-    updated_at: datetime = Field(default_factory=datetime.now, sa_column=Column(DateTime, nullable=True, onupdate=datetime.now))
+    created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, default=datetime.utcnow))
+    updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, onupdate=datetime.utcnow))
     
 class UserRead(SQLModel):
     id: int
