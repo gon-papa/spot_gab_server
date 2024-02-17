@@ -1,6 +1,7 @@
 from injector import Injector, inject
+from app.db.db import AppConfig
 
-injection = Injector()
+injection = Injector([AppConfig()])
 
 @inject
 def get_di_class(_class):
