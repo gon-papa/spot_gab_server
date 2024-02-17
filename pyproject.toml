@@ -19,8 +19,13 @@ sqlmodel = "^0.0.14" # ORM
 sqlalchemy-utils = "^0.41.1"
 aiomysql = "^0.2.0"
 python-multipart = "^0.0.9"
-pytest = "^8.0.0"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.23.5"
+aiosqlite = "^0.19.0"
+httpx = "^0.26.0"
+pytest = "^8.0.0"
 
 [build-system]
 requires = ["poetry-core"]
