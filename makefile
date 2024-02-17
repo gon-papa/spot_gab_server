@@ -34,3 +34,6 @@ endif
 
 cache-clear: ## Clear cache
 	docker compose exec -it fastapi find . -type d -name "__pycache__" -exec rm -r {} +
+
+openapi: ## Generate openapi
+	curl http://127.0.0.1:8000/openapi.json -o openapi.json
