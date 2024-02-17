@@ -4,6 +4,8 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
 from sqlmodel import SQLModel
+from app.db.db import DatabaseConnection
+from app.resource.depends.depends import get_di_class
 
 # import app.resource.model.users
 
@@ -13,15 +15,10 @@ import os
 
 load_dotenv()
 
-dialect = os.getenv("DB_DIALECT")
-driver = os.getenv("DB_DRIVER")
-username = os.getenv("DB_USER")
-password = os.getenv("DB_PASS")
-host = os.getenv("DB_HOST")
-port = os.getenv("DB_PORT")
-db_name = os.getenv("DB_NAME")
+db_connection = get_di_class(DatabaseConnection)
+ASYNC_DB_URL = db_connection.get_migration_url()
 
-ASYNC_DB_URL = f"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8"
+
 # 実行時にコンソールに表示
 print(ASYNC_DB_URL)
 
