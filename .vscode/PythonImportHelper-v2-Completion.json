@@ -253,14 +253,6 @@
         "documentation": {}
     },
     {
-        "label": "SQLModel",
-        "importPath": "sqlmodel",
-        "description": "sqlmodel",
-        "isExtraImport": true,
-        "detail": "sqlmodel",
-        "documentation": {}
-    },
-    {
         "label": "fileConfig",
         "importPath": "logging.config",
         "description": "logging.config",
@@ -274,14 +266,6 @@
         "description": "logging.config",
         "isExtraImport": true,
         "detail": "logging.config",
-        "documentation": {}
-    },
-    {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -349,6 +333,14 @@
         "documentation": {}
     },
     {
+        "label": "TestAppConfig",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -357,7 +349,7 @@
         "documentation": {}
     },
     {
-        "label": "get_db",
+        "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
         "isExtraImport": true,
@@ -365,7 +357,7 @@
         "documentation": {}
     },
     {
-        "label": "test_engine",
+        "label": "TestAppConfig",
         "importPath": "app.db.db",
         "description": "app.db.db",
         "isExtraImport": true,
@@ -390,6 +382,22 @@
     },
     {
         "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "update_injector",
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
         "isExtraImport": true,
@@ -447,14 +455,6 @@
         "documentation": {}
     },
     {
-        "label": "AsyncSession",
-        "importPath": "sqlmodel.ext.asyncio.session",
-        "description": "sqlmodel.ext.asyncio.session",
-        "isExtraImport": true,
-        "detail": "sqlmodel.ext.asyncio.session",
-        "documentation": {}
-    },
-    {
         "label": "AsyncEngine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
@@ -476,22 +476,6 @@
         "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
         "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "create_async_engine",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "sessionmaker",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
@@ -968,14 +952,6 @@
         "documentation": {}
     },
     {
-        "label": "app",
-        "importPath": "app.app",
-        "description": "app.app",
-        "isExtraImport": true,
-        "detail": "app.app",
-        "documentation": {}
-    },
-    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -1268,6 +1244,15 @@
         "documentation": {}
     },
     {
+        "label": "pytest_asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest_asyncio",
+        "description": "pytest_asyncio",
+        "detail": "pytest_asyncio",
+        "documentation": {}
+    },
+    {
         "label": "log_directory",
         "kind": 5,
         "importPath": "app.config.logging_config",
@@ -1371,7 +1356,7 @@
         "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "class DatabaseConnection:\n    def __init__(self, connection_url: str, migration_url: str):\n        self.connection_url = connection_url\n        self.migration_url = migration_url\n    @asynccontextmanager\n    async def get_db(self):\n        engine = self.get_async_engine()\n        session = self.get_session(engine)\n        async with session() as session:\n            yield session",
+        "peekOfCode": "class DatabaseConnection:\n    def __init__(self, connection_url: str, migration_url: str, option: dict = {}):\n        self.connection_url = connection_url\n        self.migration_url = migration_url\n        self.option = option\n        self.engine = self.get_async_engine()\n        self.session = self.get_session(self.engine)\n    @asynccontextmanager\n    async def get_db(self):\n        async with self.session() as session:",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1380,7 +1365,7 @@
         "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "class AppConfig(Module):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url())\n    def db_url(self) -> str:\n        dialect = os.getenv(\"DB_DIALECT\")\n        driver = os.getenv(\"DB_DRIVER\")\n        username = os.getenv(\"DB_USER\")\n        password = os.getenv(\"DB_PASS\")",
+        "peekOfCode": "class AppConfig(Module):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        dialect = os.getenv(\"DB_DIALECT\")\n        driver = os.getenv(\"DB_DRIVER\")\n        username = os.getenv(\"DB_USER\")\n        password = os.getenv(\"DB_PASS\")",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1389,7 +1374,7 @@
         "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "class TestAppConfig(Module):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url())\n    def db_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def migration_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"",
+        "peekOfCode": "class TestAppConfig(Module):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def migration_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def get_option(self):",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1407,16 +1392,16 @@
         "kind": 2,
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
-        "peekOfCode": "def get_di_class(_class):\n    return injection.get(_class)",
+        "peekOfCode": "def get_di_class(_class):\n    return di.get(_class)",
         "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
-        "label": "injection",
+        "label": "di",
         "kind": 5,
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
-        "peekOfCode": "injection = Injector([AppConfig()])\n@inject\ndef get_di_class(_class):\n    return injection.get(_class)",
+        "peekOfCode": "di = Injector([AppConfig()])\nasync def update_injector(_class):\n    global di\n    di = Injector([_class])\n@inject\ndef get_di_class(_class):\n    return di.get(_class)",
         "detail": "app.resource.depends.depends",
         "documentation": {}
     },
@@ -1740,80 +1725,8 @@
         "kind": 5,
         "importPath": "tests.feature.test_auth_controller",
         "description": "tests.feature.test_auth_controller",
-        "peekOfCode": "client = AsyncClient(app=app, base_url=os.getenv(\"BASE_URL\"))\n@pytest.mark.asyncio\nasync def test_email_exists_メールアドレスが存在したらtrueを返す(set_test_env):\n    user = Users(\n        account_name = \"test\",\n        id_account = \"test\",\n        email = \"test@test.com\",\n        hashed_password = \"test\",\n        birth_date = date(2000, 1, 1),\n        is_active = True,",
+        "peekOfCode": "client = AsyncClient(app=app, base_url=os.getenv(\"BASE_URL\"))\n@pytest.mark.asyncio\nasync def test_email_exists_メールアドレスが存在したらtrueを返す(set_up_test):\n    user = Users(\n        account_name = \"test\",\n        id_account = \"test\",\n        email = \"test@test.com\",\n        hashed_password = \"test\",\n        birth_date = date(2000, 1, 1),\n        is_active = True,",
         "detail": "tests.feature.test_auth_controller",
-        "documentation": {}
-    },
-    {
-        "label": "dialect",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "dialect = os.getenv(\"DB_DIALECT\")\ndriver = os.getenv(\"DB_DRIVER\")\nusername = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "driver",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "driver = os.getenv(\"DB_DRIVER\")\nusername = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "username",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "username = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:\n        os.environ[\"TEST_ENV\"] = \"true\"",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "password",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "password = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:\n        os.environ[\"TEST_ENV\"] = \"true\"\n        # テスト用DBの初期化",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "host",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "host = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:\n        os.environ[\"TEST_ENV\"] = \"true\"\n        # テスト用DBの初期化\n        os.system(\"alembic upgrade head\")",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "port",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "port = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:\n        os.environ[\"TEST_ENV\"] = \"true\"\n        # テスト用DBの初期化\n        os.system(\"alembic upgrade head\")\n        yield",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "db_name",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "db_name = os.getenv(\"TEST_DB_NAME\")\nTEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:\n        os.environ[\"TEST_ENV\"] = \"true\"\n        # テスト用DBの初期化\n        os.system(\"alembic upgrade head\")\n        yield\n    except Exception as e:",
-        "detail": "tests.conftest",
-        "documentation": {}
-    },
-    {
-        "label": "TEST_ASYNC_DB_URL",
-        "kind": 5,
-        "importPath": "tests.conftest",
-        "description": "tests.conftest",
-        "peekOfCode": "TEST_ASYNC_DB_URL = f\"sqlite+aiosqlite:///./test.db\"\n@pytest.fixture(autouse=True)\nasync def set_test_env():\n    try:\n        os.environ[\"TEST_ENV\"] = \"true\"\n        # テスト用DBの初期化\n        os.system(\"alembic upgrade head\")\n        yield\n    except Exception as e:\n        print(e)",
-        "detail": "tests.conftest",
         "documentation": {}
     }
 ]

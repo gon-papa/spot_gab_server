@@ -10,18 +10,26 @@ from sqlalchemy.orm import sessionmaker
 from injector import Module, provider, singleton
 
 load_dotenv()
-            
+
 class DatabaseConnection:
-    def __init__(self, connection_url: str, migration_url: str):
+    def __init__(self, connection_url: str, migration_url: str, option: dict = {}):
         self.connection_url = connection_url
         self.migration_url = migration_url
+        self.option = option
+        self.engine = self.get_async_engine()
+        self.session = self.get_session(self.engine)
         
     @asynccontextmanager
     async def get_db(self):
-        engine = self.get_async_engine()
-        session = self.get_session(engine)
-        async with session() as session:
+        async with self.session() as session:
             yield session
+            
+    async def close_engine(self):
+        if self.engine:
+            await self.engine.dispose()
+            await self.session.close()
+            self.engine = None
+            self.session = None
             
     def get_url(self) -> str:
         return self.connection_url
@@ -30,40 +38,16 @@ class DatabaseConnection:
         return self.migration_url
 
     def get_async_engine(self) -> AsyncEngine:
-        pool_size = int(os.getenv("DB_POOL_SIZE"))
-        pool_connection_timeout = int(os.getenv("POOL_CONN_TIMEOUT"))
-        pool_recycle = int(os.getenv("POOL_RECYCLE"))
-        max_overflow = int(os.getenv("DB_MAX_OVERFLOW"))
-        logging = bool(os.getenv("SQL_LOGGING"))
-
         return create_async_engine(
                     self.connection_url,
-                    echo=logging,
-                    echo_pool=logging,
-                    pool_size=pool_size,
-                    pool_timeout=pool_connection_timeout,
-                    max_overflow=max_overflow,
-                    pool_recycle=pool_recycle,
-                    pool_pre_ping=True,
+                    **self.option
                 )
         
     # 同期エンジンを取得(migration用)
     def get_sync_engine(self) -> Engine:
-        pool_size = int(os.getenv("DB_POOL_SIZE"))
-        pool_connection_timeout = int(os.getenv("POOL_CONN_TIMEOUT"))
-        pool_recycle = int(os.getenv("POOL_RECYCLE"))
-        max_overflow = int(os.getenv("DB_MAX_OVERFLOW"))
-        logging = bool(os.getenv("SQL_LOGGING"))
-
         return create_engine(
                     self.connection_url,
-                    echo=logging,
-                    echo_pool=logging,
-                    pool_size=pool_size,
-                    pool_timeout=pool_connection_timeout,
-                    max_overflow=max_overflow,
-                    pool_recycle=pool_recycle,
-                    pool_pre_ping=True,
+                    **self.option
                 )
         
     def get_session(self, engine: AsyncEngine) -> AsyncSession:
@@ -79,7 +63,7 @@ class AppConfig(Module):
     @singleton
     @provider
     def provide_database_connection(self) -> DatabaseConnection:
-        return DatabaseConnection(self.db_url(), self.migration_url())
+        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())
     
     def db_url(self) -> str:
         dialect = os.getenv("DB_DIALECT")
@@ -100,14 +84,35 @@ class AppConfig(Module):
         db_name = os.getenv("DB_NAME")
         return f"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8"
     
+    def get_option(self):
+        logging = bool(os.getenv("SQL_LOGGING"))
+        pool_size = int(os.getenv("DB_POOL_SIZE"))
+        pool_connection_timeout = int(os.getenv("POOL_CONN_TIMEOUT"))
+        max_overflow = int(os.getenv("DB_MAX_OVERFLOW"))
+        pool_recycle = int(os.getenv("POOL_RECYCLE"))
+        return {
+            "echo": logging,
+            "echo_pool": logging,
+            "pool_size": pool_size,
+            "pool_timeout": pool_connection_timeout,
+            "max_overflow": max_overflow,
+            "pool_recycle": pool_recycle,
+            "pool_pre_ping": True,
+        }
+
+        
+    
 class TestAppConfig(Module):
     @singleton
     @provider
     def provide_database_connection(self) -> DatabaseConnection:
-        return DatabaseConnection(self.db_url(), self.migration_url())
+        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())
     
     def db_url(self) -> str:
         return f"sqlite+aiosqlite:///./test.db"
     
     def migration_url(self) -> str:
         return f"sqlite+aiosqlite:///./test.db"
+    
+    def get_option(self):
+        return {}
