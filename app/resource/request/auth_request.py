@@ -1,7 +1,6 @@
-import re
 from pydantic import BaseModel, Field, field_validator
 from datetime import date as Date
-from app.resource.request.common_validate import email_validator, password_validator
+from app.resource.request.common_validate import CustomValidator
 
 class SignUpRequest(BaseModel):
     account_name: str = Field(
@@ -40,11 +39,11 @@ class SignUpRequest(BaseModel):
     
     @field_validator('email')
     def email_validator(cls, value):
-        return email_validator(cls, value)
+        return CustomValidator.email_validator(cls, value)
     
     @field_validator('password')
     def password_validator(cls, value):
-        return password_validator(cls, value)
+        return CustomValidator.password_validator(cls, value)
     
     @field_validator('birth_date')
     def birth_date_validator(cls, value):
