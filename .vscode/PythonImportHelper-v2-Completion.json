@@ -405,6 +405,22 @@
         "documentation": {}
     },
     {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
         "label": "update_injector",
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
@@ -863,6 +879,14 @@
         "documentation": {}
     },
     {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
@@ -1048,6 +1072,14 @@
         "documentation": {}
     },
     {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "uuid4",
         "importPath": "uuid",
         "description": "uuid",
@@ -1158,6 +1190,14 @@
         "importPath": "re",
         "description": "re",
         "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
     {
@@ -1758,7 +1798,7 @@
         "kind": 5,
         "importPath": "tests.feature.conftest",
         "description": "tests.feature.conftest",
-        "peekOfCode": "BASE_URL = os.getenv(\"BASE_URL\")\n@pytest_asyncio.fixture\nasync def async_client():\n    async with AsyncClient(app=app, base_url=BASE_URL) as client:\n        yield client",
+        "peekOfCode": "BASE_URL = os.getenv(\"BASE_URL\")\n# クライアント取得\n@pytest_asyncio.fixture\nasync def async_client():\n    async with AsyncClient(app=app, base_url=BASE_URL) as client:\n        yield client\n# 認証ユーザー取得\n@pytest_asyncio.fixture\nasync def get_auth_user(async_client)-> Users:\n    user = Users(",
         "detail": "tests.feature.conftest",
         "documentation": {}
     },
@@ -1767,7 +1807,7 @@
         "kind": 6,
         "importPath": "tests.feature.test_auth_controller",
         "description": "tests.feature.test_auth_controller",
-        "peekOfCode": "class TestAuthController:\n    @pytest.mark.asyncio\n    async def test_email_exists_メールアドレスが存在したらtrueを返す(self, async_client):\n        user = Users(\n            account_name = \"test\",\n            id_account = \"test\",\n            email = \"test@test.com\",\n            hashed_password = \"test\",\n            birth_date = date(2000, 1, 1),\n            is_active = True,",
+        "peekOfCode": "class TestAuthController:\n    @pytest_asyncio.fixture\n    async def setup_user(self):\n        self.user = Users(\n            account_name=\"test\",\n            id_account=\"test\",\n            email=\"test@test.com\",\n            hashed_password=\"$2b$12$VUJv82tezCvUccA35HleFulwc4qYrz7BqFHIdK7yXQK0nEPyl2Cc.\", # password\n            birth_date=date(2000, 1, 1),\n            is_active=True,",
         "detail": "tests.feature.test_auth_controller",
         "documentation": {}
     }
