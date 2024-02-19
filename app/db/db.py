@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 import os
 import asyncio
 from sqlalchemy import Engine
@@ -58,8 +59,22 @@ class DatabaseConnection:
         return async_scoped_session(
             async_session_factory, scopefunc=asyncio.current_task
         )
+  
+# DB設定クラスのインターフェース
+class ConfigInterface(ABC):
+    @abstractmethod
+    def db_url(self) -> str:
+        pass
+    
+    @abstractmethod
+    def migration_url(self) -> str:
+        pass
+    
+    @abstractmethod
+    def get_option(self) -> dict:
+        pass
         
-class AppConfig(Module):
+class AppConfig(Module, ConfigInterface):
     @singleton
     @provider
     def provide_database_connection(self) -> DatabaseConnection:
@@ -99,10 +114,9 @@ class AppConfig(Module):
             "pool_recycle": pool_recycle,
             "pool_pre_ping": True,
         }
-
-        
     
-class TestAppConfig(Module):
+    
+class TestAppConfig(Module, ConfigInterface):
     @singleton
     @provider
     def provide_database_connection(self) -> DatabaseConnection:
@@ -114,5 +128,5 @@ class TestAppConfig(Module):
     def migration_url(self) -> str:
         return f"sqlite+aiosqlite:///./test.db"
     
-    def get_option(self):
+    def get_option(self) -> dict:
         return {}

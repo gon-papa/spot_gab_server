@@ -24,36 +24,36 @@ class UserRepository:
     # emailの存在確認
     async def email_exist(self, email: str) -> bool:
         async with self.db.get_db() as session:
-            result = await session.execute(select(Users).filter(Users.email == email))
-            user = result.scalars().first()
+            result = await session.exec(select(Users).filter(Users.email == email))
+            user = result.first()
             return user is not None
         
     # id_accountの存在確認
     async def id_account_exist(self, id_account: str) -> bool:
         async with self.db.get_db() as session:
-            result = await session.execute(select(Users).filter(Users.id_account == id_account))
-            user = result.scalars().first()
+            result = await session.exec(select(Users).filter(Users.id_account == id_account))
+            user = result.first()
             return user is not None
         
     # emailからuser取得
     async def get_user_by_email(self, email: str) -> Optional[Users]:
         async with self.db.get_db() as session:
-            result = await session.execute(select(Users).filter(Users.email == email))
-            user = result.scalars().first()
+            result = await session.exec(select(Users).filter(Users.email == email))
+            user = result.first()
             return user
         
     # uuidからuser取得
     async def get_user_by_uuid(self, uuid: str)-> Optional[Users]:
         async with self.db.get_db() as session:
-            result = await session.execute(select(Users).filter(Users.uuid == uuid))
-            user = result.scalars().first()
+            result = await session.exec(select(Users).filter(Users.uuid == uuid))
+            user = result.first()
             return user
     
     # サインイン時にユーザーをアクティブ状態に更新(リフレッシュトークンと有効期限も更新)
     async def active_update(self, id: int, refresh_token: str, exp: datetime) -> Users:
         async with self.db.get_db() as session:
-            result = await session.execute(select(Users).where(Users.id == id))
-            user = result.scalars().first()
+            result = await session.exec(select(Users).where(Users.id == id))
+            user = result.first()
             user.is_active = True
             user.refresh_token = refresh_token
             user.expires_at = exp
@@ -76,11 +76,11 @@ class UserRepository:
     # リフレッシュトークンからユーザー取得
     async def get_user_by_refresh_token(self, refresh_token: str) -> Optional[Users]:
         async with self.db.get_db() as session:
-            result = await session.execute(select(Users).filter(
+            result = await session.exec(select(Users).filter(
                     Users.refresh_token == refresh_token,
                     Users.expires_at > datetime.utcnow()
                 )
             )
-            user = result.scalars().first()
+            user = result.first()
             return user
         

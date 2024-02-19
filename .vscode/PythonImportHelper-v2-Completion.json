@@ -349,6 +349,14 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -430,6 +438,22 @@
         "documentation": {}
     },
     {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "asyncio",
         "kind": 6,
         "isExtraImport": true,
@@ -472,6 +496,14 @@
     },
     {
         "label": "async_scoped_session",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncEngine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
@@ -944,14 +976,6 @@
         "documentation": {}
     },
     {
-        "label": "app",
-        "importPath": "app.app",
-        "description": "app.app",
-        "isExtraImport": true,
-        "detail": "app.app",
-        "documentation": {}
-    },
-    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -977,14 +1001,6 @@
     },
     {
         "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1045,15 +1061,6 @@
         "description": "sqlalchemy.future",
         "isExtraImport": true,
         "detail": "sqlalchemy.future",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
         "documentation": {}
     },
     {
@@ -1137,7 +1144,7 @@
         "documentation": {}
     },
     {
-        "label": "email_validator",
+        "label": "CustomValidator",
         "importPath": "app.resource.request.common_validate",
         "description": "app.resource.request.common_validate",
         "isExtraImport": true,
@@ -1145,11 +1152,12 @@
         "documentation": {}
     },
     {
-        "label": "password_validator",
-        "importPath": "app.resource.request.common_validate",
-        "description": "app.resource.request.common_validate",
+        "label": "re",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "app.resource.request.common_validate",
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -1227,12 +1235,19 @@
         "documentation": {}
     },
     {
-        "label": "pytest",
-        "kind": 6,
+        "label": "app",
+        "importPath": "app.main",
+        "description": "app.main",
         "isExtraImport": true,
-        "importPath": "pytest",
-        "description": "pytest",
-        "detail": "pytest",
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.resource.controller",
+        "description": "app.resource.controller",
+        "isExtraImport": true,
+        "detail": "app.resource.controller",
         "documentation": {}
     },
     {
@@ -1250,6 +1265,15 @@
         "importPath": "pytest_asyncio",
         "description": "pytest_asyncio",
         "detail": "pytest_asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
         "documentation": {}
     },
     {
@@ -1361,11 +1385,20 @@
         "documentation": {}
     },
     {
+        "label": "ConfigInterface",
+        "kind": 6,
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "peekOfCode": "class ConfigInterface(ABC):\n    @abstractmethod\n    def db_url(self) -> str:\n        pass\n    @abstractmethod\n    def migration_url(self) -> str:\n        pass\n    @abstractmethod\n    def get_option(self) -> dict:\n        pass",
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "class AppConfig(Module):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        dialect = os.getenv(\"DB_DIALECT\")\n        driver = os.getenv(\"DB_DRIVER\")\n        username = os.getenv(\"DB_USER\")\n        password = os.getenv(\"DB_PASS\")",
+        "peekOfCode": "class AppConfig(Module, ConfigInterface):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        dialect = os.getenv(\"DB_DIALECT\")\n        driver = os.getenv(\"DB_DRIVER\")\n        username = os.getenv(\"DB_USER\")\n        password = os.getenv(\"DB_PASS\")",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1374,7 +1407,7 @@
         "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "class TestAppConfig(Module):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def migration_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def get_option(self):",
+        "peekOfCode": "class TestAppConfig(Module, ConfigInterface):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def migration_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def get_option(self) -> dict:",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1505,20 +1538,11 @@
         "documentation": {}
     },
     {
-        "label": "email_validator",
-        "kind": 2,
+        "label": "CustomValidator",
+        "kind": 6,
         "importPath": "app.resource.request.common_validate",
         "description": "app.resource.request.common_validate",
-        "peekOfCode": "def email_validator(cls, value):\n    email_regex = r'^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n    if not re.match(email_regex, value):\n        raise ValueError('メールアドレスが無効です。正しい形式で入力してください。')\n    return value\ndef password_validator(cls, value):\n        if len(value) < 8:\n            raise ValueError('8文字以上である必要があります。')\n        if len(value) >= 20:\n            raise ValueError('最大100文字までです。')",
-        "detail": "app.resource.request.common_validate",
-        "documentation": {}
-    },
-    {
-        "label": "password_validator",
-        "kind": 2,
-        "importPath": "app.resource.request.common_validate",
-        "description": "app.resource.request.common_validate",
-        "peekOfCode": "def password_validator(cls, value):\n        if len(value) < 8:\n            raise ValueError('8文字以上である必要があります。')\n        if len(value) >= 20:\n            raise ValueError('最大100文字までです。')\n        # 半角英数字と記号のみ\n        if not re.match(r'^[@?$%!#0-9a-zA-Z]+$', value):\n            raise ValueError('パスワードは半角英数字と記号 @?$%!# のみです。')\n        return value",
+        "peekOfCode": "class CustomValidator:\n    @staticmethod\n    def email_validator(cls, value):\n        email_regex = r'^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n        if not re.match(email_regex, value):\n            raise ValueError('メールアドレスが無効です。正しい形式で入力してください。')\n        return value\n    @staticmethod\n    def password_validator(cls, value):\n            if len(value) < 8:",
         "detail": "app.resource.request.common_validate",
         "documentation": {}
     },
@@ -1721,11 +1745,29 @@
         "documentation": {}
     },
     {
-        "label": "client",
+        "label": "app",
         "kind": 5,
+        "importPath": "app.main",
+        "description": "app.main",
+        "peekOfCode": "app = app\napp.include_router(auth_controller.router)\napp.add_middleware(EnhancedTracebackMiddleware)",
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_URL",
+        "kind": 5,
+        "importPath": "tests.feature.conftest",
+        "description": "tests.feature.conftest",
+        "peekOfCode": "BASE_URL = os.getenv(\"BASE_URL\")\n@pytest_asyncio.fixture\nasync def async_client():\n    async with AsyncClient(app=app, base_url=BASE_URL) as client:\n        yield client",
+        "detail": "tests.feature.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "TestAuthController",
+        "kind": 6,
         "importPath": "tests.feature.test_auth_controller",
         "description": "tests.feature.test_auth_controller",
-        "peekOfCode": "client = AsyncClient(app=app, base_url=os.getenv(\"BASE_URL\"))\n@pytest.mark.asyncio\nasync def test_email_exists_メールアドレスが存在したらtrueを返す(set_up_test):\n    user = Users(\n        account_name = \"test\",\n        id_account = \"test\",\n        email = \"test@test.com\",\n        hashed_password = \"test\",\n        birth_date = date(2000, 1, 1),\n        is_active = True,",
+        "peekOfCode": "class TestAuthController:\n    @pytest.mark.asyncio\n    async def test_email_exists_メールアドレスが存在したらtrueを返す(self, async_client):\n        user = Users(\n            account_name = \"test\",\n            id_account = \"test\",\n            email = \"test@test.com\",\n            hashed_password = \"test\",\n            birth_date = date(2000, 1, 1),\n            is_active = True,",
         "detail": "tests.feature.test_auth_controller",
         "documentation": {}
     }
