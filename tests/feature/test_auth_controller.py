@@ -158,9 +158,36 @@ class TestAuthController:
         assert refresh_user.refresh_token == None
         assert refresh_user.expires_at == None
         
-    # サインアウト以上系
-    # リフレッシュトークン系のテスト
-    # リフレッシュトークンの異常系テスト
+    @pytest.mark.asyncio
+    async def test_sign_out_サインアウト_サインアウト後のユーザーは400エラー(self, async_client, setup_user, get_auth_user):
+        user = get_auth_user
+        user.is_active = False
+        repository = get_di_class(UserRepository)
+        await repository.inactive_update(user)
+        headers = {"Authorization": f"Bearer {user.token}"}
+        response = await async_client.post('/sign_out', headers=headers)
+        
+        assert response.status_code == 400
+        assert response.json() == {"status": 400, "error": "http-error", "message": "Inactive user"}
+
+    @pytest.mark.asyncio
+    async def test_sign_out_サインアウト_認証前のユーザーは401エラー(self, async_client, setup_user, get_auth_user):
+        response = await async_client.post('/sign_out')
+        
+        assert response.status_code == 401
+        assert response.json() == {"status": 401, "error": "http-error", "message": "Not authenticated"}
+    
+    
+    @pytest.mark.asyncio
+    async def test_refresh_token_リフレッシュトークンが成功する(self, async_client, setup_user, get_auth_user):
+        user = get_auth_user
+        response = await async_client.post('/refresh_token', json={"refresh_token": user.refresh_token})
+        
+        assert response.status_code == 200
+        assert response.json()['data']['user']['token'] is not None
+        assert response.json()['data']['user']['refresh_token'] is not None
+        assert response.json()['data']['user']['expires_at'] is not None
+        assert user.refresh_token != response.json()['data']['user']['refresh_token'] # 更新されていること
         
     
     @pytest.mark.asyncio
