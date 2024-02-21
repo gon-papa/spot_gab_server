@@ -3,8 +3,7 @@ from dotenv import load_dotenv
 from app.resource.exception.handler import EnhancedTracebackMiddleware
 from app.app import app
 
-
 load_dotenv()
-
-app.add_middleware(EnhancedTracebackMiddleware)
+app = app
 app.include_router(auth_controller.router)
+app.add_middleware(EnhancedTracebackMiddleware)

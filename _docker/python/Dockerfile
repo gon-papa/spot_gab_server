@@ -16,6 +16,9 @@ RUN curl -sSL https://install.python-poetry.org | python - && \
     poetry config virtualenvs.create false && \
     poetry install
 
+RUN apt-get update && \
+    apt-get install -y sqlite3
+
 # アプリケーションのコードをコピー
 COPY . /app
 

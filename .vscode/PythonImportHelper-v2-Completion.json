@@ -140,19 +140,19 @@
         "documentation": {}
     },
     {
+        "label": "Engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "sqlmodel",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "sqlmodel",
         "description": "sqlmodel",
-        "detail": "sqlmodel",
-        "documentation": {}
-    },
-    {
-        "label": "SQLModel",
-        "importPath": "sqlmodel",
-        "description": "sqlmodel",
-        "isExtraImport": true,
         "detail": "sqlmodel",
         "documentation": {}
     },
@@ -309,6 +309,134 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestAppConfig",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestAppConfig",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "update_injector",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "app.resource.model",
         "description": "app.resource.model",
@@ -323,6 +451,31 @@
         "importPath": "sqlalchemy_utils",
         "description": "sqlalchemy_utils",
         "detail": "sqlalchemy_utils",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
         "documentation": {}
     },
     {
@@ -342,7 +495,31 @@
         "documentation": {}
     },
     {
+        "label": "AsyncEngine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
         "label": "create_async_engine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_scoped_session",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncEngine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
@@ -358,19 +535,51 @@
         "documentation": {}
     },
     {
-        "label": "scoped_session",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "Module",
+        "importPath": "injector",
+        "description": "injector",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "injector",
         "documentation": {}
     },
     {
-        "label": "Session",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "provider",
+        "importPath": "injector",
+        "description": "injector",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "singleton",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "Injector",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "inject",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "inject",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
         "documentation": {}
     },
     {
@@ -491,22 +700,6 @@
         "description": "fastapi.security",
         "isExtraImport": true,
         "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_di_class",
-        "importPath": "app.resource.depends.depends",
-        "description": "app.resource.depends.depends",
-        "isExtraImport": true,
-        "detail": "app.resource.depends.depends",
-        "documentation": {}
-    },
-    {
-        "label": "get_di_class",
-        "importPath": "app.resource.depends.depends",
-        "description": "app.resource.depends.depends",
-        "isExtraImport": true,
-        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -678,6 +871,30 @@
         "documentation": {}
     },
     {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
         "label": "get_current_active_user",
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
@@ -731,38 +948,6 @@
         "description": "app.resource.service_domain.auth_service_domain",
         "isExtraImport": true,
         "detail": "app.resource.service_domain.auth_service_domain",
-        "documentation": {}
-    },
-    {
-        "label": "Injector",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "inject",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "inject",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
-        "documentation": {}
-    },
-    {
-        "label": "inject",
-        "importPath": "injector",
-        "description": "injector",
-        "isExtraImport": true,
-        "detail": "injector",
         "documentation": {}
     },
     {
@@ -855,14 +1040,6 @@
         "documentation": {}
     },
     {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
@@ -887,6 +1064,22 @@
         "documentation": {}
     },
     {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "uuid4",
         "importPath": "uuid",
         "description": "uuid",
@@ -895,28 +1088,11 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "select",
         "importPath": "sqlalchemy.future",
         "description": "sqlalchemy.future",
         "isExtraImport": true,
         "detail": "sqlalchemy.future",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "isExtraImport": true,
-        "detail": "app.db.db",
         "documentation": {}
     },
     {
@@ -1000,7 +1176,7 @@
         "documentation": {}
     },
     {
-        "label": "email_validator",
+        "label": "CustomValidator",
         "importPath": "app.resource.request.common_validate",
         "description": "app.resource.request.common_validate",
         "isExtraImport": true,
@@ -1008,11 +1184,28 @@
         "documentation": {}
     },
     {
-        "label": "password_validator",
-        "importPath": "app.resource.request.common_validate",
-        "description": "app.resource.request.common_validate",
+        "label": "re",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "app.resource.request.common_validate",
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
     {
@@ -1082,6 +1275,48 @@
         "documentation": {}
     },
     {
+        "label": "app",
+        "importPath": "app.main",
+        "description": "app.main",
+        "isExtraImport": true,
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.resource.controller",
+        "description": "app.resource.controller",
+        "isExtraImport": true,
+        "detail": "app.resource.controller",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncClient",
+        "importPath": "httpx",
+        "description": "httpx",
+        "isExtraImport": true,
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "pytest_asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest_asyncio",
+        "description": "pytest_asyncio",
+        "detail": "pytest_asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
         "label": "log_directory",
         "kind": 5,
         "importPath": "app.config.logging_config",
@@ -1145,65 +1380,11 @@
         "documentation": {}
     },
     {
-        "label": "dialect",
+        "label": "db_connection",
         "kind": 5,
         "importPath": "app.db.migration.env",
         "description": "app.db.migration.env",
-        "peekOfCode": "dialect = os.getenv(\"DB_DIALECT\")\ndriver = os.getenv(\"DB_DRIVER\")\nusername = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)",
-        "detail": "app.db.migration.env",
-        "documentation": {}
-    },
-    {
-        "label": "driver",
-        "kind": 5,
-        "importPath": "app.db.migration.env",
-        "description": "app.db.migration.env",
-        "peekOfCode": "driver = os.getenv(\"DB_DRIVER\")\nusername = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides",
-        "detail": "app.db.migration.env",
-        "documentation": {}
-    },
-    {
-        "label": "username",
-        "kind": 5,
-        "importPath": "app.db.migration.env",
-        "description": "app.db.migration.env",
-        "peekOfCode": "username = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.",
-        "detail": "app.db.migration.env",
-        "documentation": {}
-    },
-    {
-        "label": "password",
-        "kind": 5,
-        "importPath": "app.db.migration.env",
-        "description": "app.db.migration.env",
-        "peekOfCode": "password = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config",
-        "detail": "app.db.migration.env",
-        "documentation": {}
-    },
-    {
-        "label": "host",
-        "kind": 5,
-        "importPath": "app.db.migration.env",
-        "description": "app.db.migration.env",
-        "peekOfCode": "host = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config\n# alembic.iniの設定を上書き",
-        "detail": "app.db.migration.env",
-        "documentation": {}
-    },
-    {
-        "label": "port",
-        "kind": 5,
-        "importPath": "app.db.migration.env",
-        "description": "app.db.migration.env",
-        "peekOfCode": "port = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config\n# alembic.iniの設定を上書き\nconfig.set_main_option('sqlalchemy.url', ASYNC_DB_URL)",
-        "detail": "app.db.migration.env",
-        "documentation": {}
-    },
-    {
-        "label": "db_name",
-        "kind": 5,
-        "importPath": "app.db.migration.env",
-        "description": "app.db.migration.env",
-        "peekOfCode": "db_name = os.getenv(\"DB_NAME\")\nASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config\n# alembic.iniの設定を上書き\nconfig.set_main_option('sqlalchemy.url', ASYNC_DB_URL)\n# Interpret the config file for Python logging.",
+        "peekOfCode": "db_connection = get_di_class(DatabaseConnection)\nASYNC_DB_URL = db_connection.get_migration_url()\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config\n# alembic.iniの設定を上書き\nconfig.set_main_option('sqlalchemy.url', ASYNC_DB_URL)\n# Interpret the config file for Python logging.",
         "detail": "app.db.migration.env",
         "documentation": {}
     },
@@ -1212,7 +1393,7 @@
         "kind": 5,
         "importPath": "app.db.migration.env",
         "description": "app.db.migration.env",
-        "peekOfCode": "ASYNC_DB_URL = f\"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config\n# alembic.iniの設定を上書き\nconfig.set_main_option('sqlalchemy.url', ASYNC_DB_URL)\n# Interpret the config file for Python logging.\n# This line sets up loggers basically.",
+        "peekOfCode": "ASYNC_DB_URL = db_connection.get_migration_url()\n# 実行時にコンソールに表示\nprint(ASYNC_DB_URL)\n# this is the Alembic Config object, which provides\n# access to the values within the .ini file in use.\nconfig = context.config\n# alembic.iniの設定を上書き\nconfig.set_main_option('sqlalchemy.url', ASYNC_DB_URL)\n# Interpret the config file for Python logging.\n# This line sets up loggers basically.",
         "detail": "app.db.migration.env",
         "documentation": {}
     },
@@ -1235,137 +1416,38 @@
         "documentation": {}
     },
     {
-        "label": "dialect",
-        "kind": 5,
+        "label": "DatabaseConnection",
+        "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "dialect = os.getenv(\"DB_DIALECT\")\ndriver = os.getenv(\"DB_DRIVER\")\nusername = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))",
+        "peekOfCode": "class DatabaseConnection:\n    def __init__(self, connection_url: str, migration_url: str, option: dict = {}):\n        self.connection_url = connection_url\n        self.migration_url = migration_url\n        self.option = option\n        self.engine = self.get_async_engine()\n        self.session = self.get_session(self.engine)\n    @asynccontextmanager\n    async def get_db(self):\n        async with self.session() as session:",
         "detail": "app.db.db",
         "documentation": {}
     },
     {
-        "label": "driver",
-        "kind": 5,
+        "label": "ConfigInterface",
+        "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "driver = os.getenv(\"DB_DRIVER\")\nusername = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))",
+        "peekOfCode": "class ConfigInterface(ABC):\n    @abstractmethod\n    def db_url(self) -> str:\n        pass\n    @abstractmethod\n    def migration_url(self) -> str:\n        pass\n    @abstractmethod\n    def get_option(self) -> dict:\n        pass",
         "detail": "app.db.db",
         "documentation": {}
     },
     {
-        "label": "username",
-        "kind": 5,
+        "label": "AppConfig",
+        "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "username = os.getenv(\"DB_USER\")\npassword = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))",
+        "peekOfCode": "class AppConfig(Module, ConfigInterface):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        dialect = os.getenv(\"DB_DIALECT\")\n        driver = os.getenv(\"DB_DRIVER\")\n        username = os.getenv(\"DB_USER\")\n        password = os.getenv(\"DB_PASS\")",
         "detail": "app.db.db",
         "documentation": {}
     },
     {
-        "label": "password",
-        "kind": 5,
+        "label": "TestAppConfig",
+        "kind": 6,
         "importPath": "app.db.db",
         "description": "app.db.db",
-        "peekOfCode": "password = os.getenv(\"DB_PASS\")\nhost = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "host",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "host = os.getenv(\"DB_HOST\")\nport = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "port",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "port = os.getenv(\"DB_PORT\")\ndb_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "db_name",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "db_name = os.getenv(\"DB_NAME\")\npool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "pool_size",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "pool_size = int(os.getenv(\"DB_POOL_SIZE\"))\npool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "pool_connection_timeout",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "pool_connection_timeout = int(os.getenv(\"POOL_CONN_TIMEOUT\"))\npool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "pool_recycle",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "pool_recycle = int(os.getenv(\"POOL_RECYCLE\"))\nmax_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "max_overflow",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "max_overflow = int(os.getenv(\"DB_MAX_OVERFLOW\"))\nlogging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "logging = bool(os.getenv(\"SQL_LOGGING\"))\nASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "ASYNC_DB_URL",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "ASYNC_DB_URL = f\"{dialect}+{driver}://{username}:{password}@{host}:{port}/{db_name}?charset=utf8\"\nengine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,\n    pool_pre_ping=True,",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "engine",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "engine = create_async_engine(\n    ASYNC_DB_URL,\n    echo=logging,\n    echo_pool=logging,\n    pool_size=pool_size,\n    pool_timeout=pool_connection_timeout,\n    max_overflow=pool_size,\n    pool_recycle=pool_recycle,\n    pool_pre_ping=True,\n)",
-        "detail": "app.db.db",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncSessionLocal",
-        "kind": 5,
-        "importPath": "app.db.db",
-        "description": "app.db.db",
-        "peekOfCode": "AsyncSessionLocal = scoped_session(\n    sessionmaker(\n        autocommit=False, autoflush=False, bind=engine, class_=AsyncSession, expire_on_commit=True,\n    )\n)\n@asynccontextmanager\nasync def get_db():\n    async with AsyncSessionLocal() as session:\n        yield session",
+        "peekOfCode": "class TestAppConfig(Module, ConfigInterface):\n    @singleton\n    @provider\n    def provide_database_connection(self) -> DatabaseConnection:\n        return DatabaseConnection(self.db_url(), self.migration_url(), self.get_option())\n    def db_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def migration_url(self) -> str:\n        return f\"sqlite+aiosqlite:///./test.db\"\n    def get_option(self) -> dict:",
         "detail": "app.db.db",
         "documentation": {}
     },
@@ -1383,16 +1465,16 @@
         "kind": 2,
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
-        "peekOfCode": "def get_di_class(_class):\n    return injection.get(_class)",
+        "peekOfCode": "def get_di_class(_class):\n    return di.get(_class)",
         "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
-        "label": "injection",
+        "label": "di",
         "kind": 5,
         "importPath": "app.resource.depends.depends",
         "description": "app.resource.depends.depends",
-        "peekOfCode": "injection = Injector()\n@inject\ndef get_di_class(_class):\n    return injection.get(_class)",
+        "peekOfCode": "di = Injector([AppConfig()])\nasync def update_injector(_class):\n    global di\n    di = Injector([_class])\n@inject\ndef get_di_class(_class):\n    return di.get(_class)",
         "detail": "app.resource.depends.depends",
         "documentation": {}
     },
@@ -1455,7 +1537,7 @@
         "kind": 6,
         "importPath": "app.resource.repository.user_repository",
         "description": "app.resource.repository.user_repository",
-        "peekOfCode": "class UserRepository:\n    # ユーザー作成\n    async def create_user(self, user:Users) -> Users:\n        async with get_db() as session:\n            session.add(user)\n            await session.commit()\n            await session.refresh(user)\n            return user\n    # emailの存在確認\n    async def email_exist(self, email: str) -> bool:",
+        "peekOfCode": "class UserRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # ユーザー作成\n    async def create_user(self, user:Users) -> Users:\n        async with self.db.get_db() as session:\n            session.add(user)\n            await session.commit()\n            await session.refresh(user)\n            return user",
         "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
@@ -1496,20 +1578,11 @@
         "documentation": {}
     },
     {
-        "label": "email_validator",
-        "kind": 2,
+        "label": "CustomValidator",
+        "kind": 6,
         "importPath": "app.resource.request.common_validate",
         "description": "app.resource.request.common_validate",
-        "peekOfCode": "def email_validator(cls, value):\n    email_regex = r'^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n    if not re.match(email_regex, value):\n        raise ValueError('メールアドレスが無効です。正しい形式で入力してください。')\n    return value\ndef password_validator(cls, value):\n        if len(value) < 8:\n            raise ValueError('8文字以上である必要があります。')\n        if len(value) >= 20:\n            raise ValueError('最大100文字までです。')",
-        "detail": "app.resource.request.common_validate",
-        "documentation": {}
-    },
-    {
-        "label": "password_validator",
-        "kind": 2,
-        "importPath": "app.resource.request.common_validate",
-        "description": "app.resource.request.common_validate",
-        "peekOfCode": "def password_validator(cls, value):\n        if len(value) < 8:\n            raise ValueError('8文字以上である必要があります。')\n        if len(value) >= 20:\n            raise ValueError('最大100文字までです。')\n        # 半角英数字と記号のみ\n        if not re.match(r'^[@?$%!#0-9a-zA-Z]+$', value):\n            raise ValueError('パスワードは半角英数字と記号 @?$%!# のみです。')\n        return value",
+        "peekOfCode": "class CustomValidator:\n    @staticmethod\n    def email_validator(cls, value):\n        email_regex = r'^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n        if not re.match(email_regex, value):\n            raise ValueError('メールアドレスが無効です。正しい形式で入力してください。')\n        return value\n    @staticmethod\n    def password_validator(cls, value):\n            if len(value) < 8:",
         "detail": "app.resource.request.common_validate",
         "documentation": {}
     },
@@ -1709,6 +1782,33 @@
         "description": "app.app",
         "peekOfCode": "app = FastAPI()",
         "detail": "app.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.main",
+        "description": "app.main",
+        "peekOfCode": "app = app\napp.include_router(auth_controller.router)\napp.add_middleware(EnhancedTracebackMiddleware)",
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_URL",
+        "kind": 5,
+        "importPath": "tests.feature.conftest",
+        "description": "tests.feature.conftest",
+        "peekOfCode": "BASE_URL = os.getenv(\"BASE_URL\")\n# クライアント取得\n@pytest_asyncio.fixture\nasync def async_client():\n    async with AsyncClient(app=app, base_url=BASE_URL) as client:\n        yield client\n# 認証ユーザー取得\n@pytest_asyncio.fixture\nasync def get_auth_user(async_client)-> Users:\n    user = Users(",
+        "detail": "tests.feature.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "TestAuthController",
+        "kind": 6,
+        "importPath": "tests.feature.test_auth_controller",
+        "description": "tests.feature.test_auth_controller",
+        "peekOfCode": "class TestAuthController:\n    @pytest_asyncio.fixture\n    async def setup_user(self):\n        self.user = Users(\n            account_name=\"test\",\n            id_account=\"test\",\n            email=\"test@test.com\",\n            hashed_password=\"$2b$12$VUJv82tezCvUccA35HleFulwc4qYrz7BqFHIdK7yXQK0nEPyl2Cc.\", # password\n            birth_date=date(2000, 1, 1),\n            is_active=True,",
+        "detail": "tests.feature.test_auth_controller",
         "documentation": {}
     }
 ]
