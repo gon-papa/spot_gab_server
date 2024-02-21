@@ -49,7 +49,7 @@ async def sign_up(request: SignUpRequest) -> SignInResponse:
 @router.post(
     '/sign_in',
     tags=["auth"],
-    response_model=dict,
+    response_model=SignInResponse,
     name="サインイン",
     description="サインイン",
     operation_id="sign_in",
@@ -64,14 +64,14 @@ async def sign_up(request: SignUpRequest) -> SignInResponse:
         }
     },
 )
-async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> dict:
+async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInResponse:
     try:
         email = request.username
         password = request.password
         user = await get_di_class(AuthService).sign_in(email, password)
     except Exception as e:
         raise e
-    return {"access_token": user.token, "token_type": "bearer"}
+    return SignInResponse(status=200, data={"user": user})
 
 @router.post(
     '/sign_out',
