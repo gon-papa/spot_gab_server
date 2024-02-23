@@ -115,28 +115,8 @@ class TestAuthController:
         
         assert user.is_active == True
         assert response.status_code == 200
-        assert actual['data']['user']['token'] is not None
-        actual["data"]["user"].pop("token")# tokenは存在確認で十分なので削除
-        assert actual == {
-            "status": 200,
-            "data": {
-                "user": {
-                    "id": user.id,
-                    "uuid": user.uuid,
-                    "account_name": user.account_name,
-                    "id_account": user.id_account,
-                    "email": user.email,
-                    "birth_date": user.birth_date.strftime("%Y-%m-%d"),
-                    "other_user_invitation_code": user.other_user_invitation_code,
-                    "refresh_token": user.refresh_token,
-                    "expires_at": user.expires_at.isoformat(),
-                    "deleted_at": None,
-                    "created_at": user.created_at.isoformat(),
-                    "updated_at": user.updated_at.isoformat(),
-                },
-            },
-            "message": "ok"
-        }
+        assert actual['access_token'] is not None
+        assert actual['token_type'] == "bearer"
         
     @pytest.mark.asyncio
     async def test_sign_in_認証失敗時は401エラーを返す(self, async_client, setup_user):
