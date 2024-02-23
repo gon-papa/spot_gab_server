@@ -887,6 +887,14 @@
         "documentation": {}
     },
     {
+        "label": "SignUpResponse",
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
         "label": "SignInResponse",
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
@@ -943,7 +951,7 @@
         "documentation": {}
     },
     {
-        "label": "SignInUser",
+        "label": "SignUpUser",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
         "isExtraImport": true,
@@ -951,15 +959,7 @@
         "documentation": {}
     },
     {
-        "label": "UserRead",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "SignInUser",
+        "label": "SignUpUser",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
         "isExtraImport": true,
@@ -1659,7 +1659,7 @@
         "kind": 5,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "router = APIRouter()\nload_dotenv()\n@router.post(\n    '/sign-up',\n    tags=[\"auth\"],\n    response_model=SignInResponse,\n    name=\"サインアップ\",\n    description=\"サインアップ\",\n    operation_id=\"sign_up\",\n    responses = {",
+        "peekOfCode": "router = APIRouter()\nload_dotenv()\n@router.post(\n    '/sign-up',\n    tags=[\"auth\"],\n    response_model=SignUpResponse,\n    name=\"サインアップ\",\n    description=\"サインアップ\",\n    operation_id=\"sign_up\",\n    responses = {",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -1727,11 +1727,11 @@
         "documentation": {}
     },
     {
-        "label": "SignInUser",
+        "label": "SignUpUser",
         "kind": 6,
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
-        "peekOfCode": "class SignInUser(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    token: Optional[str] = None\n    refresh_token: str",
+        "peekOfCode": "class SignUpUser(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    token: Optional[str] = None\n    refresh_token: str",
         "detail": "app.resource.model.users",
         "documentation": {}
     },
@@ -1794,7 +1794,7 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class EmailExistsResponse(JsonResponse):\n    class EmailExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: EmailExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):",
+        "peekOfCode": "class EmailExistsResponse(JsonResponse):\n    class EmailExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: EmailExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass SignUpResponse(JsonResponse):\n    class SignUpResponseItem(BaseModel):",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1803,7 +1803,16 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):\n        user: SignInUser = Field(None, description=\"サインインユーザー情報\")\n    data: SignInResponseItem = Field(None, description=\"サインインユーザー情報\")",
+        "peekOfCode": "class IdAccountExistsResponse(JsonResponse):\n    class IdAccountExistsResponseItem(BaseModel):\n        exists: bool = Field(None, description=\"存在確認結果\")\n    data: IdAccountExistsResponseItem = Field(None, description=\"存在確認結果\")\nclass SignUpResponse(JsonResponse):\n    class SignUpResponseItem(BaseModel):\n        user: SignUpUser = Field(None, description=\"サインアップユーザー情報\")\n    data: SignUpResponseItem = Field(None, description=\"サインアップユーザー情報\")\nclass SignInResponse(BaseModel):\n    access_token: str",
+        "detail": "app.resource.response.auth_response",
+        "documentation": {}
+    },
+    {
+        "label": "SignUpResponse",
+        "kind": 6,
+        "importPath": "app.resource.response.auth_response",
+        "description": "app.resource.response.auth_response",
+        "peekOfCode": "class SignUpResponse(JsonResponse):\n    class SignUpResponseItem(BaseModel):\n        user: SignUpUser = Field(None, description=\"サインアップユーザー情報\")\n    data: SignUpResponseItem = Field(None, description=\"サインアップユーザー情報\")\nclass SignInResponse(BaseModel):\n    access_token: str\n    token_type: str = \"bearer\"",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1812,7 +1821,7 @@
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
         "description": "app.resource.response.auth_response",
-        "peekOfCode": "class SignInResponse(JsonResponse):\n    class SignInResponseItem(BaseModel):\n        user: SignInUser = Field(None, description=\"サインインユーザー情報\")\n    data: SignInResponseItem = Field(None, description=\"サインインユーザー情報\")",
+        "peekOfCode": "class SignInResponse(BaseModel):\n    access_token: str\n    token_type: str = \"bearer\"",
         "detail": "app.resource.response.auth_response",
         "documentation": {}
     },
@@ -1839,7 +1848,7 @@
         "kind": 6,
         "importPath": "app.resource.service.auth_service",
         "description": "app.resource.service.auth_service",
-        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # サインアップ\n    async def sign_up(self, request:SignUpRequest) -> SignInUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:\n            raise HTTPException(status_code=400, detail=\"Email already registered\")",
+        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # サインアップ\n    async def sign_up(self, request:SignUpRequest) -> SignUpUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:\n            raise HTTPException(status_code=400, detail=\"Email already registered\")",
         "detail": "app.resource.service.auth_service",
         "documentation": {}
     },
