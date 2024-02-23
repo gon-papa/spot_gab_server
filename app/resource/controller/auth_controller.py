@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import BackgroundTasks, APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from app.resource.depends.depends import get_di_class
 from app.resource.service.auth_service import AuthService
@@ -17,6 +17,8 @@ from app.resource.response.error_response import ErrorJsonResponse
 from app.resource.response.json_response import JsonResponse
 from app.resource.model.users import Users
 from app.resource.service_domain.auth_service_domain import get_current_active_user
+from app.resource.util.mailer.mailer import Mailer
+from app.resource.util.mailer.templetes.verify_email import VerifyEmail
 
 router = APIRouter()
 
@@ -38,9 +40,16 @@ router = APIRouter()
         }
     },
 )
-async def sign_up(request: SignUpRequest) -> SignInResponse:
+async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignInResponse:
     try:
         user = await get_di_class(AuthService).sign_up(request)
+        template = get_di_class(VerifyEmail).get_html(user.uuid, user.account_name)
+        bk.add_task(
+            Mailer().send,
+            subject="メールアドレスの確認",
+            to=[user.email],
+            body=template
+        )
     except Exception as e:
         raise e
     return SignInResponse(status=200, data={"user": user})
@@ -153,3 +162,23 @@ async def id_account_exists(request: IdAccountExistsRequest) -> IdAccountExistsR
     service = get_di_class(AuthService)
     result = await service.id_account_exist(id_account)
     return IdAccountExistsResponse(status=200, data={"exists": result})
+
+# @router.get(
+#     '/verify-email',
+#     tags=["auth"],
+#     response_model=JsonResponse,
+#     name="メールアドレスの確認",
+#     description="メールアドレスの確認",
+#     operation_id="verify_email"
+# )
+# async def verify_email() -> JsonResponse:
+#     # emailの認証処置
+#     # uuidを元にemailを認証する
+#     # 有効期限を確認する
+#     # uuidが存在しないor有効期限が切れていたらエラーを返す
+#     # 認証が済めばワーカーのverify_statusをtrueにする(DBに追加。)
+#     # 後でクエリパラメータにuuidを追加する
+
+    
+#     return JsonResponse(status=200, data={"result": "success"})
+    

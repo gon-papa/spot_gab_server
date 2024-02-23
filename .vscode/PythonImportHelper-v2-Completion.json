@@ -99,6 +99,14 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "op",
         "importPath": "alembic",
         "description": "alembic",
@@ -317,6 +325,22 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -470,6 +494,22 @@
         "documentation": {}
     },
     {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "asyncio",
         "kind": 6,
         "isExtraImport": true,
@@ -580,6 +620,14 @@
         "description": "injector",
         "isExtraImport": true,
         "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundTasks",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
         "documentation": {}
     },
     {
@@ -951,6 +999,22 @@
         "documentation": {}
     },
     {
+        "label": "Mailer",
+        "importPath": "app.resource.util.mailer.mailer",
+        "description": "app.resource.util.mailer.mailer",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.mailer",
+        "documentation": {}
+    },
+    {
+        "label": "VerifyEmail",
+        "importPath": "app.resource.util.mailer.templetes.verify_email",
+        "description": "app.resource.util.mailer.templetes.verify_email",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.templetes.verify_email",
+        "documentation": {}
+    },
+    {
         "label": "BaseHTTPMiddleware",
         "importPath": "starlette.middleware.base",
         "description": "starlette.middleware.base",
@@ -1176,6 +1240,14 @@
         "documentation": {}
     },
     {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "CustomValidator",
         "importPath": "app.resource.request.common_validate",
         "description": "app.resource.request.common_validate",
@@ -1258,6 +1330,38 @@
         "documentation": {}
     },
     {
+        "label": "BaseTempleteInterface",
+        "importPath": "app.resource.util.mailer.templetes.base_template",
+        "description": "app.resource.util.mailer.templetes.base_template",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.templetes.base_template",
+        "documentation": {}
+    },
+    {
+        "label": "FastMail",
+        "importPath": "fastapi_mail",
+        "description": "fastapi_mail",
+        "isExtraImport": true,
+        "detail": "fastapi_mail",
+        "documentation": {}
+    },
+    {
+        "label": "MessageSchema",
+        "importPath": "fastapi_mail",
+        "description": "fastapi_mail",
+        "isExtraImport": true,
+        "detail": "fastapi_mail",
+        "documentation": {}
+    },
+    {
+        "label": "ConnectionConfig",
+        "importPath": "fastapi_mail",
+        "description": "fastapi_mail",
+        "isExtraImport": true,
+        "detail": "fastapi_mail",
+        "documentation": {}
+    },
+    {
         "label": "app.resource.controller.auth_controller",
         "kind": 6,
         "isExtraImport": true,
@@ -1314,6 +1418,15 @@
         "importPath": "pytest",
         "description": "pytest",
         "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "pytest_mock",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest_mock",
+        "description": "pytest_mock",
+        "detail": "pytest_mock",
         "documentation": {}
     },
     {
@@ -1773,6 +1886,33 @@
         "description": "app.resource.service_domain.auth_service_domain",
         "peekOfCode": "expired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)\n# リフレッシュトークン作成\ndef create_refresh_token()-> str:\n    return secrets.token_urlsafe(64)",
         "detail": "app.resource.service_domain.auth_service_domain",
+        "documentation": {}
+    },
+    {
+        "label": "BaseTempleteInterface",
+        "kind": 6,
+        "importPath": "app.resource.util.mailer.templetes.base_template",
+        "description": "app.resource.util.mailer.templetes.base_template",
+        "peekOfCode": "class BaseTempleteInterface(ABC):\n    @abstractmethod\n    def get_html(self, **kwargs: str) -> str:\n        pass",
+        "detail": "app.resource.util.mailer.templetes.base_template",
+        "documentation": {}
+    },
+    {
+        "label": "VerifyEmail",
+        "kind": 6,
+        "importPath": "app.resource.util.mailer.templetes.verify_email",
+        "description": "app.resource.util.mailer.templetes.verify_email",
+        "peekOfCode": "class VerifyEmail(BaseTempleteInterface):\n    def get_html(self, uuid: str, account_name: str) -> str:\n        return f\"\"\"\n        <!DOCTYPE html>\n        <html lang=\"ja\">\n            <head>\n                <meta charset=\"UTF-8\">\n                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n                <title>SpotGabへの招待</title>\n                <style>",
+        "detail": "app.resource.util.mailer.templetes.verify_email",
+        "documentation": {}
+    },
+    {
+        "label": "Mailer",
+        "kind": 6,
+        "importPath": "app.resource.util.mailer.mailer",
+        "description": "app.resource.util.mailer.mailer",
+        "peekOfCode": "class Mailer:\n    def __init__(self):\n        self.conf = ConnectionConfig(\n            MAIL_USERNAME=os.getenv(\"MAIL_USERNAME\"),\n            MAIL_PASSWORD=os.getenv(\"MAIL_PASSWORD\"),\n            MAIL_FROM=os.getenv(\"MAIL_FROM\"),\n            MAIL_PORT=os.getenv(\"MAIL_PORT\"),\n            MAIL_SERVER=os.getenv(\"MAIL_SERVER\"),\n            MAIL_FROM_NAME=os.getenv(\"MAIL_FROM_NAME\"),\n            MAIL_STARTTLS=os.getenv(\"MAIL_STARTTLS\"),",
+        "detail": "app.resource.util.mailer.mailer",
         "documentation": {}
     },
     {
