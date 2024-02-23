@@ -5,7 +5,7 @@ from app.resource.util.mailer.templetes.base_template import BaseTempleteInterfa
 load_dotenv()
 
 class VerifyEmail(BaseTempleteInterface):
-    def get_html(self, uuid: str, account_name: str) -> str:
+    def get_html(self, uuid: str, account_name: str, suppout_url) -> str:
         return f"""
         <!DOCTYPE html>
         <html lang="ja">
@@ -76,7 +76,11 @@ class VerifyEmail(BaseTempleteInterface):
                         <a href="{self.get_verify_url(uuid)}">認証する</a>
                     </div>
                     <div class="footer">
-                        <p>もし質問があれば、いつでもお気軽にお問い合わせください。</p>
+                        <p>
+                            もし質問があれば、いつでもお気軽に
+                            <a href="{suppout_url}">お問い合わせ</a>
+                            ください。
+                        </p>
                     </div>
                 </div>
             </body>
