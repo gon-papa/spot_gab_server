@@ -1,5 +1,8 @@
-from fastapi import BackgroundTasks, APIRouter, Depends
+from dotenv import load_dotenv
+from fastapi import BackgroundTasks, APIRouter, Depends, Request
+from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
+from fastapi.templating import Jinja2Templates
 from app.resource.depends.depends import get_di_class
 from app.resource.service.auth_service import AuthService
 from app.resource.request.auth_request import (
@@ -19,8 +22,10 @@ from app.resource.model.users import Users
 from app.resource.service_domain.auth_service_domain import get_current_active_user
 from app.resource.util.mailer.mailer import Mailer
 from app.resource.util.mailer.templetes.verify_email import VerifyEmail
+import os
 
 router = APIRouter()
+load_dotenv()
 
 @router.post(
     '/sign_up',
@@ -43,7 +48,7 @@ router = APIRouter()
 async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignInResponse:
     try:
         user = await get_di_class(AuthService).sign_up(request)
-        template = get_di_class(VerifyEmail).get_html(user.uuid, user.account_name)
+        template = get_di_class(VerifyEmail).get_html(user.uuid, user.account_name, os.getenv('SUPPORT_URL'))
         bk.add_task(
             Mailer().send,
             subject="メールアドレスの確認",
@@ -163,22 +168,37 @@ async def id_account_exists(request: IdAccountExistsRequest) -> IdAccountExistsR
     result = await service.id_account_exist(id_account)
     return IdAccountExistsResponse(status=200, data={"exists": result})
 
-# @router.get(
-#     '/verify-email',
-#     tags=["auth"],
-#     response_model=JsonResponse,
-#     name="メールアドレスの確認",
-#     description="メールアドレスの確認",
-#     operation_id="verify_email"
-# )
-# async def verify_email() -> JsonResponse:
-#     # emailの認証処置
-#     # uuidを元にemailを認証する
-#     # 有効期限を確認する
-#     # uuidが存在しないor有効期限が切れていたらエラーを返す
-#     # 認証が済めばワーカーのverify_statusをtrueにする(DBに追加。)
-#     # 後でクエリパラメータにuuidを追加する
-
+@router.get(
+    '/verify-email/{uuid}',
+    tags=["auth"],
+    response_class=HTMLResponse,
+    response_model=None,
+    name="メールアドレスの確認",
+    description="メールアドレスの確認",
+    operation_id="verify_email"
+)
+async def verify_email(request: Request, uuid: str) -> HTMLResponse:
+    # emailの認証処置
+    # uuidを元にemailを認証する
+    # 有効期限を確認する
+    # uuidが存在しないor有効期限が切れていたらエラーを返す
+    # 認証が済めばワーカーのverify_statusをtrueにする(DBに追加。)
+    # 後でクエリパラメータにuuidを追加する
+    templates = Jinja2Templates(directory="app/resource/templates")
     
-#     return JsonResponse(status=200, data={"result": "success"})
+    # return templates.TemplateResponse(
+    #     "verify-email.html",
+    #     {
+    #         "request": request,
+    #         "suppout_url": os.getenv('SUPPORT_URL')
+    #     }
+    # )
+
+    return templates.TemplateResponse(
+        "faild-verify-email.html",
+        {
+            "request": request,
+            "suppout_url": os.getenv('SUPPORT_URL')
+        }
+    )
     
