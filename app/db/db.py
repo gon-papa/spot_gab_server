@@ -59,7 +59,7 @@ class DatabaseConnection:
         return async_scoped_session(
             async_session_factory, scopefunc=asyncio.current_task
         )
-  
+
 # DB設定クラスのインターフェース
 class ConfigInterface(ABC):
     @abstractmethod

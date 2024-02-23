@@ -11,7 +11,7 @@ fastapi = "^0.109.0"
 uvicorn = "^0.27.0.post1"
 alembic = "^1.13.1" # マイグレーションツール
 python-dotenv = "^1.0.1"
-injector = "^0.21.0"
+injector = "^0.21.0" #DIライブラリ
 pydantic-i18n = "^0.4.0"
 python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
@@ -19,6 +19,7 @@ sqlmodel = "^0.0.14" # ORM
 sqlalchemy-utils = "^0.41.1"
 aiomysql = "^0.2.0"
 python-multipart = "^0.0.9"
+fastapi-mail = "^1.4.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -26,6 +27,7 @@ pytest-asyncio = "^0.23.5"
 aiosqlite = "^0.19.0"
 httpx = "^0.26.0"
 pytest = "^8.0.0"
+pytest-mock = "^3.12.0"
 
 [build-system]
 requires = ["poetry-core"]
