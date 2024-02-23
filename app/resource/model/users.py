@@ -55,7 +55,7 @@ class UserRead(SQLModel):
             }
         }
         
-class SignInUser(SQLModel):
+class SignUpUser(SQLModel):
     id: int
     uuid: str
     account_name: str

@@ -42,5 +42,5 @@ async def get_auth_user(async_client)-> Users:
         "password": "password"
     })
     refresh_user = await repository.get_user_by_email(user.email)
-    refresh_user.__dict__["token"] = response.json()['data']['user']['token']
+    refresh_user.__dict__["token"] = response.json()['access_token']
     return refresh_user

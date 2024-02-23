@@ -12,14 +12,14 @@ from app.resource.service_domain.auth_service_domain import (
 from fastapi import HTTPException
 from injector import inject
 from app.resource.request.auth_request import SignUpRequest
-from app.resource.model.users import SignInUser, Users
+from app.resource.model.users import SignUpUser, Users
 
 class AuthService:
     @inject
     def __init__(self, repository: UserRepository):
         self.repository = repository
     # サインアップ
-    async def sign_up(self, request:SignUpRequest) -> SignInUser:
+    async def sign_up(self, request:SignUpRequest) -> SignUpUser:
         is_email_exist = await self.email_exist(request.email)
         is_id_account_exist = await self.id_account_exist(request.id_account)
         if is_email_exist:
@@ -42,12 +42,12 @@ class AuthService:
         # アクセストークン作成
         claim = crate_user_claim(user)
         token = create_access_token(claim)
-        user = SignInUser.model_validate(user)
+        user = SignUpUser.model_validate(user)
         user.token = token
         return user
     
     # サインイン
-    async def sign_in(self, email: str, password: str) -> SignInUser:
+    async def sign_in(self, email: str, password: str) -> str:
         # emailとpasswordが一致するユーザーを取得
         user = await authenticate_user(email, password)
         if not user:
@@ -59,9 +59,7 @@ class AuthService:
         refresh_token = create_refresh_token()
         expires_at = create_expire_at()
         user = await self.repository.active_update(user.id, refresh_token, expires_at)
-        user = SignInUser.model_validate(user)
-        user.token = token
-        return user   
+        return token
     
     # サインアウト
     async def sign_out(self, user: Users) -> bool:
@@ -71,7 +69,7 @@ class AuthService:
         return True
     
     # リフレッシュトークンユーザー認証
-    async def get_refresh_token(self, token: str)-> SignInUser:
+    async def get_refresh_token(self, token: str)-> SignUpUser:
         user = await self.repository.get_user_by_refresh_token(token)
         if user is None:
             raise HTTPException(status_code=401, detail="Unauthorized")
@@ -86,7 +84,7 @@ class AuthService:
         refresh_token = create_refresh_token()
         expires_at = create_expire_at()
         user = await self.repository.active_update(user.id, refresh_token, expires_at)
-        user = SignInUser.model_validate(user)
+        user = SignUpUser.model_validate(user)
         user.token = token
         return user   
     

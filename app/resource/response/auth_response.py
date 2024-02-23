@@ -1,6 +1,6 @@
 from app.resource.response.json_response import JsonResponse
 from pydantic import BaseModel, Field
-from app.resource.model.users import SignInUser, UserRead
+from app.resource.model.users import SignUpUser
 
 
 class EmailExistsResponse(JsonResponse):
@@ -13,7 +13,11 @@ class IdAccountExistsResponse(JsonResponse):
         exists: bool = Field(None, description="存在確認結果")
     data: IdAccountExistsResponseItem = Field(None, description="存在確認結果")
     
-class SignInResponse(JsonResponse):
-    class SignInResponseItem(BaseModel):
-        user: SignInUser = Field(None, description="サインインユーザー情報")
-    data: SignInResponseItem = Field(None, description="サインインユーザー情報")
+class SignUpResponse(JsonResponse):
+    class SignUpResponseItem(BaseModel):
+        user: SignUpUser = Field(None, description="サインアップユーザー情報")
+    data: SignUpResponseItem = Field(None, description="サインアップユーザー情報")
+
+class SignInResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"

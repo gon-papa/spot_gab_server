@@ -14,6 +14,7 @@ from app.resource.request.auth_request import (
 from app.resource.response.auth_response import (
     EmailExistsResponse,
     IdAccountExistsResponse,
+    SignUpResponse,
     SignInResponse
 )
 from app.resource.response.error_response import ErrorJsonResponse
@@ -30,7 +31,7 @@ load_dotenv()
 @router.post(
     '/sign-up',
     tags=["auth"],
-    response_model=SignInResponse,
+    response_model=SignUpResponse,
     name="サインアップ",
     description="サインアップ",
     operation_id="sign_up",
@@ -45,7 +46,7 @@ load_dotenv()
         }
     },
 )
-async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignInResponse:
+async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignUpResponse:
     try:
         user = await get_di_class(AuthService).sign_up(request)
         template = get_di_class(VerifyEmail).get_html(
@@ -61,7 +62,7 @@ async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignInResponse
         )
     except Exception as e:
         raise e
-    return SignInResponse(status=200, data={"user": user})
+    return SignUpResponse(status=200, data={"user": user})
         
 
 @router.post(
@@ -86,10 +87,10 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
     try:
         email = request.username
         password = request.password
-        user = await get_di_class(AuthService).sign_in(email, password)
+        token = await get_di_class(AuthService).sign_in(email, password)
     except Exception as e:
         raise e
-    return SignInResponse(status=200, data={"user": user})
+    return SignInResponse(access_token=token, token_type="bearer")
 
 @router.post(
     '/sign-out',
@@ -119,7 +120,7 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
 @router.post(
     '/refresh-token',
     tags=["auth"],
-    response_model=SignInResponse,
+    response_model=SignUpResponse,
     name="トークンリフレッシュ",
     description="トークンリフレッシュ",
     operation_id="refresh_token",
@@ -134,12 +135,12 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
         }
     },
 )
-async def refresh_token(request: RefreshTokenRequest) -> SignInResponse:
+async def refresh_token(request: RefreshTokenRequest) -> SignUpResponse:
     try:
         user = await get_di_class(AuthService).get_refresh_token(request.refresh_token)
     except Exception as e:
         raise e
-    return SignInResponse(status=200, data={"user": user})
+    return SignUpResponse(status=200, data={"user": user})
 
 @router.post(
     '/email-exists',
