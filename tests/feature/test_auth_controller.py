@@ -20,7 +20,9 @@ class TestAuthController:
             birth_date=date(2000, 1, 1),
             is_active=True,
             refresh_token="test",
-            expires_at=date(2000, 1, 1)
+            expires_at=date(2000, 1, 1),
+            email_verified=True,
+            email_verify_token="test",
         )
         repository = get_di_class(UserRepository)
         await repository.create_user(self.user)
@@ -31,7 +33,7 @@ class TestAuthController:
             'app.resource.util.mailer.mailer.Mailer.send',
             return_value=True
         )
-        response = await async_client.post('/sign_up', json={
+        response = await async_client.post('/sign-up', json={
             "account_name": "test_name",
             "id_account": "test_account_id",
             "email": "signup@test.com",
@@ -59,6 +61,8 @@ class TestAuthController:
                     "other_user_invitation_code": user.other_user_invitation_code,
                     "refresh_token": user.refresh_token,
                     "expires_at": user.expires_at.isoformat(),
+                    "email_verified": user.email_verified,
+                    "email_verify_token": user.email_verify_token,
                     "deleted_at": None,
                     "created_at": user.created_at.isoformat(),
                     "updated_at": user.updated_at.isoformat(),
@@ -73,7 +77,7 @@ class TestAuthController:
     
     @pytest.mark.asyncio
     async def test_sign_up_メールアドレスが登録済みなら400エラーを返す(self, async_client, setup_user):
-        response = await async_client.post('/sign_up', json={
+        response = await async_client.post('/sign-up', json={
             "account_name": "test_name",
             "id_account": "test_account_id",
             "email": "test@test.com",
@@ -89,7 +93,7 @@ class TestAuthController:
         
     @pytest.mark.asyncio
     async def test_sign_up_アカウントIDが登録済みなら400エラーを返す(self, async_client, setup_user):
-        response = await async_client.post('/sign_up', json={
+        response = await async_client.post('/sign-up', json={
             "account_name": "test_name",
             "id_account": "test",
             "email": "signup@test.com",
@@ -105,7 +109,7 @@ class TestAuthController:
         
     @pytest.mark.asyncio
     async def test_sign_in_サインインが成功する(self, async_client, setup_user):
-        response = await async_client.post('/sign_in', data={
+        response = await async_client.post('/sign-in', data={
             "username": "test@test.com",
             "password": "password",
         })
@@ -130,6 +134,8 @@ class TestAuthController:
                     "other_user_invitation_code": user.other_user_invitation_code,
                     "refresh_token": user.refresh_token,
                     "expires_at": user.expires_at.isoformat(),
+                    "email_verified": user.email_verified,
+                    "email_verify_token": user.email_verify_token,
                     "deleted_at": None,
                     "created_at": user.created_at.isoformat(),
                     "updated_at": user.updated_at.isoformat(),
@@ -140,7 +146,7 @@ class TestAuthController:
         
     @pytest.mark.asyncio
     async def test_sign_in_認証失敗時は401エラーを返す(self, async_client, setup_user):
-        response = await async_client.post('/sign_in', data={
+        response = await async_client.post('/sign-in', data={
             "username": "dummy",
             "password": "dummy",
         })
@@ -155,7 +161,7 @@ class TestAuthController:
     async def test_sign_out_サインアウトが成功する(self, async_client, setup_user, get_auth_user):
         user = get_auth_user
         headers = {"Authorization": f"Bearer {user.token}"}
-        response = await async_client.post('/sign_out', headers=headers)
+        response = await async_client.post('/sign-out', headers=headers)
         
         assert response.status_code == 200
         assert response.json() == {"status": 200, "data": {"result": True}, "message": "ok"}
@@ -174,14 +180,14 @@ class TestAuthController:
         repository = get_di_class(UserRepository)
         await repository.inactive_update(user)
         headers = {"Authorization": f"Bearer {user.token}"}
-        response = await async_client.post('/sign_out', headers=headers)
+        response = await async_client.post('/sign-out', headers=headers)
         
         assert response.status_code == 400
         assert response.json() == {"status": 400, "error": "http-error", "message": "Inactive user"}
 
     @pytest.mark.asyncio
     async def test_sign_out_サインアウト_認証前のユーザーは401エラー(self, async_client, setup_user, get_auth_user):
-        response = await async_client.post('/sign_out')
+        response = await async_client.post('/sign-out')
         
         assert response.status_code == 401
         assert response.json() == {"status": 401, "error": "http-error", "message": "Not authenticated"}
@@ -190,7 +196,7 @@ class TestAuthController:
     @pytest.mark.asyncio
     async def test_refresh_token_リフレッシュトークンが成功する(self, async_client, setup_user, get_auth_user):
         user = get_auth_user
-        response = await async_client.post('/refresh_token', json={"refresh_token": user.refresh_token})
+        response = await async_client.post('/refresh-token', json={"refresh_token": user.refresh_token})
         
         assert response.status_code == 200
         assert response.json()['data']['user']['token'] is not None

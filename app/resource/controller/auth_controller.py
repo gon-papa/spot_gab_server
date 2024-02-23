@@ -28,7 +28,7 @@ router = APIRouter()
 load_dotenv()
 
 @router.post(
-    '/sign_up',
+    '/sign-up',
     tags=["auth"],
     response_model=SignInResponse,
     name="サインアップ",
@@ -48,7 +48,11 @@ load_dotenv()
 async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignInResponse:
     try:
         user = await get_di_class(AuthService).sign_up(request)
-        template = get_di_class(VerifyEmail).get_html(user.uuid, user.account_name, os.getenv('SUPPORT_URL'))
+        template = get_di_class(VerifyEmail).get_html(
+            user.email_verify_token,
+            user.account_name,
+            os.getenv('SUPPORT_URL')
+        )
         bk.add_task(
             Mailer().send,
             subject="メールアドレスの確認",
@@ -61,7 +65,7 @@ async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignInResponse
         
 
 @router.post(
-    '/sign_in',
+    '/sign-in',
     tags=["auth"],
     response_model=SignInResponse,
     name="サインイン",
@@ -88,7 +92,7 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
     return SignInResponse(status=200, data={"user": user})
 
 @router.post(
-    '/sign_out',
+    '/sign-out',
     tags=["auth"],
     response_model=JsonResponse,
     name="サインアウト",
@@ -113,7 +117,7 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
     return JsonResponse(status=200, data={"result": result})
 
 @router.post(
-    '/refresh_token',
+    '/refresh-token',
     tags=["auth"],
     response_model=SignInResponse,
     name="トークンリフレッシュ",

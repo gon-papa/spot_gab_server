@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from app.resource.repository.user_repository import UserRepository
 from app.resource.service_domain.auth_service_domain import (
     authenticate_user,
@@ -34,6 +35,8 @@ class AuthService:
             is_active = True,
             refresh_token = create_refresh_token(),
             expires_at = create_expire_at(),
+            email_verify_token=create_refresh_token(),
+            email_verified_expired_at=datetime.utcnow() + timedelta(days=1)
         )
         user = await self.repository.create_user(user)
         # アクセストークン作成
