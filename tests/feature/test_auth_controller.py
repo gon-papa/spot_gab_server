@@ -1,6 +1,7 @@
 from datetime import date
 import pytest
 import pytest_asyncio
+import pytest_mock
 from app.resource.repository.user_repository import UserRepository
 from app.resource.model.users import Users
 from app.resource.depends.depends import get_di_class
@@ -25,7 +26,11 @@ class TestAuthController:
         await repository.create_user(self.user)
 
     @pytest.mark.asyncio
-    async def test_sign_up_サインアップが成功する(self, async_client):
+    async def test_sign_up_サインアップが成功する(self, async_client, mocker):
+        mock_mail_send = mocker.patch(
+            'app.resource.util.mailer.mailer.Mailer.send',
+            return_value=True
+        )
         response = await async_client.post('/sign_up', json={
             "account_name": "test_name",
             "id_account": "test_account_id",
@@ -61,6 +66,10 @@ class TestAuthController:
             },
             "message": "ok"
         }
+        mock_mail_send.assert_called_once()
+        call_args = mock_mail_send.call_args[1]
+        assert call_args['to'] == ["signup@test.com"]
+        assert "メールアドレスの確認" == call_args['subject']
     
     @pytest.mark.asyncio
     async def test_sign_up_メールアドレスが登録済みなら400エラーを返す(self, async_client, setup_user):
