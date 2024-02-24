@@ -4,22 +4,27 @@ from app.db.db import DatabaseConnection
 from app.resource.depends.depends import get_di_class
 from app.resource.model.users import Users
 from typing import Optional
+from sqlalchemy.exc import SQLAlchemyError
 
 from app.resource.request.auth_request import SignUpRequest
 import typing
+from app.resource.model.email_verification import EmailVerification
 
 class UserRepository:
     def __init__(self) -> None:
         self.db = get_di_class(DatabaseConnection)
-    
-    
+
     # ユーザー作成
     async def create_user(self, user:Users) -> Users:
         async with self.db.get_db() as session:
-            session.add(user)
-            await session.commit()
-            await session.refresh(user)
-            return user
+            try: 
+                session.add(user)
+                await session.commit()
+                await session.refresh(user)
+                return user
+            except SQLAlchemyError as e:
+                session.rollback()
+                raise e
 
     # emailの存在確認
     async def email_exist(self, email: str) -> bool:
@@ -34,6 +39,13 @@ class UserRepository:
             result = await session.exec(select(Users).filter(Users.id_account == id_account))
             user = result.scalars().first()
             return user is not None
+        
+    # idからuser取得
+    async def get_user_by_id(self, id: int) -> Optional[Users]:
+        async with self.db.get_db() as session:
+            result = await session.exec(select(Users).filter(Users.id == id))
+            user = result.scalars().first()
+            return user
         
     # emailからuser取得
     async def get_user_by_email(self, email: str) -> Optional[Users]:
@@ -83,4 +95,21 @@ class UserRepository:
             )
             user = result.scalars().first()
             return user
+        
+    #email認証後のアップデート
+    async def email_verify_update(self, user: Users, ev: EmailVerification) -> Users:
+        async with self.db.get_db() as session:
+            try:
+                user.email_verified = True
+                ev.email_verified_at = datetime.utcnow()
+                ev.email_verify_token = None
+                ev.email_verified_expired_at = None
+                session.add(user)
+                session.add(ev)
+                await session.commit()
+                await session.refresh(user)
+                return user
+            except SQLAlchemyError as e:
+                session.rollback()
+                raise e
         

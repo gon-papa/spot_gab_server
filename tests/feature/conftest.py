@@ -32,10 +32,11 @@ async def get_auth_user(async_client)-> Users:
         is_active=True,
         refresh_token="test",
         expires_at=date(2000, 1, 1),
+        email_verified=True,
     )
     repository = get_di_class(UserRepository)
     await repository.create_user(user)
-    response = await async_client.post("/sign_in", data={
+    response = await async_client.post("/sign-in", data={
         "username": user.email,
         "password": "password"
     })

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>認証完了のお知らせ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            margin: auto;
+            width: 60%;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #364f6b;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #6c757d;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .thank-you {
+            font-size: 24px;
+            color: #4a7c59;
+            margin-top: 30px;
+        }
+        .decoration {
+            margin-top: 25px;
+            border-top: 2px dashed #ccc;
+            padding-top: 20px;
+        }
+        .signature {
+            font-weight: bold;
+            font-size: 18px;
+            color: #364f6b;
+        }
+
+        /* レスポンシブデザインのためのメディアクエリ */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%; /* スマートフォンではコンテナを幅いっぱいに広げる */
+                padding: 20px; /* スマートフォンではパディングを減らす */
+            }
+            h1, h2 {
+                font-size: 20px; /* スマートフォンでは見出しのフォントサイズを調整 */
+            }
+            p {
+                font-size: 16px; /* スマートフォンでは本文のフォントサイズを調整 */
+            }
+            .thank-you {
+                font-size: 20px; /* スマートフォンでは「ありがとうございます」のフォントサイズを調整 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SpotGabを始めましょう!</h1>
+        <h2>認証完了のお知らせ</h2>
+        <p>この度は、メールアドレスの認証を完了していただき、誠にありがとうございます。</p>
+        <p>ご登録いただいた情報は正常に認証されました。今後とも当サービスを心よりお楽しみください。</p>
+        <div class="thank-you">心より感謝申し上げます。</div>
+        <div class="decoration">
+            <p>素晴らしい体験を提供できるよう、引き続き努力してまいります。</p>
+            <p class="signature">
+                - あなたの
+                <a href="{{suppout_url}}">サービスチーム</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

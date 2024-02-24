@@ -26,7 +26,7 @@ class Token(BaseModel):
     
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="sign_in")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="sign-in")
 
 secret_key = os.getenv('JWT_SECRET_KEY')
 
