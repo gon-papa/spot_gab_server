@@ -5,7 +5,7 @@ from app.resource.util.mailer.templetes.base_template import BaseTempleteInterfa
 load_dotenv()
 
 class VerifyEmail(BaseTempleteInterface):
-    def get_html(self, uuid: str, account_name: str) -> str:
+    def get_html(self, verify_token: str, account_name: str, suppout_url) -> str:
         return f"""
         <!DOCTYPE html>
         <html lang="ja">
@@ -73,15 +73,19 @@ class VerifyEmail(BaseTempleteInterface):
                     <p>あなたをSpotGabの世界に招待します。SpotGabは、同じ興味や趣味を持つ人々が集まり、情報を共有し合えるプラットフォームです。ここでは、新しい友達を見つけたり、様々なトピックについて話し合ったりすることができます。</p>
                     <p>ご参加いただくには、<span class="highlight">下記のボタンをクリックしてメール認証を完了</span>させる必要があります。認証プロセスを通じて、安全なコミュニティ環境を保ち、あなたの体験を最大限に引き出すことができます。</p>
                     <div class="verify-button">
-                        <a href="{self.get_verify_url(uuid)}">認証する</a>
+                        <a href="{self.get_verify_url(verify_token)}">認証する</a>
                     </div>
                     <div class="footer">
-                        <p>もし質問があれば、いつでもお気軽にお問い合わせください。</p>
+                        <p>
+                            もし質問があれば、いつでもお気軽に
+                            <a href="{suppout_url}">お問い合わせ</a>
+                            ください。
+                        </p>
                     </div>
                 </div>
             </body>
         </html>
         """
 
-    def get_verify_url(self, uuid: str) -> str:
-        return f"{os.getenv('BASE_URL')}/verify-email/{uuid}"
+    def get_verify_url(self, verify_token: str) -> str:
+        return f"{os.getenv('BASE_URL')}/verify-email/{verify_token}"

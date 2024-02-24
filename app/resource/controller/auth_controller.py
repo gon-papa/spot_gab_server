@@ -1,5 +1,8 @@
-from fastapi import BackgroundTasks, APIRouter, Depends
+from dotenv import load_dotenv
+from fastapi import APIRouter, BackgroundTasks, Depends, Request
+from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
+from fastapi.templating import Jinja2Templates
 from app.resource.depends.depends import get_di_class
 from app.resource.service.auth_service import AuthService
 from app.resource.request.auth_request import (
@@ -18,13 +21,13 @@ from app.resource.response.error_response import ErrorJsonResponse
 from app.resource.response.json_response import JsonResponse
 from app.resource.model.users import Users
 from app.resource.service_domain.auth_service_domain import get_current_active_user
-from app.resource.util.mailer.mailer import Mailer
-from app.resource.util.mailer.templetes.verify_email import VerifyEmail
+import os
 
 router = APIRouter()
+load_dotenv()
 
 @router.post(
-    '/sign_up',
+    '/sign-up',
     tags=["auth"],
     response_model=SignUpResponse,
     name="サインアップ",
@@ -43,21 +46,14 @@ router = APIRouter()
 )
 async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignUpResponse:
     try:
-        user = await get_di_class(AuthService).sign_up(request)
-        template = get_di_class(VerifyEmail).get_html(user.uuid, user.account_name)
-        bk.add_task(
-            Mailer().send,
-            subject="メールアドレスの確認",
-            to=[user.email],
-            body=template
-        )
+        user = await get_di_class(AuthService).sign_up(request, bk)
     except Exception as e:
         raise e
     return SignUpResponse(status=200, data={"user": user})
         
 
 @router.post(
-    '/sign_in',
+    '/sign-in',
     tags=["auth"],
     response_model=SignInResponse,
     name="サインイン",
@@ -84,7 +80,7 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
     return SignInResponse(access_token=token, token_type="bearer")
 
 @router.post(
-    '/sign_out',
+    '/sign-out',
     tags=["auth"],
     response_model=JsonResponse,
     name="サインアウト",
@@ -109,7 +105,7 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
     return JsonResponse(status=200, data={"result": result})
 
 @router.post(
-    '/refresh_token',
+    '/refresh-token',
     tags=["auth"],
     response_model=SignUpResponse,
     name="トークンリフレッシュ",
@@ -164,22 +160,45 @@ async def id_account_exists(request: IdAccountExistsRequest) -> IdAccountExistsR
     result = await service.id_account_exist(id_account)
     return IdAccountExistsResponse(status=200, data={"exists": result})
 
-# @router.get(
-#     '/verify-email',
-#     tags=["auth"],
-#     response_model=JsonResponse,
-#     name="メールアドレスの確認",
-#     description="メールアドレスの確認",
-#     operation_id="verify_email"
-# )
-# async def verify_email() -> JsonResponse:
-#     # emailの認証処置
-#     # uuidを元にemailを認証する
-#     # 有効期限を確認する
-#     # uuidが存在しないor有効期限が切れていたらエラーを返す
-#     # 認証が済めばワーカーのverify_statusをtrueにする(DBに追加。)
-#     # 後でクエリパラメータにuuidを追加する
+@router.get(
+    '/verify-email/{token}',
+    tags=["auth"],
+    response_class=HTMLResponse,
+    response_model=None,
+    name="メールアドレスの確認",
+    description="メールアドレスの確認",
+    operation_id="verify_email"
+)
+async def verify_email(request: Request, token: str) -> HTMLResponse:
+    templates = Jinja2Templates(directory="app/resource/templates")
+    try:
+        await get_di_class(AuthService).email_verify(token)
+        return templates.TemplateResponse(
+            request,
+            "verify-email.html",
+            {
+                "suppout_url": os.getenv('SUPPORT_URL')
+            }
+        )
+    except Exception as e:
+        return templates.TemplateResponse(
+            request,
+            "faild-verify-email.html",
+            {
+                "suppout_url": os.getenv('SUPPORT_URL')
+            }
+        )
 
+# #メール再設定
+# @router.post(
+#     '/reset-email/',
+#     tags=["auth"],
+#     response_class=HTMLResponse,
+#     response_model=None,
+#     name="メール再設定送信",
+#     description="メール再設定送信",
+#     operation_id="reset_email"
+# )
+# async def reset_email(request: Request, current_user: Users = Depends(get_current_active_user)) -> HTMLResponse:
     
-#     return JsonResponse(status=200, data={"result": "success"})
     

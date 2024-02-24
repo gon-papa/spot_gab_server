@@ -51,6 +51,38 @@
         "documentation": {}
     },
     {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -115,6 +147,14 @@
         "documentation": {}
     },
     {
+        "label": "op",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
+        "documentation": {}
+    },
+    {
         "label": "context",
         "importPath": "alembic",
         "description": "alembic",
@@ -156,6 +196,14 @@
         "documentation": {}
     },
     {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "sqlmodel",
         "kind": 6,
         "isExtraImport": true,
@@ -174,6 +222,70 @@
     },
     {
         "label": "create_engine",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Relationship",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Relationship",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
         "isExtraImport": true,
@@ -341,6 +453,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -373,6 +493,14 @@
         "documentation": {}
     },
     {
+        "label": "DatabaseConnection",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -394,6 +522,22 @@
         "description": "app.db.db",
         "isExtraImport": true,
         "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -461,11 +605,131 @@
         "documentation": {}
     },
     {
-        "label": "*",
-        "importPath": "app.resource.model",
-        "description": "app.resource.model",
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
         "isExtraImport": true,
-        "detail": "app.resource.model",
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "SignUpUser",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "SignUpUser",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "EmailVerification",
+        "importPath": "app.resource.model.email_verification",
+        "description": "app.resource.model.email_verification",
+        "isExtraImport": true,
+        "detail": "app.resource.model.email_verification",
+        "documentation": {}
+    },
+    {
+        "label": "EmailVerification",
+        "importPath": "app.resource.model.email_verification",
+        "description": "app.resource.model.email_verification",
+        "isExtraImport": true,
+        "detail": "app.resource.model.email_verification",
+        "documentation": {}
+    },
+    {
+        "label": "EmailVerification",
+        "importPath": "app.resource.model.email_verification",
+        "description": "app.resource.model.email_verification",
+        "isExtraImport": true,
+        "detail": "app.resource.model.email_verification",
+        "documentation": {}
+    },
+    {
+        "label": "EmailVerification",
+        "importPath": "app.resource.model.email_verification",
+        "description": "app.resource.model.email_verification",
+        "isExtraImport": true,
+        "detail": "app.resource.model.email_verification",
+        "documentation": {}
+    },
+    {
+        "label": "EmailVerification",
+        "importPath": "app.resource.model.email_verification",
+        "description": "app.resource.model.email_verification",
+        "isExtraImport": true,
+        "detail": "app.resource.model.email_verification",
         "documentation": {}
     },
     {
@@ -623,14 +887,6 @@
         "documentation": {}
     },
     {
-        "label": "BackgroundTasks",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -639,7 +895,23 @@
         "documentation": {}
     },
     {
+        "label": "BackgroundTasks",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -687,6 +959,14 @@
         "documentation": {}
     },
     {
+        "label": "BackgroundTasks",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "Depends",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -727,6 +1007,22 @@
         "documentation": {}
     },
     {
+        "label": "HTMLResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
         "label": "OAuth2PasswordRequestForm",
         "importPath": "fastapi.security",
         "description": "fastapi.security",
@@ -748,6 +1044,14 @@
         "description": "fastapi.security",
         "isExtraImport": true,
         "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "Jinja2Templates",
+        "importPath": "fastapi.templating",
+        "description": "fastapi.templating",
+        "isExtraImport": true,
+        "detail": "fastapi.templating",
         "documentation": {}
     },
     {
@@ -871,78 +1175,6 @@
         "documentation": {}
     },
     {
-        "label": "Users",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "Users",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "SignUpUser",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "SignUpUser",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "Users",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "Users",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "Users",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "Users",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
-        "isExtraImport": true,
-        "detail": "app.resource.model.users",
-        "documentation": {}
-    },
-    {
         "label": "get_current_active_user",
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
@@ -999,19 +1231,11 @@
         "documentation": {}
     },
     {
-        "label": "Mailer",
-        "importPath": "app.resource.util.mailer.mailer",
-        "description": "app.resource.util.mailer.mailer",
+        "label": "create_refresh_token",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
         "isExtraImport": true,
-        "detail": "app.resource.util.mailer.mailer",
-        "documentation": {}
-    },
-    {
-        "label": "VerifyEmail",
-        "importPath": "app.resource.util.mailer.templetes.verify_email",
-        "description": "app.resource.util.mailer.templetes.verify_email",
-        "isExtraImport": true,
-        "detail": "app.resource.util.mailer.templetes.verify_email",
+        "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {
@@ -1020,14 +1244,6 @@
         "description": "starlette.middleware.base",
         "isExtraImport": true,
         "detail": "starlette.middleware.base",
-        "documentation": {}
-    },
-    {
-        "label": "JSONResponse",
-        "importPath": "fastapi.responses",
-        "description": "fastapi.responses",
-        "isExtraImport": true,
-        "detail": "fastapi.responses",
         "documentation": {}
     },
     {
@@ -1064,6 +1280,14 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -1097,6 +1321,22 @@
     },
     {
         "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1144,6 +1384,22 @@
         "documentation": {}
     },
     {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "uuid4",
         "importPath": "uuid",
         "description": "uuid",
@@ -1157,6 +1413,22 @@
         "description": "sqlalchemy.future",
         "isExtraImport": true,
         "detail": "sqlalchemy.future",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy.future",
+        "description": "sqlalchemy.future",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.future",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
         "documentation": {}
     },
     {
@@ -1265,11 +1537,19 @@
         "documentation": {}
     },
     {
-        "label": "UserRepository",
-        "importPath": "app.resource.repository.user_repository",
-        "description": "app.resource.repository.user_repository",
+        "label": "EmailVerificationRepository",
+        "importPath": "app.resource.repository.email_varification_repository",
+        "description": "app.resource.repository.email_varification_repository",
         "isExtraImport": true,
-        "detail": "app.resource.repository.user_repository",
+        "detail": "app.resource.repository.email_varification_repository",
+        "documentation": {}
+    },
+    {
+        "label": "EmailVerificationRepository",
+        "importPath": "app.resource.repository.email_varification_repository",
+        "description": "app.resource.repository.email_varification_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.email_varification_repository",
         "documentation": {}
     },
     {
@@ -1294,6 +1574,30 @@
         "description": "app.resource.repository.user_repository",
         "isExtraImport": true,
         "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
+        "label": "VerifyEmail",
+        "importPath": "app.resource.util.mailer.templetes.verify_email",
+        "description": "app.resource.util.mailer.templetes.verify_email",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.templetes.verify_email",
+        "documentation": {}
+    },
+    {
+        "label": "Mailer",
+        "importPath": "app.resource.util.mailer.mailer",
+        "description": "app.resource.util.mailer.mailer",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.mailer",
         "documentation": {}
     },
     {
@@ -1450,6 +1754,24 @@
     {
         "label": "upgrade",
         "kind": 2,
+        "importPath": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
+        "description": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
+        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('email_verifications',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('user_id', sa.Integer(), nullable=False, comment='ユーザーID'),\n    sa.Column('email_verified_at', sa.DateTime(), nullable=True, comment='メール認証日時'),\n    sa.Column('email_verify_token', sa.String(length=100), nullable=True, comment='メール認証トークン'),\n    sa.Column('email_verified_expired_at', sa.DateTime(), nullable=True, comment='メール認証有効期限'),\n    sa.Column('created_at', sa.DateTime(), nullable=True),\n    sa.Column('updated_at', sa.DateTime(), nullable=True),",
+        "detail": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "downgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
+        "description": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
+        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_column('users', 'email_verified')\n    op.drop_table('email_verifications')\n    # ### end Alembic commands ###",
+        "detail": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "upgrade",
+        "kind": 2,
         "importPath": "app.db.migration.versions.aabe030448a4_users_create",
         "description": "app.db.migration.versions.aabe030448a4_users_create",
         "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('users',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('uuid', sa.String(length=36), nullable=False, comment='UUID'),\n    sa.Column('account_name', sa.String(length=100), nullable=False, comment='アカウント名'),\n    sa.Column('id_account', sa.String(length=100), nullable=False, comment='アカウントID'),\n    sa.Column('email', sa.String(length=100), nullable=False, comment='メールアドレス'),\n    sa.Column('hashed_password', sa.String(length=100), nullable=False, comment='パスワード'),\n    sa.Column('is_active', sa.Boolean(), nullable=False, comment='アクティブフラグ True:ログイン中 False:ログアウト中'),",
@@ -1569,7 +1891,7 @@
         "kind": 5,
         "importPath": "app.resource.controller.auth_controller",
         "description": "app.resource.controller.auth_controller",
-        "peekOfCode": "router = APIRouter()\n@router.post(\n    '/sign_up',\n    tags=[\"auth\"],\n    response_model=SignUpResponse,\n    name=\"サインアップ\",\n    description=\"サインアップ\",\n    operation_id=\"sign_up\",\n    responses = {\n        400: {",
+        "peekOfCode": "router = APIRouter()\nload_dotenv()\n@router.post(\n    '/sign-up',\n    tags=[\"auth\"],\n    response_model=SignUpResponse,\n    name=\"サインアップ\",\n    description=\"サインアップ\",\n    operation_id=\"sign_up\",\n    responses = {",
         "detail": "app.resource.controller.auth_controller",
         "documentation": {}
     },
@@ -1619,6 +1941,15 @@
         "documentation": {}
     },
     {
+        "label": "EmailVerification",
+        "kind": 6,
+        "importPath": "app.resource.model.email_verification",
+        "description": "app.resource.model.email_verification",
+        "peekOfCode": "class EmailVerification(SQLModel, table=True):\n    __tablename__ = \"email_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(default=None, sa_column=Column(Integer, ForeignKey(\"users.id\"), nullable=False, comment=\"ユーザーID\"))\n    email_verified_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment=\"メール認証日時\"))\n    email_verify_token: str = Field(sa_column=Column(String(100), nullable=True, comment=\"メール認証トークン\"))\n    email_verified_expired_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment=\"メール認証有効期限\"))\n    created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, default=datetime.utcnow))\n    updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, onupdate=datetime.utcnow))\n    # リレーション",
+        "detail": "app.resource.model.email_verification",
+        "documentation": {}
+    },
+    {
         "label": "Users",
         "kind": 6,
         "importPath": "app.resource.model.users",
@@ -1632,7 +1963,7 @@
         "kind": 6,
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
-        "peekOfCode": "class UserRead(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    is_active: bool\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    deleted_at: Optional[datetime] = None",
+        "peekOfCode": "class UserRead(SQLModel):\n    id: int\n    uuid: str\n    account_name: str\n    id_account: str\n    email: str\n    is_active: bool\n    birth_date: date\n    other_user_invitation_code: Optional[str] = None\n    email_verified: bool",
         "detail": "app.resource.model.users",
         "documentation": {}
     },
@@ -1646,11 +1977,20 @@
         "documentation": {}
     },
     {
+        "label": "EmailVerificationRepository",
+        "kind": 6,
+        "importPath": "app.resource.repository.email_varification_repository",
+        "description": "app.resource.repository.email_varification_repository",
+        "peekOfCode": "class EmailVerificationRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # email_verify_tokenからemail_verification取得\n    async def get_email_verification_by_token(self, token: str) -> EmailVerification:\n        async with self.db.get_db() as session:\n            result = await session.exec(select(EmailVerification).filter(EmailVerification.email_verify_token == token))\n            email_verification = result.scalars().first()\n            return email_verification\n    # user_idからemail_verification取得",
+        "detail": "app.resource.repository.email_varification_repository",
+        "documentation": {}
+    },
+    {
         "label": "UserRepository",
         "kind": 6,
         "importPath": "app.resource.repository.user_repository",
         "description": "app.resource.repository.user_repository",
-        "peekOfCode": "class UserRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # ユーザー作成\n    async def create_user(self, user:Users) -> Users:\n        async with self.db.get_db() as session:\n            session.add(user)\n            await session.commit()\n            await session.refresh(user)\n            return user",
+        "peekOfCode": "class UserRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # ユーザー作成\n    async def create_user(self, user:Users) -> Users:\n        async with self.db.get_db() as session:\n            try: \n                session.add(user)\n                await session.commit()\n                await session.refresh(user)",
         "detail": "app.resource.repository.user_repository",
         "documentation": {}
     },
@@ -1758,7 +2098,7 @@
         "kind": 6,
         "importPath": "app.resource.service.auth_service",
         "description": "app.resource.service.auth_service",
-        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository):\n        self.repository = repository\n    # サインアップ\n    async def sign_up(self, request:SignUpRequest) -> SignUpUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:\n            raise HTTPException(status_code=400, detail=\"Email already registered\")",
+        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository, emailVerificationRepository: EmailVerificationRepository):\n        self.repository = repository\n        self.emailVerificationRepository = emailVerificationRepository        \n    # サインアップ\n    async def sign_up(self, request:SignUpRequest, bk: BackgroundTasks) -> SignUpUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:",
         "detail": "app.resource.service.auth_service",
         "documentation": {}
     },
@@ -1767,7 +2107,7 @@
         "kind": 6,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "class TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))",
+        "peekOfCode": "class TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1776,7 +2116,7 @@
         "kind": 6,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:",
+        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1848,7 +2188,7 @@
         "kind": 5,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\nclass TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\nclass TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1857,7 +2197,7 @@
         "kind": 5,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1866,7 +2206,7 @@
         "kind": 5,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign_in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化\ndef get_password_hash(password)-> str:\n    return pwd_context.hash(password)",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -1911,7 +2251,7 @@
         "kind": 6,
         "importPath": "app.resource.util.mailer.templetes.verify_email",
         "description": "app.resource.util.mailer.templetes.verify_email",
-        "peekOfCode": "class VerifyEmail(BaseTempleteInterface):\n    def get_html(self, uuid: str, account_name: str) -> str:\n        return f\"\"\"\n        <!DOCTYPE html>\n        <html lang=\"ja\">\n            <head>\n                <meta charset=\"UTF-8\">\n                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n                <title>SpotGabへの招待</title>\n                <style>",
+        "peekOfCode": "class VerifyEmail(BaseTempleteInterface):\n    def get_html(self, verify_token: str, account_name: str, suppout_url) -> str:\n        return f\"\"\"\n        <!DOCTYPE html>\n        <html lang=\"ja\">\n            <head>\n                <meta charset=\"UTF-8\">\n                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n                <title>SpotGabへの招待</title>\n                <style>",
         "detail": "app.resource.util.mailer.templetes.verify_email",
         "documentation": {}
     },

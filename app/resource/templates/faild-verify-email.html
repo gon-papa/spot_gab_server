@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>認証エラーのお知らせ</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f4f4f9;
+                text-align: center;
+                padding: 40px;
+            }
+            .container {
+                background-color: #ffffff;
+                margin: auto;
+                width: 60%;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+            h1, h2 {
+                color: #b33a3a; /* エラーメッセージは赤色で表示 */
+                margin-bottom: 20px;
+            }
+            p {
+                color: #6c757d;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+            .error-message {
+                font-size: 20px;
+                color: #d9534f;
+                margin-top: 30px;
+            }
+            .help-text {
+                margin-top: 25px;
+                font-size: 16px;
+            }
+            a {
+                display: inline-block;
+                background-color: #007bff;
+                color: #ffffff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            a:hover {
+                background-color: #0056b3;
+            }
+
+            /* レスポンシブデザインのためのメディアクエリ */
+            @media (max-width: 768px) {
+                .container {
+                    width: 90%; /* スマートフォンではコンテナを幅いっぱいに広げる */
+                    padding: 20px; /* スマートフォンではパディングを減らす */
+                }
+                h1, h2, .error-message {
+                    font-size: 18px; /* スマートフォンではフォントサイズを調整 */
+                }
+                p, .help-text {
+                    font-size: 16px; /* スマートフォンでは本文のフォントサイズを調整 */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>認証エラーのお知らせ</h1>
+            <p>誠に申し訳ございませんが、メールアドレスの認証に失敗しました。</p>
+            <div class="error-message">認証プロセス中に何らかのエラーが発生しました。</div>
+            <div class="help-text">
+                <p>以下の可能性が考えられます：</p>
+                <ul>
+                    <li>認証リンクが期限切れです。</li>
+                    <li>すでに認証が完了している可能性があります。</li>
+                    <li>認証リンクが不正です。</li>
+                </ul>
+                <p>問題が解決しない場合は、以下のリンクからサポートチームまでご連絡ください。</p>
+            </div>
+            <a href="{{suppout_url}}">サポートに連絡する</a>
+        </div>
+    </body>
+</html>
