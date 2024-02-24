@@ -33,7 +33,6 @@ async def get_auth_user(async_client)-> Users:
         refresh_token="test",
         expires_at=date(2000, 1, 1),
         email_verified=True,
-        email_verify_token="test",
     )
     repository = get_di_class(UserRepository)
     await repository.create_user(user)

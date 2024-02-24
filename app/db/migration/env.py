@@ -9,7 +9,9 @@ from app.resource.depends.depends import get_di_class
 
 # import app.resource.model.users
 
-from app.resource.model import *
+from app.resource.model.users import Users
+from app.resource.model.email_verification import EmailVerification
+
 import sqlalchemy_utils
 import os
 

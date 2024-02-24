@@ -1,10 +1,13 @@
-from datetime import date
+from datetime import date, timedelta, datetime
 import pytest
 import pytest_asyncio
 import pytest_mock
+from app.resource.model.email_verification import EmailVerification
 from app.resource.repository.user_repository import UserRepository
 from app.resource.model.users import Users
 from app.resource.depends.depends import get_di_class
+from app.resource.repository.email_varification_repository import EmailVerificationRepository
+from app.resource.service_domain.auth_service_domain import create_refresh_token
 
 # テストコマンド
 # pytest tests/feature/test_auth_controller.py
@@ -22,7 +25,6 @@ class TestAuthController:
             refresh_token="test",
             expires_at=date(2000, 1, 1),
             email_verified=True,
-            email_verify_token="test",
         )
         repository = get_di_class(UserRepository)
         await repository.create_user(self.user)
@@ -41,10 +43,12 @@ class TestAuthController:
             "birth_date": "2024-02-19"
         })
         repository = get_di_class(UserRepository)
+        emailVarificationRepository = get_di_class(EmailVerificationRepository)
         user = await repository.get_user_by_email("signup@test.com")
+        ev = await emailVarificationRepository.get_email_verification_by_user_id(user.id)
         actual = response.json()
 
-        assert user.is_active == True
+        # レスポンス確認
         assert response.status_code == 200
         assert actual['data']['user']['token'] is not None
         actual["data"]["user"].pop("token")# tokenは存在確認で十分なので削除
@@ -62,7 +66,6 @@ class TestAuthController:
                     "refresh_token": user.refresh_token,
                     "expires_at": user.expires_at.isoformat(),
                     "email_verified": user.email_verified,
-                    "email_verify_token": user.email_verify_token,
                     "deleted_at": None,
                     "created_at": user.created_at.isoformat(),
                     "updated_at": user.updated_at.isoformat(),
@@ -70,6 +73,15 @@ class TestAuthController:
             },
             "message": "ok"
         }
+        # ユーザー確認
+        assert user.is_active == True
+        # email_varificationが作成されていること
+        assert user.email_verified == False
+        assert ev.user_id == user.id
+        assert ev.email_verify_token is not None
+        assert ev.email_verified_expired_at is not None
+        assert ev.email_verified_at == None
+        # メール送信がされていること
         mock_mail_send.assert_called_once()
         call_args = mock_mail_send.call_args[1]
         assert call_args['to'] == ["signup@test.com"]
@@ -207,3 +219,101 @@ class TestAuthController:
         assert response.status_code == 200
         assert response.json()['data'] == {"exists": False}
     
+    @pytest.mark.asyncio
+    async def test_email_verify_メールアドレスの確認が成功すれば成功ページを返す(self, async_client, setup_user):
+        email_verify_token = create_refresh_token()
+        user = Users(
+            account_name="test",
+            id_account="test2",
+            email="test2@test.com",
+            hashed_password="$2b$12$VUJv82tezCvUccA35HleFulwc4qYrz7BqFHIdK7yXQK0nEPyl2Cc.", # password
+            birth_date=date(2000, 1, 1),
+            is_active=True,
+            refresh_token="test",
+            expires_at=date(2000, 1, 1),
+            email_verified=False,
+            email_verifications=[EmailVerification(
+                email_verify_token = email_verify_token,
+                email_verified_expired_at = datetime.utcnow() + timedelta(days=1),
+            )]
+        )
+        user = await get_di_class(UserRepository).create_user(user)
+        
+        response = await async_client.get(f'/verify-email/{email_verify_token}')
+        user = await get_di_class(UserRepository).get_user_by_id(user.id)
+        ev = await get_di_class(EmailVerificationRepository).get_email_verification_by_user_id(user.id)
+        assert response.status_code == 200
+        assert "<h2>認証完了のお知らせ</h2>" in response.text
+        assert user.email_verified == True
+        assert ev.email_verified_at is not None
+        assert ev.email_verify_token == None
+        assert ev.email_verified_expired_at == None
+        
+    @pytest.mark.asyncio
+    async def test_email_verify_メールアドレスの確認_認証済みの場合はエラーページを返す(self, async_client, setup_user):
+        email_verify_token = create_refresh_token()
+        user = Users(
+            account_name="test",
+            id_account="test2",
+            email="test2@test.com",
+            hashed_password="$2b$12$VUJv82tezCvUccA35HleFulwc4qYrz7BqFHIdK7yXQK0nEPyl2Cc.", # password
+            birth_date=date(2000, 1, 1),
+            is_active=True,
+            refresh_token="test",
+            expires_at=date(2000, 1, 1),
+            email_verified=True,
+            email_verifications=[EmailVerification(
+                email_verify_token = email_verify_token,
+                email_verified_expired_at = datetime.utcnow() + timedelta(days=1),
+            )]
+        )
+        user = await get_di_class(UserRepository).create_user(user)
+        
+        response = await async_client.get(f'/verify-email/{email_verify_token}')
+        assert response.status_code == 200
+        assert "<h1>認証エラーのお知らせ</h1>" in response.text
+    
+    @pytest.mark.asyncio
+    async def test_email_verify_メールアドレスの確認_期限切れの場合はエラーページを返す(self, async_client, setup_user):
+        email_verify_token = create_refresh_token()
+        user = Users(
+            account_name="test",
+            id_account="test2",
+            email="test2@test.com",
+            hashed_password="$2b$12$VUJv82tezCvUccA35HleFulwc4qYrz7BqFHIdK7yXQK0nEPyl2Cc.", # password
+            birth_date=date(2000, 1, 1),
+            is_active=True,
+            refresh_token="test",
+            expires_at=date(2000, 1, 1),
+            email_verified=False,
+            email_verifications=[EmailVerification(
+                email_verify_token = email_verify_token,
+                email_verified_expired_at = datetime.utcnow() - timedelta(days=1),
+            )]
+        )
+        
+        user = await get_di_class(UserRepository).create_user(user)
+    
+        response = await async_client.get(f'/verify-email/{email_verify_token}')
+        assert response.status_code == 200
+        assert "<h1>認証エラーのお知らせ</h1>" in response.text
+    
+    @pytest.mark.asyncio
+    async def test_email_verify_メールアドレスの確認_トークンが存在しない場合はエラーページを返す(self, async_client, setup_user):
+        email_verify_token = create_refresh_token()
+        user = Users(
+            account_name="test",
+            id_account="test2",
+            email="test2@test.com",
+            hashed_password="$2b$12$VUJv82tezCvUccA35HleFulwc4qYrz7BqFHIdK7yXQK0nEPyl2Cc.", # password
+            birth_date=date(2000, 1, 1),
+            is_active=True,
+            refresh_token="test",
+            expires_at=date(2000, 1, 1),
+            email_verified=False,
+        )
+        
+        user = await get_di_class(UserRepository).create_user(user)
+        response = await async_client.get(f'/verify-email/{email_verify_token}')
+        assert response.status_code == 200
+        assert "<h1>認証エラーのお知らせ</h1>" in response.text
