@@ -10,7 +10,7 @@ class Users(SQLModel, table=True):
     id_account: str = Field(sa_column=Column(String(100), nullable=False, unique=True, comment="アカウントID"))
     email: str = Field(sa_column=Column(String(100), nullable=False, unique=True, comment="メールアドレス"))
     hashed_password: str = Field(sa_column=Column(String(100), nullable=False, comment="パスワード"))
-    is_active: bool = Field(sa_column=Column(Boolean, nullable=False, comment="アクティブフラグ True:ログイン中 False:ログアウト中"))
+    is_active: bool = Field(sa_column=Column(Boolean, nullable=False, default=False, comment="アクティブフラグ True:ログイン中 False:ログアウト中"))
     birth_date: date = Field(sa_column=Column(Date, nullable=False, comment="生年月日"))
     other_user_invitation_code: str = Field(default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=True, comment="他ユーザー招待コード"))
     refresh_token: str = Field(sa_column=Column(String(100), nullable=True, comment="リフレッシュトークン"))
@@ -20,7 +20,7 @@ class Users(SQLModel, table=True):
     created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, default=datetime.utcnow))
     updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, onupdate=datetime.utcnow))
     # リレーション
-    email_verifications: List["EmailVerification"] = Relationship(back_populates="user")
+    email_verifications: Optional["EmailVerification"] = Relationship(back_populates="user")
     
 class UserRead(SQLModel):
     id: int
