@@ -19,10 +19,18 @@ async def async_client():
     async with AsyncClient(app=app, base_url=BASE_URL) as client:
         yield client
         
+# ヘッダー取得
+@pytest_asyncio.fixture
+async def get_header()-> dict[str, str]:
+    return {
+        "X-Language": "ja",
+        "X-User-Agent": "spot-gab-app",
+    }
+        
 
 # 認証ユーザー取得
 @pytest_asyncio.fixture
-async def get_auth_user(async_client)-> Users:
+async def get_auth_user(async_client, get_header)-> Users:
     user = Users(
         account_name="auth_user",
         id_account="@auth_user",
@@ -37,9 +45,11 @@ async def get_auth_user(async_client)-> Users:
     repository = get_di_class(UserRepository)
     await repository.create_user(user)
     response = await async_client.post("/sign-in", data={
-        "username": user.email,
-        "password": "password"
-    })
+            "username": user.email,
+            "password": "password"
+        },
+        headers=get_header
+    )
     refresh_user = await repository.get_user_by_email(user.email)
     refresh_user.__dict__["token"] = response.json()['access_token']
     return refresh_user

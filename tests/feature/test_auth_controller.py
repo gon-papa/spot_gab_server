@@ -1,4 +1,5 @@
 from datetime import date, timedelta, datetime
+from httpx import AsyncClient
 import pytest
 import pytest_asyncio
 import pytest_mock
@@ -30,18 +31,20 @@ class TestAuthController:
         await repository.create_user(self.user)
 
     @pytest.mark.asyncio
-    async def test_sign_up_サインアップが成功する(self, async_client, mocker):
+    async def test_sign_up_サインアップが成功する(self, async_client: AsyncClient, mocker, get_header):
         mock_mail_send = mocker.patch(
             'app.resource.util.mailer.mailer.Mailer.send',
             return_value=True
         )
         response = await async_client.post('/sign-up', json={
-            "account_name": "test_name",
-            "id_account": "test_account_id",
-            "email": "signup@test.com",
-            "password": "Password",
-            "birth_date": "2024-02-19"
-        })
+                "account_name": "test_name",
+                "id_account": "test_account_id",
+                "email": "signup@test.com",
+                "password": "Password",
+                "birth_date": "2024-02-19"
+            },
+            headers=get_header,
+        )
         repository = get_di_class(UserRepository)
         emailVarificationRepository = get_di_class(EmailVerificationRepository)
         user = await repository.get_user_by_email("signup@test.com")
@@ -88,14 +91,16 @@ class TestAuthController:
         assert "メールアドレスの確認" == call_args['subject']
     
     @pytest.mark.asyncio
-    async def test_sign_up_メールアドレスが登録済みなら400エラーを返す(self, async_client, setup_user):
+    async def test_sign_up_メールアドレスが登録済みなら400エラーを返す(self, async_client, setup_user, get_header):
         response = await async_client.post('/sign-up', json={
-            "account_name": "test_name",
-            "id_account": "test_account_id",
-            "email": "test@test.com",
-            "password": "Password",
-            "birth_date": "2024-02-19"
-        })
+                "account_name": "test_name",
+                "id_account": "test_account_id",
+                "email": "test@test.com",
+                "password": "Password",
+                "birth_date": "2024-02-19"
+            },
+            headers=get_header,
+        )
         assert response.status_code == 400
         assert response.json() == {
             "error": "http-error",
@@ -104,14 +109,16 @@ class TestAuthController:
         }
         
     @pytest.mark.asyncio
-    async def test_sign_up_アカウントIDが登録済みなら400エラーを返す(self, async_client, setup_user):
+    async def test_sign_up_アカウントIDが登録済みなら400エラーを返す(self, async_client, setup_user, get_header):
         response = await async_client.post('/sign-up', json={
-            "account_name": "test_name",
-            "id_account": "test",
-            "email": "signup@test.com",
-            "password": "Password",
-            "birth_date": "2024-02-19"
-        })
+                "account_name": "test_name",
+                "id_account": "test",
+                "email": "signup@test.com",
+                "password": "Password",
+                "birth_date": "2024-02-19"
+            },
+            headers=get_header
+        )
         assert response.status_code == 400
         assert response.json() == {
             "error": "http-error",
@@ -120,11 +127,13 @@ class TestAuthController:
         }
         
     @pytest.mark.asyncio
-    async def test_sign_in_サインインが成功する(self, async_client, setup_user):
+    async def test_sign_in_サインインが成功する(self, async_client, setup_user, get_header):
         response = await async_client.post('/sign-in', data={
-            "username": "test@test.com",
-            "password": "password",
-        })
+                "username": "test@test.com",
+                "password": "password",
+            }, 
+            headers=get_header
+        )
         repository = get_di_class(UserRepository)
         user = await repository.get_user_by_email("test@test.com")
         actual = response.json()
@@ -135,11 +144,13 @@ class TestAuthController:
         assert actual['token_type'] == "bearer"
         
     @pytest.mark.asyncio
-    async def test_sign_in_認証失敗時は401エラーを返す(self, async_client, setup_user):
+    async def test_sign_in_認証失敗時は401エラーを返す(self, async_client, setup_user, get_header):
         response = await async_client.post('/sign-in', data={
-            "username": "dummy",
-            "password": "dummy",
-        })
+                "username": "dummy",
+                "password": "dummy",
+            },
+            headers=get_header
+        )
         assert response.status_code == 401
         assert response.json() == {
             "error": "http-error",
@@ -148,9 +159,10 @@ class TestAuthController:
         }
         
     @pytest.mark.asyncio
-    async def test_sign_out_サインアウトが成功する(self, async_client, setup_user, get_auth_user):
+    async def test_sign_out_サインアウトが成功する(self, async_client, setup_user, get_auth_user, get_header):
         user = get_auth_user
-        headers = {"Authorization": f"Bearer {user.token}"}
+        headers = get_header
+        headers["Authorization"] = f"Bearer {user.token}"
         response = await async_client.post('/sign-out', headers=headers)
         
         assert response.status_code == 200
@@ -164,29 +176,34 @@ class TestAuthController:
         assert refresh_user.expires_at == None
         
     @pytest.mark.asyncio
-    async def test_sign_out_サインアウト_サインアウト後のユーザーは400エラー(self, async_client, setup_user, get_auth_user):
+    async def test_sign_out_サインアウト_サインアウト後のユーザーは400エラー(self, async_client, setup_user, get_auth_user, get_header):
         user = get_auth_user
         user.is_active = False
         repository = get_di_class(UserRepository)
         await repository.inactive_update(user)
-        headers = {"Authorization": f"Bearer {user.token}"}
+        headers = get_header
+        headers["Authorization"] = f"Bearer {user.token}"
         response = await async_client.post('/sign-out', headers=headers)
         
         assert response.status_code == 400
         assert response.json() == {"status": 400, "error": "http-error", "message": "Inactive user"}
 
     @pytest.mark.asyncio
-    async def test_sign_out_サインアウト_認証前のユーザーは401エラー(self, async_client, setup_user, get_auth_user):
-        response = await async_client.post('/sign-out')
+    async def test_sign_out_サインアウト_認証前のユーザーは401エラー(self, async_client, setup_user, get_auth_user, get_header):
+        response = await async_client.post('/sign-out', headers=get_header)
         
         assert response.status_code == 401
         assert response.json() == {"status": 401, "error": "http-error", "message": "Not authenticated"}
     
     
     @pytest.mark.asyncio
-    async def test_refresh_token_リフレッシュトークンが成功する(self, async_client, setup_user, get_auth_user):
+    async def test_refresh_token_リフレッシュトークンが成功する(self, async_client, setup_user, get_auth_user, get_header):
         user = get_auth_user
-        response = await async_client.post('/refresh-token', json={"refresh_token": user.refresh_token})
+        response = await async_client.post('/refresh-token', json={
+            "refresh_token": user.refresh_token
+            },
+            headers=get_header
+        )
         
         assert response.status_code == 200
         assert response.json()['data']['user']['token'] is not None
@@ -196,26 +213,26 @@ class TestAuthController:
         
     
     @pytest.mark.asyncio
-    async def test_email_exists_メールアドレスが存在したらtrueを返す(self, async_client, setup_user):        
-        response = await async_client.post('/email-exists', json={"email": "test@test.com"})
+    async def test_email_exists_メールアドレスが存在したらtrueを返す(self, async_client, setup_user, get_header):        
+        response = await async_client.post('/email-exists', json={"email": "test@test.com"}, headers=get_header)
         assert response.status_code == 200
         assert response.json()['data'] == {"exists": True}
 
     @pytest.mark.asyncio
-    async def test_email_exists_メールアドレスが存在しなければfalseを返す(self, async_client, setup_user):    
-        response = await async_client.post('/email-exists', json={"email": "non_test@test.com"})
+    async def test_email_exists_メールアドレスが存在しなければfalseを返す(self, async_client, setup_user, get_header):    
+        response = await async_client.post('/email-exists', json={"email": "non_test@test.com"}, headers=get_header)
         assert response.status_code == 200
         assert response.json()['data'] == {"exists": False}
         
     @pytest.mark.asyncio
-    async def test_id_account_exists_アカウントIDが存在したらtrueを返す(self, async_client, setup_user):
-        response = await async_client.post('/id-account-exists', json={"id_account": "test"})
+    async def test_id_account_exists_アカウントIDが存在したらtrueを返す(self, async_client, setup_user, get_header):
+        response = await async_client.post('/id-account-exists', json={"id_account": "test"}, headers=get_header)
         assert response.status_code == 200
         assert response.json()['data'] == {"exists": True}
         
     @pytest.mark.asyncio
-    async def test_id_account_exists_アカウントIDが存在しなければfalseを返す(self, async_client, setup_user):    
-        response = await async_client.post('/id-account-exists', json={"id_account": "non_test"})
+    async def test_id_account_exists_アカウントIDが存在しなければfalseを返す(self, async_client, setup_user, get_header):    
+        response = await async_client.post('/id-account-exists', json={"id_account": "non_test"}, headers=get_header)
         assert response.status_code == 200
         assert response.json()['data'] == {"exists": False}
     

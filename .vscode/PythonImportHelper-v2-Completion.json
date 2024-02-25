@@ -83,6 +83,14 @@
         "documentation": {}
     },
     {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -410,6 +418,14 @@
         "description": "logging.config",
         "isExtraImport": true,
         "detail": "logging.config",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -967,6 +983,22 @@
         "documentation": {}
     },
     {
+        "label": "Header",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1076,6 +1108,22 @@
         "description": "fastapi.templating",
         "isExtraImport": true,
         "detail": "fastapi.templating",
+        "documentation": {}
+    },
+    {
+        "label": "CommonHeader",
+        "importPath": "app.resource.middleware.header",
+        "description": "app.resource.middleware.header",
+        "isExtraImport": true,
+        "detail": "app.resource.middleware.header",
+        "documentation": {}
+    },
+    {
+        "label": "common_header",
+        "importPath": "app.resource.middleware.header",
+        "description": "app.resource.middleware.header",
+        "isExtraImport": true,
+        "detail": "app.resource.middleware.header",
         "documentation": {}
     },
     {
@@ -1304,6 +1352,110 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "field_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
@@ -1453,94 +1605,6 @@
         "description": "sqlalchemy.exc",
         "isExtraImport": true,
         "detail": "sqlalchemy.exc",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "field_validator",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "EmailStr",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -1700,10 +1764,10 @@
     },
     {
         "label": "EnhancedTracebackMiddleware",
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
+        "importPath": "app.resource.middleware.handler",
+        "description": "app.resource.middleware.handler",
         "isExtraImport": true,
-        "detail": "app.resource.exception.handler",
+        "detail": "app.resource.middleware.handler",
         "documentation": {}
     },
     {
@@ -1720,6 +1784,14 @@
         "description": "app.resource.controller",
         "isExtraImport": true,
         "detail": "app.resource.controller",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncClient",
+        "importPath": "httpx",
+        "description": "httpx",
+        "isExtraImport": true,
+        "detail": "httpx",
         "documentation": {}
     },
     {
@@ -1958,28 +2030,46 @@
     {
         "label": "EnhancedTracebackMiddleware",
         "kind": 6,
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
+        "importPath": "app.resource.middleware.handler",
+        "description": "app.resource.middleware.handler",
         "peekOfCode": "class EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):\n        try:\n            response = await call_next(request)\n            return response\n        except Exception as exc:\n            logger.error(f\"Unhandled exception: {exc}\")\n            tb_lines = traceback.format_exception(etype=type(exc), value=exc, tb=exc.__traceback__)\n            detailed_tb = \"\".join(tb_lines[::-1])  # スタックトレースを逆順に\n            # 本番環境ではスタックトレースをレスポンスに含めない",
-        "detail": "app.resource.exception.handler",
+        "detail": "app.resource.middleware.handler",
         "documentation": {}
     },
     {
         "label": "app_env",
         "kind": 5,
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
+        "importPath": "app.resource.middleware.handler",
+        "description": "app.resource.middleware.handler",
         "peekOfCode": "app_env = os.getenv(\"APP_ENV\", \"development\")\ndictConfig(LOGGING_CONFIG)\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):",
-        "detail": "app.resource.exception.handler",
+        "detail": "app.resource.middleware.handler",
         "documentation": {}
     },
     {
         "label": "logger",
         "kind": 5,
-        "importPath": "app.resource.exception.handler",
-        "description": "app.resource.exception.handler",
+        "importPath": "app.resource.middleware.handler",
+        "description": "app.resource.middleware.handler",
         "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):\n        try:\n            response = await call_next(request)",
-        "detail": "app.resource.exception.handler",
+        "detail": "app.resource.middleware.handler",
+        "documentation": {}
+    },
+    {
+        "label": "CommonHeader",
+        "kind": 6,
+        "importPath": "app.resource.middleware.header",
+        "description": "app.resource.middleware.header",
+        "peekOfCode": "class CommonHeader(BaseModel):\n    user_agent: str = Field(\n        ...,\n        title=\"アカウント名\",\n        description=\"アカウント名\",\n    )\n    x_language: str\ndef common_header(\n    x_language: str = Header(\n        ...,",
+        "detail": "app.resource.middleware.header",
+        "documentation": {}
+    },
+    {
+        "label": "common_header",
+        "kind": 2,
+        "importPath": "app.resource.middleware.header",
+        "description": "app.resource.middleware.header",
+        "peekOfCode": "def common_header(\n    x_language: str = Header(\n        ...,\n        alias=\"X-Language\",\n        description=\"言語[ja,en]\",\n        openapi_examples={\n            \"ja\": {\n                \"summary\": \"Japanese\",\n                \"value\": \"ja\"\n            },",
+        "detail": "app.resource.middleware.header",
         "documentation": {}
     },
     {
@@ -2329,7 +2419,7 @@
         "kind": 5,
         "importPath": "tests.feature.conftest",
         "description": "tests.feature.conftest",
-        "peekOfCode": "BASE_URL = os.getenv(\"BASE_URL\")\n# クライアント取得\n@pytest_asyncio.fixture\nasync def async_client():\n    async with AsyncClient(app=app, base_url=BASE_URL) as client:\n        yield client\n# 認証ユーザー取得\n@pytest_asyncio.fixture\nasync def get_auth_user(async_client)-> Users:\n    user = Users(",
+        "peekOfCode": "BASE_URL = os.getenv(\"BASE_URL\")\n# クライアント取得\n@pytest_asyncio.fixture\nasync def async_client():\n    async with AsyncClient(app=app, base_url=BASE_URL) as client:\n        yield client\n# ヘッダー取得\n@pytest_asyncio.fixture\nasync def get_header()-> dict[str, str]:\n    return {",
         "detail": "tests.feature.conftest",
         "documentation": {}
     },

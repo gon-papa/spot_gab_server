@@ -1,6 +1,6 @@
 import app.resource.controller.auth_controller as auth_controller
 from dotenv import load_dotenv
-from app.resource.exception.handler import EnhancedTracebackMiddleware
+from app.resource.middleware.handler import EnhancedTracebackMiddleware
 from app.app import app
 
 load_dotenv()
