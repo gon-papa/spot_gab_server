@@ -1,9 +1,11 @@
+from typing import Union
 from dotenv import load_dotenv
 from fastapi import APIRouter, BackgroundTasks, Depends, Request
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.templating import Jinja2Templates
 from app.resource.depends.depends import get_di_class
+from app.resource.middleware.header import CommonHeader, common_header
 from app.resource.service.auth_service import AuthService
 from app.resource.request.auth_request import (
     SignUpRequest,
@@ -43,6 +45,7 @@ load_dotenv()
             "description": "Internal Server Error",
         }
     },
+    dependencies=[Depends(common_header)]
 )
 async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignUpResponse:
     try:
@@ -69,6 +72,7 @@ async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignUpResponse
             "description": "Internal Server Error",
         }
     },
+    dependencies=[Depends(common_header)]
 )
 async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInResponse:
     try:
@@ -96,6 +100,7 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
             "description": "Not authenticated",
         }
     },
+    dependencies=[Depends(common_header)]
 )
 async def sign_out(current_user: Users = Depends(get_current_active_user)) -> JsonResponse:
     try:
@@ -121,6 +126,7 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
             "description": "Internal Server Error",
         }
     },
+    dependencies=[Depends(common_header)]
 )
 async def refresh_token(request: RefreshTokenRequest) -> SignUpResponse:
     try:
@@ -135,7 +141,8 @@ async def refresh_token(request: RefreshTokenRequest) -> SignUpResponse:
     response_model=EmailExistsResponse,
     name="メールアドレスの存在確認",
     description="emailの存在確認。ture: 存在する, false: 存在しない",
-    operation_id="email_exists"   
+    operation_id="email_exists",
+    dependencies=[Depends(common_header)]
 )
 async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
     try:
@@ -152,7 +159,8 @@ async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
     response_model=IdAccountExistsResponse,
     name="id_accountの存在確認",
     description="id_accountの存在確認。ture: 存在する, false: 存在しない",
-    operation_id="id_account_exists"
+    operation_id="id_account_exists",
+    dependencies=[Depends(common_header)]
 )
 async def id_account_exists(request: IdAccountExistsRequest) -> IdAccountExistsResponse:
     id_account = request.id_account
@@ -167,7 +175,7 @@ async def id_account_exists(request: IdAccountExistsRequest) -> IdAccountExistsR
     response_model=None,
     name="メールアドレスの確認",
     description="メールアドレスの確認",
-    operation_id="verify_email"
+    operation_id="verify_email",
 )
 async def verify_email(request: Request, token: str) -> HTMLResponse:
     templates = Jinja2Templates(directory="app/resource/templates")
