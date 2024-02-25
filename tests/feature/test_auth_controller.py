@@ -232,10 +232,10 @@ class TestAuthController:
             refresh_token="test",
             expires_at=date(2000, 1, 1),
             email_verified=False,
-            email_verifications=[EmailVerification(
+            email_verifications=EmailVerification(
                 email_verify_token = email_verify_token,
                 email_verified_expired_at = datetime.utcnow() + timedelta(days=1),
-            )]
+            )
         )
         user = await get_di_class(UserRepository).create_user(user)
         
@@ -262,10 +262,10 @@ class TestAuthController:
             refresh_token="test",
             expires_at=date(2000, 1, 1),
             email_verified=True,
-            email_verifications=[EmailVerification(
+            email_verifications=EmailVerification(
                 email_verify_token = email_verify_token,
                 email_verified_expired_at = datetime.utcnow() + timedelta(days=1),
-            )]
+            )
         )
         user = await get_di_class(UserRepository).create_user(user)
         
@@ -286,10 +286,10 @@ class TestAuthController:
             refresh_token="test",
             expires_at=date(2000, 1, 1),
             email_verified=False,
-            email_verifications=[EmailVerification(
+            email_verifications=EmailVerification(
                 email_verify_token = email_verify_token,
                 email_verified_expired_at = datetime.utcnow() - timedelta(days=1),
-            )]
+            )
         )
         
         user = await get_di_class(UserRepository).create_user(user)

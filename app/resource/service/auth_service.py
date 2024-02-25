@@ -44,10 +44,10 @@ class AuthService:
             is_active = True,
             refresh_token = create_refresh_token(),
             expires_at = create_expire_at(),
-            email_verifications = [EmailVerification(
+            email_verifications = EmailVerification(
                 email_verify_token = email_verify_token,
                 email_verified_expired_at = datetime.utcnow() + timedelta(days=1),
-            )]
+            )
         )
         user = await self.repository.create_user(user)
         # アクセストークン作成
@@ -122,11 +122,11 @@ class AuthService:
     # メール認証
     async def email_verify(self, token: str) -> dict:
         ev = await self.emailVerificationRepository.get_email_verification_by_token(token)
-        user = await self.repository.get_user_by_id(ev.user_id)
         if ev is None:
             raise HTTPException(status_code=400, detail="Invalid token")
         if ev.email_verified_expired_at < datetime.utcnow():
             raise HTTPException(status_code=400, detail="Expired token")
+        user = await self.repository.get_user_by_id(ev.user_id)
         if user is None:
             raise HTTPException(status_code=400, detail="User not found")
         if user.email_verified:

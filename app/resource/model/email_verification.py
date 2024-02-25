@@ -8,7 +8,7 @@ from app.resource.model.users import Users
 class EmailVerification(SQLModel, table=True):
     __tablename__ = "email_verifications"
     id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment="ID"))
-    user_id: int = Field(default=None, sa_column=Column(Integer, ForeignKey("users.id"), nullable=False, comment="ユーザーID"))
+    user_id: int = Field(default=None, sa_column=Column(Integer, ForeignKey("users.id"), nullable=False, unique=True, comment="ユーザーID"))
     email_verified_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment="メール認証日時"))
     email_verify_token: str = Field(sa_column=Column(String(100), nullable=True, comment="メール認証トークン"))
     email_verified_expired_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment="メール認証有効期限"))
