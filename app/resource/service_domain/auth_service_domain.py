@@ -16,13 +16,6 @@ import logging
 
 load_dotenv()
 logger = logging.getLogger("app.exception")
-
-class TokenData(BaseModel):
-    uuid: Union[str, None] = None
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
     
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
