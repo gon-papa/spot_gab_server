@@ -13,6 +13,9 @@ down: ## Stop docker container
 api: ## Run python container
 	docker compose exec -it fastapi /bin/bash
 
+test: ## Run python container
+	docker compose exec -it fastapi /bin/bash -c "pytest -vv"
+
 db: ## Run mysql container
 	docker compose exec -it mysql  mysql -u root -p
 

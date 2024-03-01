@@ -83,14 +83,6 @@
         "documentation": {}
     },
     {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -131,7 +123,7 @@
         "documentation": {}
     },
     {
-        "label": "Optional",
+        "label": "Union",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1108,14 +1100,6 @@
         "description": "fastapi.templating",
         "isExtraImport": true,
         "detail": "fastapi.templating",
-        "documentation": {}
-    },
-    {
-        "label": "CommonHeader",
-        "importPath": "app.resource.middleware.header",
-        "description": "app.resource.middleware.header",
-        "isExtraImport": true,
-        "detail": "app.resource.middleware.header",
         "documentation": {}
     },
     {
@@ -2221,7 +2205,7 @@
         "kind": 6,
         "importPath": "app.resource.response.json_response",
         "description": "app.resource.response.json_response",
-        "peekOfCode": "class JsonResponse(BaseModel):\n    status: int = Field(200, description=\"ステータスコード\")\n    data: Any = Field(None, description=\"データ\")\n    message: Optional[str] = Field(\"ok\", description=\"メッセージ\")",
+        "peekOfCode": "class JsonResponse(BaseModel):\n    status: int = Field(200, description=\"ステータスコード\")\n    data: Any = Field(None, description=\"データ\")\n    message: Union[str,None] = Field(\"ok\", description=\"メッセージ\")",
         "detail": "app.resource.response.json_response",
         "documentation": {}
     },
@@ -2232,24 +2216,6 @@
         "description": "app.resource.service.auth_service",
         "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository, emailVerificationRepository: EmailVerificationRepository):\n        self.repository = repository\n        self.emailVerificationRepository = emailVerificationRepository        \n    # サインアップ\n    async def sign_up(self, request:SignUpRequest, bk: BackgroundTasks) -> SignUpUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:",
         "detail": "app.resource.service.auth_service",
-        "documentation": {}
-    },
-    {
-        "label": "TokenData",
-        "kind": 6,
-        "importPath": "app.resource.service_domain.auth_service_domain",
-        "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "class TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))",
-        "detail": "app.resource.service_domain.auth_service_domain",
-        "documentation": {}
-    },
-    {
-        "label": "Token",
-        "kind": 6,
-        "importPath": "app.resource.service_domain.auth_service_domain",
-        "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:",
-        "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {
@@ -2320,7 +2286,7 @@
         "kind": 5,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\nclass TokenData(BaseModel):\n    uuid: Union[str, None] = None\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"sign-in\")\nsecret_key = os.getenv('JWT_SECRET_KEY')\nalgorithm = \"HS256\"\nexpired_minutes = int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))\n# パスワード比較\ndef verify_password(plain_password, hashed_password)-> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n# パスワードのハッシュ化",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
@@ -2401,7 +2367,7 @@
         "kind": 5,
         "importPath": "app.app",
         "description": "app.app",
-        "peekOfCode": "app = FastAPI()",
+        "peekOfCode": "app = FastAPI(\n    title=\"spot_gab_api\",\n    description=\"API for spot_gab_app\",\n    verion=\"0.1.0\",\n    servers=[\n        {\n            \"url\": \"http://localhost:8000\",\n            \"description\": \"Local server\"\n        }\n    ]",
         "detail": "app.app",
         "documentation": {}
     },

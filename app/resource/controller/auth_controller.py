@@ -1,11 +1,10 @@
-from typing import Union
 from dotenv import load_dotenv
 from fastapi import APIRouter, BackgroundTasks, Depends, Request
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.templating import Jinja2Templates
 from app.resource.depends.depends import get_di_class
-from app.resource.middleware.header import CommonHeader, common_header
+from app.resource.middleware.header import common_header
 from app.resource.service.auth_service import AuthService
 from app.resource.request.auth_request import (
     SignUpRequest,
