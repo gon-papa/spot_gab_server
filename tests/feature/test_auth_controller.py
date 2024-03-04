@@ -102,10 +102,19 @@ class TestAuthController:
             headers=get_header,
         )
         assert response.status_code == 400
+        # assert response.json() == {
+        #     "server_error": "http-error",
+        #     "status": 400,
+        #     "message": "Email already registered",
+        # }
         assert response.json() == {
-            "server_error": "http-error",
-            "status": 400,
-            "message": "Email already registered",
+            'detail': [{
+                'loc': [
+                    'POST /sign-up',    
+                ],
+                'msg': 'Email already registered',
+                'type': 'http_error'
+            }]
         }
         
     @pytest.mark.asyncio
@@ -121,9 +130,13 @@ class TestAuthController:
         )
         assert response.status_code == 400
         assert response.json() == {
-            "server_error": "http-error",
-            "status": 400,
-            "message": "Account ID already registered",
+            'detail': [{
+                'loc': [
+                    'POST /sign-up',    
+                ],
+                'msg': 'Account ID already registered',
+                'type': 'http_error'
+            }]
         }
         
     @pytest.mark.asyncio
@@ -153,9 +166,13 @@ class TestAuthController:
         )
         assert response.status_code == 401
         assert response.json() == {
-            "server_error": "http-error",
-            "status": 401,
-            "message": "Unauthorized",
+            'detail': [{
+                'loc': [
+                    'POST /sign-in',    
+                ],
+                'msg': 'Unauthorized',
+                'type': 'http_error'
+            }]
         }
         
     @pytest.mark.asyncio
@@ -186,14 +203,30 @@ class TestAuthController:
         response = await async_client.post('/sign-out', headers=headers)
         
         assert response.status_code == 400
-        assert response.json() == {"status": 400, "server_error": "http-error", "message": "Inactive user"}
+        assert response.json() == {
+            'detail': [{
+                'loc': [
+                    'POST /sign-out',    
+                ],
+                'msg': 'Inactive user',
+                'type': 'http_error'
+            }]
+        }
 
     @pytest.mark.asyncio
     async def test_sign_out_サインアウト_認証前のユーザーは401エラー(self, async_client, setup_user, get_auth_user, get_header):
         response = await async_client.post('/sign-out', headers=get_header)
         
         assert response.status_code == 401
-        assert response.json() == {"status": 401, "server_error": "http-error", "message": "Not authenticated"}
+        assert response.json() == {
+            'detail': [{
+                'loc': [
+                    'POST /sign-out',    
+                ],
+                'msg': 'Not authenticated',
+                'type': 'http_error'
+            }]
+        }
     
     
     @pytest.mark.asyncio
