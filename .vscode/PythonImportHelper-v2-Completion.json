@@ -115,6 +115,14 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -944,6 +952,14 @@
     },
     {
         "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -2025,7 +2041,7 @@
         "kind": 5,
         "importPath": "app.resource.middleware.handler",
         "description": "app.resource.middleware.handler",
-        "peekOfCode": "app_env = os.getenv(\"APP_ENV\", \"development\")\ndictConfig(LOGGING_CONFIG)\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):",
+        "peekOfCode": "app_env = os.getenv(\"APP_ENV\", \"development\")\ndictConfig(LOGGING_CONFIG)\nlogger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(\n        detail=[{\n            \"loc\": [\n                f\"{request.method} {request.url.path}\"",
         "detail": "app.resource.middleware.handler",
         "documentation": {}
     },
@@ -2034,7 +2050,7 @@
         "kind": 5,
         "importPath": "app.resource.middleware.handler",
         "description": "app.resource.middleware.handler",
-        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(status=exc.status_code, error=\"http-error\", message=exc.detail)\n    return JSONResponse(status_code=exc.status_code, content=error.model_dump())\nclass EnhancedTracebackMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request: Request, call_next):\n        try:\n            response = await call_next(request)",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n# カスタムエラーハンドラの追加\n@app.exception_handler(HTTPException)\nasync def http_exception_handler(request: Request, exc: HTTPException):\n    error = ErrorJsonResponse(\n        detail=[{\n            \"loc\": [\n                f\"{request.method} {request.url.path}\"\n            ],\n            \"msg\": exc.detail,",
         "detail": "app.resource.middleware.handler",
         "documentation": {}
     },
@@ -2192,11 +2208,20 @@
         "documentation": {}
     },
     {
+        "label": "ErrorDetail",
+        "kind": 6,
+        "importPath": "app.resource.response.error_response",
+        "description": "app.resource.response.error_response",
+        "peekOfCode": "class ErrorDetail(BaseModel):\n    loc: List[str] = Field(..., description=\"エラー箇所\")\n    msg: str = Field(..., description=\"エラーメッセージ\")\n    type: str = Field(..., description=\"エラータイプ\")\n    class Config:\n        schema_extra = {\n            \"example\": {\n                \"loc\": [],\n                \"msg\": \"1文字以上である必要があります。\",\n                \"type\": \"value_error\",",
+        "detail": "app.resource.response.error_response",
+        "documentation": {}
+    },
+    {
         "label": "ErrorJsonResponse",
         "kind": 6,
         "importPath": "app.resource.response.error_response",
         "description": "app.resource.response.error_response",
-        "peekOfCode": "class ErrorJsonResponse(BaseModel):\n    status: int = Field(500, description=\"ステータスコード\")\n    error: str = Field(\"Internal Server Error\", description=\"エラーメッセージ\")\n    message: str = Field(\"Internal Server Error\", description=\"エラーメッセージ\")",
+        "peekOfCode": "class ErrorJsonResponse(BaseModel):\n    detail: List[ErrorDetail] = Field(..., description=\"エラーメッセージ\")",
         "detail": "app.resource.response.error_response",
         "documentation": {}
     },

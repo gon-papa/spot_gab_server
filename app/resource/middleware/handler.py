@@ -19,7 +19,15 @@ logger = logging.getLogger("app.exception")
 # カスタムエラーハンドラの追加
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
-    error = ErrorJsonResponse(status=exc.status_code, server_error="http-error", message=exc.detail)
+    error = ErrorJsonResponse(
+        detail=[{
+            "loc": [
+                f"{request.method} {request.url.path}"
+            ],
+            "msg": exc.detail,
+            "type": "http_error",
+        }]
+    )
     return JSONResponse(status_code=exc.status_code, content=error.model_dump())
 
 class EnhancedTracebackMiddleware(BaseHTTPMiddleware):

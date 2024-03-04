@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from fastapi import APIRouter, BackgroundTasks, Depends, Request
+from fastapi import APIRouter, BackgroundTasks, Depends, Request, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.templating import Jinja2Templates
@@ -148,6 +148,7 @@ async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
         email = request.email
         service = get_di_class(AuthService)
         result = await service.email_exist(email)
+
         return EmailExistsResponse(status=200, data={"exists": result})
     except Exception as e:
         raise e
