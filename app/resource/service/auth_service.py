@@ -74,7 +74,7 @@ class AuthService:
         # emailとpasswordが一致するユーザーを取得
         user = await authenticate_user(email, password)
         if not user:
-            raise HTTPException(status_code=401, detail="Unauthorized")
+            raise HTTPException(status_code=403, detail="Incorrect email or password")
         # アクセストークン作成
         claim = crate_user_claim(user)
         token = create_access_token(claim)

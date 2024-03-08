@@ -62,16 +62,17 @@ async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignUpResponse
     description="サインイン",
     operation_id="sign_in",
     responses = {
-        401: {
+        403: {
             "model": ErrorJsonResponse,
-            "description": "Unauthorized",
+            "description": "Incorrect email or password",
         },
         500: {
             "model": ErrorJsonResponse,
             "description": "Internal Server Error",
         }
     },
-    dependencies=[Depends(common_header)]
+    # openApiで認証が使えなくなるので一旦コメントアウト
+    # dependencies=[Depends(common_header)]
 )
 async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInResponse:
     try:
