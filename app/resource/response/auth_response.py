@@ -21,3 +21,4 @@ class SignUpResponse(JsonResponse):
 class SignInResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
+    refresh_token: str

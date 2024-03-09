@@ -70,7 +70,7 @@ class AuthService:
         return user
     
     # サインイン
-    async def sign_in(self, email: str, password: str) -> str:
+    async def sign_in(self, email: str, password: str) -> dict:
         # emailとpasswordが一致するユーザーを取得
         user = await authenticate_user(email, password)
         if not user:
@@ -82,7 +82,7 @@ class AuthService:
         refresh_token = create_refresh_token()
         expires_at = create_expire_at()
         user = await self.repository.active_update(user.id, refresh_token, expires_at)
-        return token
+        return {'token': token, 'refresh_token': refresh_token}
     
     # サインアウト
     async def sign_out(self, user: Users) -> bool:

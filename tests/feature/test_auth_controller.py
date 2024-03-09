@@ -157,20 +157,20 @@ class TestAuthController:
         assert actual['token_type'] == "bearer"
         
     @pytest.mark.asyncio
-    async def test_sign_in_認証失敗時は401エラーを返す(self, async_client, setup_user, get_header):
+    async def test_sign_in_認証失敗時は403エラーを返す(self, async_client, setup_user, get_header):
         response = await async_client.post('/sign-in', data={
                 "username": "dummy",
                 "password": "dummy",
             },
             headers=get_header
         )
-        assert response.status_code == 401
+        assert response.status_code == 403
         assert response.json() == {
             'detail': [{
                 'loc': [
                     'POST /sign-in',    
                 ],
-                'msg': 'Unauthorized',
+                'msg': 'Incorrect email or password',
                 'type': 'http_error'
             }]
         }
