@@ -78,10 +78,10 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
     try:
         email = request.username
         password = request.password
-        token = await get_di_class(AuthService).sign_in(email, password)
+        tokens = await get_di_class(AuthService).sign_in(email, password)
     except Exception as e:
         raise e
-    return SignInResponse(access_token=token, token_type="bearer")
+    return SignInResponse(access_token=tokens['token'], token_type="bearer", refresh_token=tokens['refresh_token'])
 
 @router.post(
     '/sign-out',
