@@ -68,7 +68,7 @@ def crate_user_claim(user: Users) -> dict:
     access_token_data = {
         "sub": user.uuid,  # 一意の識別子
         "aud": "user",  # role
-        "exp": datetime.utcnow() + timedelta(minutes=expired_minutes),  # 有効期限
+        "exp": datetime.now(timezone.utc) + timedelta(minutes=expired_minutes),  # 有効期限
     }
     return access_token_data
 

@@ -1,5 +1,5 @@
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from fastapi import BackgroundTasks, HTTPException
 from injector import inject
@@ -51,7 +51,7 @@ class AuthService:
             email_verifications=EmailVerification(
                 email_verify_token=email_verify_token,
                 email_verified_at=None,
-                email_verified_expired_at=datetime.utcnow() + timedelta(days=1),
+                email_verified_expired_at=datetime.now(timezone.utc) + timedelta(days=1),
             ),
             deleted_at=None,
             email_verified=False,
@@ -129,9 +129,11 @@ class AuthService:
     # メール認証
     async def email_verify(self, token: str) -> dict:
         ev = await self.emailVerificationRepository.get_email_verification_by_token(token)
+        if ev.email_verified_expired_at is not None:
+            ev.email_verified_expired_at = ev.email_verified_expired_at.replace(tzinfo=timezone.utc)
         if ev is None:
             raise HTTPException(status_code=400, detail=convert_lang("common_error.not_found"))
-        if ev.email_verified_expired_at is None or ev.email_verified_expired_at < datetime.utcnow():
+        if ev.email_verified_expired_at is None or ev.email_verified_expired_at < datetime.now(timezone.utc):
             raise HTTPException(status_code=400, detail=convert_lang("common_error.expired_token"))
         user = await self.repository.get_user_by_id(ev.user_id)
         if user is None:
