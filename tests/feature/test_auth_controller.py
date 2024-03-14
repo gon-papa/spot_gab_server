@@ -78,13 +78,13 @@ class TestAuthController:
             "message": "ok",
         }
         # ユーザー確認
-        assert user.is_active == True
+        assert user.is_active
         # email_varificationが作成されていること
-        assert user.email_verified == False
+        assert not user.email_verified
         assert ev.user_id == user.id
         assert ev.email_verify_token is not None
         assert ev.email_verified_expired_at is not None
-        assert ev.email_verified_at == None
+        assert ev.email_verified_at is None
         # メール送信がされていること
         mock_mail_send.assert_called_once()
         call_args = mock_mail_send.call_args[1]
@@ -157,7 +157,7 @@ class TestAuthController:
         user = await repository.get_user_by_email("test@test.com")
         actual = response.json()
 
-        assert user.is_active == True
+        assert user.is_active
         assert response.status_code == 200
         assert actual["access_token"] is not None
         assert actual["token_type"] == "bearer"
@@ -198,9 +198,9 @@ class TestAuthController:
         repository = get_di_class(UserRepository)
         refresh_user = await repository.get_user_by_email(user.email)
 
-        assert refresh_user.is_active == False
-        assert refresh_user.refresh_token == None
-        assert refresh_user.expires_at == None
+        assert not refresh_user.is_active
+        assert refresh_user.refresh_token is None
+        assert refresh_user.expires_at is None
 
     @pytest.mark.asyncio
     async def test_sign_out_サインアウト_サインアウト後のユーザーは400エラー(
@@ -312,10 +312,10 @@ class TestAuthController:
         ev = await get_di_class(EmailVerificationRepository).get_email_verification_by_user_id(user.id)
         assert response.status_code == 200
         assert "<h2>認証完了のお知らせ</h2>" in response.text
-        assert user.email_verified == True
+        assert user.email_verified
         assert ev.email_verified_at is not None
-        assert ev.email_verify_token == None
-        assert ev.email_verified_expired_at == None
+        assert ev.email_verify_token is None
+        assert ev.email_verified_expired_at is None
 
     @pytest.mark.asyncio
     async def test_email_verify_メールアドレスの確認_認証済みの場合はエラーページを返す(
