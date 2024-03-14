@@ -1,11 +1,12 @@
-from dotenv import load_dotenv
-from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
-from typing import List
 import os
+from typing import List
 
+from dotenv import load_dotenv
+from fastapi_mail import ConnectionConfig, FastMail, MessageSchema
 from pydantic import EmailStr
 
 load_dotenv()
+
 
 class Mailer:
     def __init__(self):
@@ -22,16 +23,13 @@ class Mailer:
             VALIDATE_CERTS=os.getenv("VALIDATE_CERTS"),
         )
         self.mail = FastMail(self.conf)
-    
-    async def send(self, to: List[EmailStr], subject: str, body: str)-> bool:
+
+    async def send(self, to: List[EmailStr], subject: str, body: str) -> bool:
         try:
             message = MessageSchema(
-                subject=subject,
-                recipients=to,  # List of recipients, as EmailStr type
-                body=body,
-                subtype="html"
+                subject=subject, recipients=to, body=body, subtype="html"  # List of recipients, as EmailStr type
             )
-        
+
             await self.mail.send_message(message)
             return True
         except Exception as e:

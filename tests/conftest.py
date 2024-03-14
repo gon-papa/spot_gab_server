@@ -1,8 +1,10 @@
 import pytest_asyncio
-from app.resource.model.users import *
-from app.resource.depends.depends import update_injector, get_di_class
-from app.db.db import AppConfig, DatabaseConnection, TestAppConfig
 from sqlalchemy.ext.asyncio import AsyncEngine
+
+from app.db.db import AppConfig, DatabaseConnection, TestAppConfig
+from app.resource.depends.depends import get_di_class, update_injector
+from app.resource.model.users import *
+
 
 # functionごとに実行される
 @pytest_asyncio.fixture(autouse=True, scope='function')

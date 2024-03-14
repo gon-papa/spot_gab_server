@@ -1,0 +1,26 @@
+{
+    "email": {
+        "subject": "Email Verification",
+        "email_verified": "Your email has been verified"
+    },
+    "error": {
+        "exsist_email": "This email address is not available",
+        "exsist_id_account": "This account ID is not available",
+        "incorrect_email_or_password": "Incorrect email or password",
+        "invalid_refresh_token": "Authentication is invalid",
+        "inactive_user": "Already logged out.",
+        "deleted_user": "User has been deleted",
+        "alradey_verified": "Already verified",
+        "invalid_credentials": "Invalid credentials"
+    },
+    "validation": {
+        "required": "This field is required",
+        "min_length_8": "Please enter at least 8 characters",
+        "max_length_20": "Up to 20 characters",
+        "max_length_100": "Up to 100 characters maximum",
+        "invalid_future_date": "Future dates cannot be specified",
+        "invalid_date": "Invalid date",
+        "invalid_email": "Invalid email address. Please enter in the correct format.",
+        "invalid_password": "Password must be alphanumeric and can include symbols @?$%!# only."
+    }
+}
