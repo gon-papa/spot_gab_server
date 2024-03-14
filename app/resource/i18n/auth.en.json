@@ -8,7 +8,7 @@
         "exsist_id_account": "This account ID is not available",
         "incorrect_email_or_password": "Incorrect email or password",
         "invalid_refresh_token": "Authentication is invalid",
-        "inactive_user": "User is inactive",
+        "inactive_user": "Already logged out.",
         "deleted_user": "User has been deleted",
         "alradey_verified": "Already verified",
         "invalid_credentials": "Invalid credentials"
