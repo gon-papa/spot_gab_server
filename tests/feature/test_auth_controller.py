@@ -111,7 +111,7 @@ class TestAuthController:
                     "loc": [
                         "POST /sign-up",
                     ],
-                    "msg": "Email already registered",
+                    "msg": "このメールアドレスは利用できません",
                     "type": "http_error",
                 }
             ]
@@ -137,7 +137,7 @@ class TestAuthController:
                     "loc": [
                         "POST /sign-up",
                     ],
-                    "msg": "Account ID already registered",
+                    "msg": "このアカウントIDは利用できません",
                     "type": "http_error",
                 }
             ]
@@ -179,7 +179,7 @@ class TestAuthController:
                     "loc": [
                         "POST /sign-in",
                     ],
-                    "msg": "Incorrect email or password",
+                    "msg": "メールアドレスかパスワードが間違っています",
                     "type": "http_error",
                 }
             ]
@@ -221,7 +221,7 @@ class TestAuthController:
                     "loc": [
                         "POST /sign-out",
                     ],
-                    "msg": "Inactive user",
+                    "msg": "すでにログアウト済みです",
                     "type": "http_error",
                 }
             ]
@@ -307,7 +307,7 @@ class TestAuthController:
         )
         user = await get_di_class(UserRepository).create_user(user)
 
-        response = await async_client.get(f"/verify-email/{email_verify_token}")
+        response = await async_client.get(f"/verify-email/{email_verify_token}/ja")
         user = await get_di_class(UserRepository).get_user_by_id(user.id)
         ev = await get_di_class(EmailVerificationRepository).get_email_verification_by_user_id(user.id)
         assert response.status_code == 200
@@ -339,7 +339,7 @@ class TestAuthController:
         )
         user = await get_di_class(UserRepository).create_user(user)
 
-        response = await async_client.get(f"/verify-email/{email_verify_token}")
+        response = await async_client.get(f"/verify-email/{email_verify_token}/ja")
         assert response.status_code == 200
         assert "<h1>認証エラーのお知らせ</h1>" in response.text
 
@@ -366,7 +366,7 @@ class TestAuthController:
 
         user = await get_di_class(UserRepository).create_user(user)
 
-        response = await async_client.get(f"/verify-email/{email_verify_token}")
+        response = await async_client.get(f"/verify-email/{email_verify_token}/ja")
         assert response.status_code == 200
         assert "<h1>認証エラーのお知らせ</h1>" in response.text
 
@@ -388,6 +388,6 @@ class TestAuthController:
         )
 
         user = await get_di_class(UserRepository).create_user(user)
-        response = await async_client.get(f"/verify-email/{email_verify_token}")
+        response = await async_client.get(f"/verify-email/{email_verify_token}/ja")
         assert response.status_code == 200
         assert "<h1>認証エラーのお知らせ</h1>" in response.text

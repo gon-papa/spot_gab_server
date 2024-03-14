@@ -8,7 +8,7 @@
         "exsist_id_account": "このアカウントIDは利用できません",
         "incorrect_email_or_password": "メールアドレスかパスワードが間違っています",
         "invalid_refresh_token": "認証が無効です",
-        "inactive_user": "ユーザーが無効になってます",
+        "inactive_user": "すでにログアウト済みです",
         "deleted_user": "ユーザーは削除されています",
         "alradey_verified": "既に認証済みです",
         "invalid_credentials": "認証情報が無効です"
