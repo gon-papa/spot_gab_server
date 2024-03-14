@@ -1,11 +1,13 @@
 from typing import List
+
 from pydantic import BaseModel, Field
+
 
 class ErrorDetail(BaseModel):
     loc: List[str] = Field(..., description="エラー箇所")
     msg: str = Field(..., description="エラーメッセージ")
     type: str = Field(..., description="エラータイプ")
-    
+
     class Config:
         schema_extra = {
             "example": {
@@ -15,6 +17,6 @@ class ErrorDetail(BaseModel):
             }
         }
 
+
 class ErrorJsonResponse(BaseModel):
     detail: List[ErrorDetail] = Field(..., description="エラーメッセージ")
-    

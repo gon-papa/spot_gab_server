@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Complete Notification</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            margin: auto;
+            width: 60%;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #364f6b;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #6c757d;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .thank-you {
+            font-size: 24px;
+            color: #4a7c59;
+            margin-top: 30px;
+        }
+        .decoration {
+            margin-top: 25px;
+            border-top: 2px dashed #ccc;
+            padding-top: 20px;
+        }
+        .signature {
+            font-weight: bold;
+            font-size: 18px;
+            color: #364f6b;
+        }
+
+        /* Responsive design media queries */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%; /* Make the container fill the width on smartphones */
+                padding: 20px; /* Reduce padding on smartphones */
+            }
+            h1, h2 {
+                font-size: 20px; /* Adjust heading font sizes for smartphones */
+            }
+            p {
+                font-size: 16px; /* Adjust text font sizes for smartphones */
+            }
+            .thank-you {
+                font-size: 20px; /* Adjust the 'thank you' font size for smartphones */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to SpotGab!</h1>
+        <h2>Notification of Authentication Completion</h2>
+        <p>We sincerely thank you for completing the email address verification.</p>
+        <p>The information you registered has been authenticated successfully. Please continue to enjoy our service.</p>
+        <div class="thank-you">We are deeply grateful.</div>
+        <div class="decoration">
+            <p>We will continue to work hard to provide a wonderful experience.</p>
+            <p class="signature">
+                - Your
+                <a href="{{support_url}}">Service Team</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

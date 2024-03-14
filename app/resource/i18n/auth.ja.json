@@ -1,0 +1,26 @@
+{
+    "email": {
+        "subject": "メールアドレスの確認",
+        "email_verified": "メールアドレスが確認されました"
+    },
+    "error": {
+        "exsist_email": "このメールアドレスは利用できません",
+        "exsist_id_account": "このアカウントIDは利用できません",
+        "incorrect_email_or_password": "メールアドレスかパスワードが間違っています",
+        "invalid_refresh_token": "認証が無効です",
+        "inactive_user": "すでにログアウト済みです",
+        "deleted_user": "ユーザーは削除されています",
+        "alradey_verified": "既に認証済みです",
+        "invalid_credentials": "認証情報が無効です"
+    },
+    "validation": {
+        "required": "必ず入力してください",
+        "min_length_8": "8文字以上で入力してください",
+        "max_length_20" : "20文字までです",
+        "max_length_100": "最大100文字までです",
+        "invalid_future_date": "未来の日付は指定できません",
+        "invalid_date": "日付が無効です",
+        "invalid_email": "メールアドレスが無効です。正しい形式で入力してください。",
+        "invalid_password": "パスワードは半角英数字と記号 @?$%!# のみです。"
+    }
+}
