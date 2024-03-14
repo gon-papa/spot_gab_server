@@ -1,9 +1,12 @@
-from typing import Optional
-from sqlalchemy import ForeignKey
-from sqlmodel import SQLModel, Field, Column, Integer, String, DateTime, Relationship
 from datetime import datetime
+from typing import Optional
+
+from sqlalchemy import ForeignKey
+from sqlmodel import (Column, DateTime, Field, Integer, Relationship, SQLModel,
+                      String)
 
 from app.resource.model.users import Users
+
 
 class EmailVerification(SQLModel, table=True):
     __tablename__ = "email_verifications"

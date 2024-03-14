@@ -1,19 +1,20 @@
+import os
 from logging.config import fileConfig
-from dotenv import load_dotenv
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
+
+import sqlalchemy_utils
 from alembic import context
+from dotenv import load_dotenv
+from sqlalchemy import engine_from_config, pool
 from sqlmodel import SQLModel
+
 from app.db.db import DatabaseConnection
 from app.resource.depends.depends import get_di_class
+from app.resource.model.email_verification import EmailVerification
+from app.resource.model.users import Users
 
 # import app.resource.model.users
 
-from app.resource.model.users import Users
-from app.resource.model.email_verification import EmailVerification
 
-import sqlalchemy_utils
-import os
 
 load_dotenv()
 
