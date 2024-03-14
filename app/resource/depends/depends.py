@@ -1,4 +1,5 @@
 from injector import Injector, inject
+
 from app.db.db import AppConfig, TestAppConfig
 
 di = Injector([AppConfig()])

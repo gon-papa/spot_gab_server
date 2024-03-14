@@ -1,6 +1,10 @@
-from pydantic import BaseModel, Field, field_validator
 from datetime import date as Date
+
+from pydantic import BaseModel, Field, field_validator
+
 from app.resource.request.common_validate import CustomValidator
+from app.resource.util.lang import convert_lang
+
 
 class SignUpRequest(BaseModel):
     account_name: str = Field(
@@ -28,30 +32,31 @@ class SignUpRequest(BaseModel):
         title="生年月日",
         description="生年月日",
     )
-    
-    @field_validator('account_name', 'id_account', 'email')
+
+    @field_validator("account_name", "id_account", "email")
     def name_length_validator(cls, value):
         if len(value) < 1:
-            raise ValueError('1文字以上である必要があります。')
+            raise ValueError(convert_lang("auth.validation.required"))
         if len(value) >= 100:
-            raise ValueError('最大100文字までです。')
+            raise ValueError(convert_lang("auth.validation.max_length_100"))
         return value
-    
-    @field_validator('email')
+
+    @field_validator("email")
     def email_validator(cls, value):
         return CustomValidator.email_validator(cls, value)
-    
-    @field_validator('password')
+
+    @field_validator("password")
     def password_validator(cls, value):
         return CustomValidator.password_validator(cls, value)
-    
-    @field_validator('birth_date')
+
+    @field_validator("birth_date")
     def birth_date_validator(cls, value):
         if value > Date.today():
-            raise ValueError('未来の日付は指定できません。')
+            raise ValueError(convert_lang("auth.validation.invalid_future_date"))
         if value.year < 1900:
-            raise ValueError('1900年以降の日付を指定してください。')
+            raise ValueError(convert_lang("auth.validation.invalid_date"))
         return value
+
 
 class EmailExistsRequest(BaseModel):
     email: str = Field(
@@ -59,14 +64,16 @@ class EmailExistsRequest(BaseModel):
         title="メールアドレス",
         description="メールアドレス",
     )
-    
+
+
 class IdAccountExistsRequest(BaseModel):
     id_account: str = Field(
         ...,
         title="アカウントID",
         description="アカウントID",
     )
-    
+
+
 class RefreshTokenRequest(BaseModel):
     refresh_token: str = Field(
         ...,

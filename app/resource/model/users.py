@@ -1,27 +1,45 @@
-from datetime import date, datetime, timedelta
-from typing import List, Optional
+from datetime import date, datetime
+from typing import Optional
 from uuid import uuid4
-from sqlmodel import Relationship, SQLModel, Field, Date, DateTime, Column, Integer, String, Boolean, func, UUID
+
+from sqlmodel import Boolean, Column, Date, DateTime, Field, Integer, Relationship, SQLModel, String
+
 
 class Users(SQLModel, table=True):
     id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment="ID"))
-    uuid: str = Field(default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=False, unique=True, comment="UUID"))
+    uuid: str = Field(
+        default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=False, unique=True, comment="UUID")
+    )
     account_name: str = Field(sa_column=Column(String(100), nullable=False, comment="アカウント名"))
     id_account: str = Field(sa_column=Column(String(100), nullable=False, unique=True, comment="アカウントID"))
     email: str = Field(sa_column=Column(String(100), nullable=False, unique=True, comment="メールアドレス"))
     hashed_password: str = Field(sa_column=Column(String(100), nullable=False, comment="パスワード"))
-    is_active: bool = Field(sa_column=Column(Boolean, nullable=False, default=False, comment="アクティブフラグ True:ログイン中 False:ログアウト中"))
+    is_active: bool = Field(
+        sa_column=Column(
+            Boolean, nullable=False, default=False, comment="アクティブフラグ True:ログイン中 False:ログアウト中"
+        )
+    )
     birth_date: date = Field(sa_column=Column(Date, nullable=False, comment="生年月日"))
-    other_user_invitation_code: str = Field(default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=True, comment="他ユーザー招待コード"))
+    other_user_invitation_code: str = Field(
+        default_factory=lambda: str(uuid4()),
+        sa_column=Column(String(36), nullable=True, comment="他ユーザー招待コード"),
+    )
     refresh_token: str = Field(sa_column=Column(String(100), nullable=True, comment="リフレッシュトークン"))
     expires_at: datetime = Field(sa_column=Column(DateTime, nullable=True, comment="リフレッシュトークン有効期限"))
-    email_verified: bool = Field(sa_column=Column(Boolean, nullable=False, default=False, comment="メール認証フラグ True:認証済 False:未認証"))
+    email_verified: bool = Field(
+        sa_column=Column(Boolean, nullable=False, default=False, comment="メール認証フラグ True:認証済 False:未認証")
+    )
     deleted_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment="削除日時とフラグ"))
-    created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, default=datetime.utcnow))
-    updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, onupdate=datetime.utcnow))
+    created_at: datetime = Field(
+        default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, default=datetime.utcnow)
+    )
+    updated_at: datetime = Field(
+        default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, onupdate=datetime.utcnow)
+    )
     # リレーション
-    email_verifications: Optional["EmailVerification"] = Relationship(back_populates="user")
-    
+    email_verifications: Optional["EmailVerification"] = Relationship(back_populates="user")  # type: ignore  # noqa: F821 E501
+
+
 class UserRead(SQLModel):
     id: int
     uuid: str
@@ -35,6 +53,7 @@ class UserRead(SQLModel):
     deleted_at: Optional[datetime] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+
     class ConfigDict:
         from_attributes = True
         json_schema_extra = {
@@ -50,10 +69,11 @@ class UserRead(SQLModel):
                 "email_verified": True,
                 "deleted_at": "2021-01-01T00:00:00",
                 "created_at": "2021-01-01T00:00:00",
-                "updated_at": "2021-01-01T00:00:00"
+                "updated_at": "2021-01-01T00:00:00",
             }
         }
-        
+
+
 class SignUpUser(SQLModel):
     id: int
     uuid: str
@@ -69,6 +89,7 @@ class SignUpUser(SQLModel):
     deleted_at: Optional[datetime] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+
     class ConfigDict:
         from_attributes = True
         json_schema_extra = {
@@ -86,6 +107,6 @@ class SignUpUser(SQLModel):
                 "email_verified": True,
                 "deleted_at": "2021-01-01T00:00:00",
                 "created_at": "2021-01-01T00:00:00",
-                "updated_at": "2021-01-01T00:00:00"
+                "updated_at": "2021-01-01T00:00:00",
             }
         }
