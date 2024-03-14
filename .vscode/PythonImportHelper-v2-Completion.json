@@ -42,38 +42,6 @@
         "documentation": {}
     },
     {
-        "label": "Sequence",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Sequence",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -143,6 +111,22 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "op",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
+        "documentation": {}
+    },
+    {
+        "label": "context",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
         "documentation": {}
     },
     {
@@ -220,14 +204,6 @@
         "documentation": {}
     },
     {
-        "label": "DateTime",
-        "importPath": "sqlmodel",
-        "description": "sqlmodel",
-        "isExtraImport": true,
-        "detail": "sqlmodel",
-        "documentation": {}
-    },
-    {
         "label": "Field",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
@@ -253,6 +229,14 @@
     },
     {
         "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "TIMESTAMP",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
         "isExtraImport": true,
@@ -292,14 +276,6 @@
         "documentation": {}
     },
     {
-        "label": "DateTime",
-        "importPath": "sqlmodel",
-        "description": "sqlmodel",
-        "isExtraImport": true,
-        "detail": "sqlmodel",
-        "documentation": {}
-    },
-    {
         "label": "Field",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
@@ -340,35 +316,11 @@
         "documentation": {}
     },
     {
-        "label": "op",
-        "importPath": "alembic",
-        "description": "alembic",
+        "label": "TIMESTAMP",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
         "isExtraImport": true,
-        "detail": "alembic",
-        "documentation": {}
-    },
-    {
-        "label": "op",
-        "importPath": "alembic",
-        "description": "alembic",
-        "isExtraImport": true,
-        "detail": "alembic",
-        "documentation": {}
-    },
-    {
-        "label": "op",
-        "importPath": "alembic",
-        "description": "alembic",
-        "isExtraImport": true,
-        "detail": "alembic",
-        "documentation": {}
-    },
-    {
-        "label": "context",
-        "importPath": "alembic",
-        "description": "alembic",
-        "isExtraImport": true,
-        "detail": "alembic",
+        "detail": "sqlmodel",
         "documentation": {}
     },
     {
@@ -1464,6 +1416,14 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -1480,7 +1440,23 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1505,6 +1481,14 @@
     },
     {
         "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1561,6 +1545,14 @@
     },
     {
         "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1858,55 +1850,19 @@
     {
         "label": "upgrade",
         "kind": 2,
-        "importPath": "app.db.migration.versions.770998b477ca_create_email_verifications_1_on_1_change",
-        "description": "app.db.migration.versions.770998b477ca_create_email_verifications_1_on_1_change",
-        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_unique_constraint(None, 'email_verifications', ['user_id'])\n    # ### end Alembic commands ###\ndef downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_constraint(None, 'email_verifications', type_='unique')\n    # ### end Alembic commands ###",
-        "detail": "app.db.migration.versions.770998b477ca_create_email_verifications_1_on_1_change",
-        "documentation": {}
-    },
-    {
-        "label": "downgrade",
-        "kind": 2,
-        "importPath": "app.db.migration.versions.770998b477ca_create_email_verifications_1_on_1_change",
-        "description": "app.db.migration.versions.770998b477ca_create_email_verifications_1_on_1_change",
-        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_constraint(None, 'email_verifications', type_='unique')\n    # ### end Alembic commands ###",
-        "detail": "app.db.migration.versions.770998b477ca_create_email_verifications_1_on_1_change",
-        "documentation": {}
-    },
-    {
-        "label": "upgrade",
-        "kind": 2,
-        "importPath": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
-        "description": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
-        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('email_verifications',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('user_id', sa.Integer(), nullable=False, comment='ユーザーID'),\n    sa.Column('email_verified_at', sa.DateTime(), nullable=True, comment='メール認証日時'),\n    sa.Column('email_verify_token', sa.String(length=100), nullable=True, comment='メール認証トークン'),\n    sa.Column('email_verified_expired_at', sa.DateTime(), nullable=True, comment='メール認証有効期限'),\n    sa.Column('created_at', sa.DateTime(), nullable=True),\n    sa.Column('updated_at', sa.DateTime(), nullable=True),",
-        "detail": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
-        "documentation": {}
-    },
-    {
-        "label": "downgrade",
-        "kind": 2,
-        "importPath": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
-        "description": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
-        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_column('users', 'email_verified')\n    op.drop_table('email_verifications')\n    # ### end Alembic commands ###",
-        "detail": "app.db.migration.versions.80bbbe1d7643_create_email_verifications",
-        "documentation": {}
-    },
-    {
-        "label": "upgrade",
-        "kind": 2,
-        "importPath": "app.db.migration.versions.aabe030448a4_users_create",
-        "description": "app.db.migration.versions.aabe030448a4_users_create",
+        "importPath": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
+        "description": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
         "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('users',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('uuid', sa.String(length=36), nullable=False, comment='UUID'),\n    sa.Column('account_name', sa.String(length=100), nullable=False, comment='アカウント名'),\n    sa.Column('id_account', sa.String(length=100), nullable=False, comment='アカウントID'),\n    sa.Column('email', sa.String(length=100), nullable=False, comment='メールアドレス'),\n    sa.Column('hashed_password', sa.String(length=100), nullable=False, comment='パスワード'),\n    sa.Column('is_active', sa.Boolean(), nullable=False, comment='アクティブフラグ True:ログイン中 False:ログアウト中'),",
-        "detail": "app.db.migration.versions.aabe030448a4_users_create",
+        "detail": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
         "documentation": {}
     },
     {
         "label": "downgrade",
         "kind": 2,
-        "importPath": "app.db.migration.versions.aabe030448a4_users_create",
-        "description": "app.db.migration.versions.aabe030448a4_users_create",
-        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('users')\n    # ### end Alembic commands ###",
-        "detail": "app.db.migration.versions.aabe030448a4_users_create",
+        "importPath": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
+        "description": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
+        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('email_verifications')\n    op.drop_table('users')\n    # ### end Alembic commands ###",
+        "detail": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
         "documentation": {}
     },
     {
@@ -2121,7 +2077,7 @@
         "kind": 6,
         "importPath": "app.resource.model.email_verification",
         "description": "app.resource.model.email_verification",
-        "peekOfCode": "class EmailVerification(SQLModel, table=True):\n    __tablename__ = \"email_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(default=None, sa_column=Column(Integer, ForeignKey(\"users.id\"), nullable=False, unique=True, comment=\"ユーザーID\"))\n    email_verified_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment=\"メール認証日時\"))\n    email_verify_token: str = Field(sa_column=Column(String(100), nullable=True, comment=\"メール認証トークン\"))\n    email_verified_expired_at: Optional[datetime] = Field(sa_column=Column(DateTime, nullable=True, comment=\"メール認証有効期限\"))\n    created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, default=datetime.utcnow))\n    updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column(DateTime, nullable=True, onupdate=datetime.utcnow))\n    # リレーション",
+        "peekOfCode": "class EmailVerification(SQLModel, table=True):\n    __tablename__ = \"email_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(\n        default=None,\n        sa_column=Column(\n            Integer,\n            ForeignKey(\"users.id\"),\n            nullable=False,\n            unique=True,",
         "detail": "app.resource.model.email_verification",
         "documentation": {}
     },
@@ -2328,7 +2284,7 @@
         "kind": 2,
         "importPath": "app.resource.service_domain.auth_service_domain",
         "description": "app.resource.service_domain.auth_service_domain",
-        "peekOfCode": "def crate_user_claim(user: Users) -> dict:\n    access_token_data = {\n        \"sub\": user.uuid,  # 一意の識別子\n        \"aud\": \"user\",  # role\n        \"exp\": datetime.utcnow() + timedelta(minutes=expired_minutes),  # 有効期限\n    }\n    return access_token_data\n# アクセストークン作成\ndef create_access_token(data: dict):\n    to_encode = data.copy()",
+        "peekOfCode": "def crate_user_claim(user: Users) -> dict:\n    access_token_data = {\n        \"sub\": user.uuid,  # 一意の識別子\n        \"aud\": \"user\",  # role\n        \"exp\": datetime.now(timezone.utc) + timedelta(minutes=expired_minutes),  # 有効期限\n    }\n    return access_token_data\n# アクセストークン作成\ndef create_access_token(data: dict):\n    to_encode = data.copy()",
         "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },

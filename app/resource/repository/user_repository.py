@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from sqlalchemy.exc import SQLAlchemyError
@@ -89,7 +89,9 @@ class UserRepository:
     async def get_user_by_refresh_token(self, refresh_token: str) -> Optional[Users]:
         async with self.db.get_db() as session:
             result = await session.exec(
-                select(Users).filter(Users.refresh_token == refresh_token, Users.expires_at > datetime.utcnow())
+                select(Users).filter(
+                    Users.refresh_token == refresh_token, Users.expires_at > datetime.now(timezone.utc)
+                )
             )
             user = result.scalars().first()
             return user
@@ -99,7 +101,7 @@ class UserRepository:
         async with self.db.get_db() as session:
             try:
                 user.email_verified = True
-                ev.email_verified_at = datetime.utcnow()
+                ev.email_verified_at = datetime.now(timezone.utc)
                 ev.email_verify_token = None
                 ev.email_verified_expired_at = None
                 session.add(user)

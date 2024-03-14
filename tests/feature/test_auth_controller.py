@@ -1,4 +1,4 @@
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 
 import pytest
 import pytest_asyncio
@@ -26,7 +26,7 @@ class TestAuthController:
             birth_date=date(2000, 1, 1),
             is_active=True,
             refresh_token="test",
-            expires_at=date(2000, 1, 1),
+            expires_at=datetime(2000, 1, 1, tzinfo=timezone.utc),
             email_verified=True,
         )
         repository = get_di_class(UserRepository)
@@ -298,11 +298,11 @@ class TestAuthController:
             birth_date=date(2000, 1, 1),
             is_active=True,
             refresh_token="test",
-            expires_at=date(2000, 1, 1),
+            expires_at=datetime(2030, 1, 1, tzinfo=timezone.utc),
             email_verified=False,
             email_verifications=EmailVerification(
                 email_verify_token=email_verify_token,
-                email_verified_expired_at=datetime.utcnow() + timedelta(days=1),
+                email_verified_expired_at=datetime.now(timezone.utc) + timedelta(days=1),
             ),
         )
         user = await get_di_class(UserRepository).create_user(user)
@@ -334,7 +334,7 @@ class TestAuthController:
             email_verified=True,
             email_verifications=EmailVerification(
                 email_verify_token=email_verify_token,
-                email_verified_expired_at=datetime.utcnow() + timedelta(days=1),
+                email_verified_expired_at=datetime.now(timezone.utc) + timedelta(days=1),
             ),
         )
         user = await get_di_class(UserRepository).create_user(user)
@@ -360,7 +360,7 @@ class TestAuthController:
             email_verified=False,
             email_verifications=EmailVerification(
                 email_verify_token=email_verify_token,
-                email_verified_expired_at=datetime.utcnow() - timedelta(days=1),
+                email_verified_expired_at=datetime.now(timezone.utc) - timedelta(days=1),
             ),
         )
 
