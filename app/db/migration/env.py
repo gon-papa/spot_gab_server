@@ -11,6 +11,7 @@ from app.db.db import DatabaseConnection
 from app.resource.depends.depends import get_di_class
 from app.resource.model.email_verification import EmailVerification
 from app.resource.model.users import Users
+from app.resource.model.password_reset_verifications import PasswordResetVerifications
 
 # import app.resource.model.users
 
