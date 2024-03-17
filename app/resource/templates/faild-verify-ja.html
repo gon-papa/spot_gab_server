@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Authentication Error Notification</title>
+        <title>認証エラーのお知らせ</title>
         <style>
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +20,7 @@
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             }
             h1, h2 {
-                color: #b33a3a; /* Display error messages in red */
+                color: #b33a3a; /* エラーメッセージは赤色で表示 */
                 margin-bottom: 20px;
             }
             p {
@@ -51,36 +51,36 @@
                 background-color: #0056b3;
             }
 
-            /* Responsive design media queries */
+            /* レスポンシブデザインのためのメディアクエリ */
             @media (max-width: 768px) {
                 .container {
-                    width: 90%; /* Make the container fill the width on smartphones */
-                    padding: 20px; /* Reduce padding on smartphones */
+                    width: 90%; /* スマートフォンではコンテナを幅いっぱいに広げる */
+                    padding: 20px; /* スマートフォンではパディングを減らす */
                 }
                 h1, h2, .error-message {
-                    font-size: 18px; /* Adjust font sizes for smartphones */
+                    font-size: 18px; /* スマートフォンではフォントサイズを調整 */
                 }
                 p, .help-text {
-                    font-size: 16px; /* Adjust text font sizes for smartphones */
+                    font-size: 16px; /* スマートフォンでは本文のフォントサイズを調整 */
                 }
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>Notification of Authentication Error</h1>
-            <p>We are very sorry, but the authentication of your email address has failed.</p>
-            <div class="error-message">An error occurred during the authentication process.</div>
+            <h1>認証エラーのお知らせ</h1>
+            <p>誠に申し訳ございませんが、認証に失敗しました。</p>
+            <div class="error-message">認証プロセス中に何らかのエラーが発生しました。</div>
             <div class="help-text">
-                <p>The following reasons might be possible:</p>
+                <p>以下の可能性が考えられます：</p>
                 <ul>
-                    <li>The authentication link has expired.</li>
-                    <li>Authentication may have already been completed.</li>
-                    <li>The authentication link is invalid.</li>
+                    <li>認証リンクが期限切れです。</li>
+                    <li>すでに認証が完了している可能性があります。</li>
+                    <li>認証リンクが不正です。</li>
                 </ul>
-                <p>If the problem persists, please contact our support team through the link below.</p>
+                <p>問題が解決しない場合は、以下のリンクからサポートチームまでご連絡ください。</p>
             </div>
-            <a href="{{support_url}}">Contact Support</a>
+            <a href="{{suppout_url}}">サポートに連絡する</a>
         </div>
     </body>
 </html>

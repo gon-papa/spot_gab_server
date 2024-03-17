@@ -1,5 +1,5 @@
 import i18n
-
+from typing import Optional
 from app.resource.middleware.http import current_language
 
 
@@ -9,5 +9,6 @@ def get_current_language():
 
 
 # i18nの言語変換を行う keyは言語ファイル名.key名
-def convert_lang(key: str) -> str:
+def convert_lang(key: str, lang: Optional[str] = None) -> str:
+    lang = lang if lang else get_current_language()
     return i18n.t(key, locale=get_current_language())

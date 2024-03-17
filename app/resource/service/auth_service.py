@@ -6,6 +6,7 @@ from injector import inject
 
 from app.resource.depends.depends import get_di_class
 from app.resource.model.email_verification import EmailVerification
+from app.resource.model.password_reset_verifications import PasswordResetVerifications
 from app.resource.model.users import SignUpUser, Users
 from app.resource.repository.email_varification_repository import EmailVerificationRepository
 from app.resource.repository.user_repository import UserRepository
@@ -20,14 +21,23 @@ from app.resource.service_domain.auth_service_domain import (
 )
 from app.resource.util.lang import convert_lang, get_current_language
 from app.resource.util.mailer.mailer import Mailer
+from app.resource.util.mailer.templetes.password_reset import PasswordReset
 from app.resource.util.mailer.templetes.verify_email import VerifyEmail
+from app.resource.repository.password_reset_verification_repository import (
+    PasswordResetVerificationRepository)
 
 
 class AuthService:
     @inject
-    def __init__(self, repository: UserRepository, emailVerificationRepository: EmailVerificationRepository):
+    def __init__(
+        self,
+        repository: UserRepository,
+        emailVerificationRepository: EmailVerificationRepository,
+        passwordResetVerificationRepository: PasswordResetVerificationRepository,
+    ):
         self.repository = repository
         self.emailVerificationRepository = emailVerificationRepository
+        self.passwordResetVerificationRepository = passwordResetVerificationRepository
 
     # サインアップ
     async def sign_up(self, request: SignUpRequest, bk: BackgroundTasks) -> SignUpUser:
@@ -144,3 +154,60 @@ class AuthService:
         await self.repository.email_verify_update(user, ev)
 
         return {"result": True, "detail": convert_lang("auth.email_verified")}
+
+    # パスワードリセット
+    async def reset_password_send_mail(self, email: str, bk: BackgroundTasks) -> bool:
+        user = await self.repository.get_user_by_email(email)
+        if user is None:
+            return True
+        # パスワードリセットトークン作成
+        password_reset_token = create_refresh_token()
+        model = PasswordResetVerifications(
+            user_id=user.id,
+            email=email,
+            verify_token=password_reset_token,
+            verified_expired_at=datetime.now(timezone.utc) + timedelta(days=1),
+        )
+        await self.passwordResetVerificationRepository.create_password_reset_verification(model)
+
+        # パスワードリセットメール送付
+        if get_current_language() == "en":
+            template = get_di_class(PasswordReset).get_html_en(
+                password_reset_token, os.getenv("SUPPORT_URL"),
+            )
+        else:
+            template = get_di_class(PasswordReset).get_html_ja(
+                password_reset_token, os.getenv("SUPPORT_URL")
+            )
+
+        bk.add_task(
+            get_di_class(Mailer).send,
+            subject=convert_lang("auth.email.passwordResetSubject"),
+            to=[user.email],
+            body=template
+        )
+        return True
+
+    # パスワード認証ページが適切なものか確認
+    async def reset_password_page_check(self, token: str) -> dict:
+        pr = await self.passwordResetVerificationRepository.get_by_token(token)
+        if pr.verified_expired_at is not None:
+            pr.verified_expired_at = pr.verified_expired_at.replace(tzinfo=timezone.utc)
+        if pr is None:
+            raise HTTPException(status_code=400, detail=convert_lang("common_error.not_found"))
+        if pr.verified_expired_at is None or pr.verified_expired_at < datetime.now(timezone.utc):
+            raise HTTPException(status_code=400, detail=convert_lang("common_error.expired_token"))
+        user = await self.repository.get_user_by_email(pr.email)
+        if user is None:
+            raise HTTPException(status_code=400, detail=convert_lang("common_error.not_found_user"))
+        return {"user": user, "passwordResetVerification": pr}
+
+    # パスワード認証
+    async def password_reset_verify(self, token: str, password: str) -> bool:
+        dict = await self.reset_password_page_check(token)
+        # パスワードをハッシュ化
+        return await self.repository.password_reset_update(
+            dict['user'],
+            dict['passwordResetVerification'],
+            get_password_hash(password)
+        )

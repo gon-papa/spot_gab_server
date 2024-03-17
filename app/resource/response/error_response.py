@@ -9,7 +9,7 @@ class ErrorDetail(BaseModel):
     type: str = Field(..., description="エラータイプ")
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "loc": [],
                 "msg": "1文字以上である必要があります。",
