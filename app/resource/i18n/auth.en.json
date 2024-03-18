@@ -1,7 +1,8 @@
 {
     "email": {
         "subject": "Email Verification",
-        "email_verified": "Your email has been verified"
+        "email_verified": "Your email has been verified",
+        "passwordResetSubject": "SpotGab Password Reset"
     },
     "error": {
         "exsist_email": "This email address is not available",

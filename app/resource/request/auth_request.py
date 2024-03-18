@@ -1,5 +1,6 @@
 from datetime import date as Date
 
+from fastapi import Form
 from pydantic import BaseModel, Field, field_validator
 
 from app.resource.request.common_validate import CustomValidator
@@ -80,3 +81,27 @@ class RefreshTokenRequest(BaseModel):
         title="リフレッシュトークン",
         description="リフレッシュトークン",
     )
+
+
+class ResetPasswordRequest(BaseModel):
+    email: str = Field(
+        ...,
+        title="メールアドレス",
+        description="メールアドレス",
+    )
+
+    @field_validator("email")
+    def email_validator(cls, value):
+        return CustomValidator.email_validator(cls, value)
+
+
+class ResetPasswordVerifyRequest(BaseModel):
+    password: str = Form(
+        ...,
+        title="パスワード",
+        description="パスワード",
+    )
+
+    @field_validator("password")
+    def password_validator(cls, value):
+        return CustomValidator.password_validator(cls, value)

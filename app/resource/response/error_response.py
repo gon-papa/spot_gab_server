@@ -8,8 +8,8 @@ class ErrorDetail(BaseModel):
     msg: str = Field(..., description="エラーメッセージ")
     type: str = Field(..., description="エラータイプ")
 
-    class Config:
-        schema_extra = {
+    class ConfigDict:
+        json_schema_extra = {
             "example": {
                 "loc": [],
                 "msg": "1文字以上である必要があります。",

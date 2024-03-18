@@ -2,10 +2,11 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from fastapi import APIRouter, BackgroundTasks, Depends, Request
+from fastapi import APIRouter, BackgroundTasks, Depends, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.templating import Jinja2Templates
+from pydantic import ValidationError
 
 from app.resource.depends.depends import get_di_class
 from app.resource.middleware.header import common_header
@@ -14,6 +15,8 @@ from app.resource.request.auth_request import (
     EmailExistsRequest,
     IdAccountExistsRequest,
     RefreshTokenRequest,
+    ResetPasswordRequest,
+    ResetPasswordVerifyRequest,
     SignUpRequest,
 )
 from app.resource.response.auth_response import (
@@ -26,6 +29,7 @@ from app.resource.response.error_response import ErrorJsonResponse
 from app.resource.response.json_response import JsonResponse
 from app.resource.service.auth_service import AuthService
 from app.resource.service_domain.auth_service_domain import get_current_active_user
+import traceback
 
 router = APIRouter()
 load_dotenv()
@@ -55,8 +59,8 @@ async def sign_up(request: SignUpRequest, bk: BackgroundTasks) -> SignUpResponse
     try:
         user = await get_di_class(AuthService).sign_up(request, bk)
 
-    except Exception as e:
-        raise e
+    except Exception:
+        raise
     return SignUpResponse(status=200, data=SignUpResponse.SignUpResponseItem(user=user), message="ok")
 
 
@@ -85,8 +89,8 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
         email = request.username
         password = request.password
         tokens = await get_di_class(AuthService).sign_in(email, password)
-    except Exception as e:
-        raise e
+    except Exception:
+        raise
     return SignInResponse(access_token=tokens["token"], token_type="bearer", refresh_token=tokens["refresh_token"])
 
 
@@ -112,8 +116,8 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
 async def sign_out(current_user: Users = Depends(get_current_active_user)) -> JsonResponse:
     try:
         result = await get_di_class(AuthService).sign_out(current_user)
-    except Exception as e:
-        raise e
+    except Exception:
+        raise
     return JsonResponse(status=200, data={"result": result}, message="ok")
 
 
@@ -139,8 +143,8 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
 async def refresh_token(request: RefreshTokenRequest) -> SignUpResponse:
     try:
         user = await get_di_class(AuthService).get_refresh_token(request.refresh_token)
-    except Exception as e:
-        raise e
+    except Exception:
+        raise
     return SignUpResponse(status=200, data=SignUpResponse.SignUpResponseItem(user=user), message="ok")
 
 
@@ -162,8 +166,8 @@ async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
         return EmailExistsResponse(
             status=200, data=EmailExistsResponse.EmailExistsResponseItem(exists=result), message="ok"
         )
-    except Exception as e:
-        raise e
+    except Exception:
+        raise
 
 
 @router.post(
@@ -202,25 +206,140 @@ async def verify_email(request: Request, token: str, lang: str) -> HTMLResponse:
                 request, "verify-email-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
             )
         return templates.TemplateResponse(request, "verify-email-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")})
-    except Exception as e:
-        logger.error(e)
+    except Exception:
+        logger.error(Exception)
         if lang == "en":
             return templates.TemplateResponse(
-                request, "faild-verify-email-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+                request, "faild-verify-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+            )
+        return templates.TemplateResponse(request, "faild-verify-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")})
+
+
+@router.post(
+    "/password-reset",
+    tags=["auth"],
+    response_model=JsonResponse,
+    name="パスワードリセット",
+    description="パスワードリセットメールを送信する",
+    operation_id="reset_password",
+    dependencies=[Depends(common_header)],
+)
+async def reset_password_send_mail(request: ResetPasswordRequest, bk: BackgroundTasks) -> JsonResponse:
+    try:
+        await get_di_class(AuthService).reset_password_send_mail(request.email, bk)
+        return JsonResponse(status=200, data={"result": "ok"}, message="ok")
+    except Exception:
+        raise
+
+
+@router.get(
+    "/password-reset/{token}/{lang}",
+    tags=["auth"],
+    response_class=HTMLResponse,
+    response_model=None,
+    name="パスワードリセット画面",
+    description="パスワードリセット画面",
+    operation_id="password_reset_page",
+)
+async def reset_password_page(request: Request, token: str, lang: str) -> HTMLResponse:
+    templates = Jinja2Templates(directory="app/resource/templates")
+    try:
+        await get_di_class(AuthService).reset_password_page_check(token)
+        if lang == "en":
+            return templates.TemplateResponse(
+                request,
+                "reset-password-en.html",
+                {
+                    "token": token,
+                    "lang": lang,
+                    "suppout_url": os.getenv("SUPPORT_URL"),
+                    "base_url": os.getenv("BASE_URL"),
+                }
             )
         return templates.TemplateResponse(
-            request, "faild-verify-email-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+            request,
+            "reset-password-ja.html",
+            {
+                "token": token,
+                "lang": lang,
+                "suppout_url": os.getenv("SUPPORT_URL"),
+                "base_url": os.getenv("BASE_URL"),
+            }
         )
+    except Exception as e:
+        tb_str = traceback.format_exception(etype=type(e), value=e, tb=e.__traceback__)
+        logger.error("".join(tb_str))
+        if lang == "en":
+            return templates.TemplateResponse(
+                request, "faild-verify-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+            )
+        return templates.TemplateResponse(request, "faild-verify-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")})
 
 
-# #メール再設定
-# @router.post(
-#     '/reset-email/',
-#     tags=["auth"],
-#     response_class=HTMLResponse,
-#     response_model=None,
-#     name="メール再設定送信",
-#     description="メール再設定送信",
-#     operation_id="reset_email"
-# )
-# async def reset_email(request: Request, current_user: Users = Depends(get_current_active_user)) -> HTMLResponse:
+@router.post(
+    "/password-reset-verify",
+    tags=["auth"],
+    response_class=HTMLResponse,
+    response_model=None,
+    name="パスワードリセット認証",
+    description="パスワードリセット認証",
+    operation_id="password_reset_verify",
+)
+async def password_reset_verify(
+    request: Request,
+    password: str = Form(...),
+) -> HTMLResponse:
+    templates = Jinja2Templates(directory="app/resource/templates")
+    try:
+        # ミドルウェアでパスパラメータは処理できないので、クエリパラメータで代用
+        token = request.query_params.get("token")
+        lang = request.query_params.get("language")
+        ResetPasswordVerifyRequest(
+            password=password,
+        )
+        await get_di_class(AuthService).password_reset_verify(token, password)
+        if lang == "en":
+            return templates.TemplateResponse(
+                request, "success-reset-password-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+            )
+        return templates.TemplateResponse(
+            request, "success-reset-password-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+        )
+    except ValidationError as e:
+        errors_list = []
+        for error in e.errors():
+            error_copy = error.copy()
+            error_copy["msg"] = error_copy["msg"].replace("Value error, ", "")
+            errors_list.append(error_copy)
+
+        if lang == "en":
+            return templates.TemplateResponse(
+                request,
+                "reset-password-en.html",
+                {
+                    "token": token,
+                    "lang": lang,
+                    "suppout_url": os.getenv("SUPPORT_URL"),
+                    "base_url": os.getenv("BASE_URL"),
+                    "errors": errors_list
+                }
+            )
+        return templates.TemplateResponse(
+            request,
+            "reset-password-ja.html",
+            {
+                "token": token,
+                "lang": lang,
+                "suppout_url": os.getenv("SUPPORT_URL"),
+                "base_url": os.getenv("BASE_URL"),
+                "errors": errors_list
+            }
+        )
+    except Exception as e:
+        tb_str = traceback.format_exception(etype=type(e), value=e, tb=e.__traceback__)
+        logger.error("".join(tb_str))
+        if lang == "en":
+            return templates.TemplateResponse(
+                request, "faild-verify-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
+            )
+        return templates.TemplateResponse(request, "faild-verify-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")})
