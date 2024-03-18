@@ -8,7 +8,7 @@ class ErrorDetail(BaseModel):
     msg: str = Field(..., description="エラーメッセージ")
     type: str = Field(..., description="エラータイプ")
 
-    class Config:
+    class ConfigDict:
         json_schema_extra = {
             "example": {
                 "loc": [],

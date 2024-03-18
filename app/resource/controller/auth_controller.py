@@ -304,7 +304,7 @@ async def password_reset_verify(
             )
         return templates.TemplateResponse(
             request, "success-reset-password-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")}
-        )   
+        )
     except ValidationError as e:
         errors_list = []
         for error in e.errors():
