@@ -6,8 +6,10 @@ from httpx import AsyncClient
 
 from app.resource.depends.depends import get_di_class
 from app.resource.model.email_verification import EmailVerification
+from app.resource.model.password_reset_verifications import PasswordResetVerifications
 from app.resource.model.users import Users
 from app.resource.repository.email_varification_repository import EmailVerificationRepository
+from app.resource.repository.password_reset_verification_repository import PasswordResetVerificationRepository
 from app.resource.repository.user_repository import UserRepository
 from app.resource.service_domain.auth_service_domain import create_refresh_token
 
@@ -391,3 +393,143 @@ class TestAuthController:
         response = await async_client.get(f"/verify-email/{email_verify_token}/ja")
         assert response.status_code == 200
         assert "<h1>認証エラーのお知らせ</h1>" in response.text
+        
+    @pytest.mark.asyncio
+    async def test_reset_password_パスワードリセットメールを送信する(
+        self,
+        async_client,
+        setup_user,
+        mocker,
+        get_header,
+    ):
+        mock_mail_send = mocker.patch("app.resource.util.mailer.mailer.Mailer.send", return_value=True)
+        response = await async_client.post("/password-reset", json={"email": "test@test.com"}, headers=get_header)
+        assert response.status_code == 200
+        assert response.json() == {
+            "status": 200,
+            "data": {
+                "result": "ok",
+            },
+            "message": "ok",
+        }
+
+        userRepository = get_di_class(UserRepository)
+        prRepositoery = get_di_class(PasswordResetVerificationRepository)
+
+        mock_mail_send.assert_called_once()
+        call_args = mock_mail_send.call_args[1]
+        assert call_args["to"] == ["test@test.com"]
+        assert "SpotGab パスワードのリセット" == call_args["subject"]
+
+        user = await userRepository.get_user_by_email("test@test.com")
+        pr = await prRepositoery.get_by_user_id(user.id)
+        assert pr is not None
+        assert pr.verify_token is not None
+        assert pr.verified_expired_at is not None
+
+    @pytest.mark.asyncio
+    async def test_reset_password_パスワードリセット画面を開く(
+        self,
+        async_client,
+        setup_user,
+    ):
+        user = await get_di_class(UserRepository).get_user_by_email("test@test.com")
+        pr = await get_di_class(PasswordResetVerificationRepository).create_password_reset_verification(
+            PasswordResetVerifications(
+                user_id=user.id,
+                email=user.email,
+                verify_token="test",
+                verified_expired_at=datetime.now(timezone.utc) + timedelta(days=1),
+            )
+        )
+
+        response = await async_client.get(f"/password-reset/{pr.verify_token}/ja")
+        assert response.status_code == 200
+        assert "<h2>パスワードリセット</h2>" in response.text
+
+    @pytest.mark.asyncio
+    async def test_reset_password_パスワードリセット画面を開かない_トークン不正(
+        self,
+        async_client,
+        setup_user,
+    ):
+        response = await async_client.get("/password-reset/dummy-token/ja")
+        assert response.status_code == 200
+        assert "<h1>認証エラーのお知らせ</h1>" in response.text
+
+    @pytest.mark.asyncio
+    async def test_reset_password_パスワードリセット画面を開かない_期限切れ(
+        self,
+        async_client,
+        setup_user,
+    ):
+        user = await get_di_class(UserRepository).get_user_by_email("test@test.com")
+        pr = await get_di_class(PasswordResetVerificationRepository).create_password_reset_verification(
+            PasswordResetVerifications(
+                user_id=user.id,
+                email=user.email,
+                verify_token="test",
+                verified_expired_at=datetime.now(timezone.utc) - timedelta(days=1),
+            )
+        )
+        response = await async_client.get(f"/password-reset/{pr.verify_token}/ja")
+        assert response.status_code == 200
+        assert "<h1>認証エラーのお知らせ</h1>" in response.text
+
+    @pytest.mark.asyncio
+    async def test_reset_password_パスワードリセット画面を開かない_ユーザーが存在しない(
+        self,
+        async_client,
+    ):
+        pr = await get_di_class(PasswordResetVerificationRepository).create_password_reset_verification(
+            PasswordResetVerifications(
+                user_id=1,
+                email="dummy@dummy.com",
+                verify_token="test",
+                verified_expired_at=datetime.now(timezone.utc) - timedelta(days=1),
+            )
+        )
+        response = await async_client.get(f"/password-reset/{pr.verify_token}/ja")
+        assert response.status_code == 200
+        assert "<h1>認証エラーのお知らせ</h1>" in response.text
+
+    # バリデーションは共用のため省略
+    @pytest.mark.asyncio
+    async def test_reset_password_パスワードリセットが成功する(
+        self,
+        async_client: AsyncClient,
+        setup_user,
+        mocker,
+        get_header
+    ):
+        user = await get_di_class(UserRepository).get_user_by_email("test@test.com")
+        pr = await get_di_class(PasswordResetVerificationRepository).create_password_reset_verification(
+            PasswordResetVerifications(
+                user_id=user.id,
+                email=user.email,
+                verify_token="test",
+                verified_expired_at=datetime.now(timezone.utc) + timedelta(days=1),
+            )
+        )
+
+        response = await async_client.post(
+            f"/password-reset-verify?language=ja&token={pr.verify_token}",
+            data={
+                "password": "new@password",
+            }
+        )
+
+        assert response.status_code == 200
+        assert "<h1>パスワードリセット完了のお知らせ</h1>" in response.text
+        
+        # サインインできるか確認
+        response = await async_client.post(
+            "/sign-in",
+            data={
+                "username": "test@test.com",
+                "password": "new@password",
+            },
+            headers=get_header,
+        )
+        
+        assert response.status_code == 200

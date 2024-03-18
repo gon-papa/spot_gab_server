@@ -56,6 +56,12 @@ class EnhancedTracebackMiddleware(BaseHTTPMiddleware):
             logger.error(f"Request path: {request.url.path}, Method: {request.method}")
 
             error = ErrorJsonResponse(
-                status=500, error=convert_lang("common_error.internal_server_error"), message=error_detail
+                detail=[
+                    {
+                        "loc": [f"{request.method} {request.url.path}"],
+                        "msg": error_detail,
+                        "type": "server_error",
+                    }
+                ]
             )
             return JSONResponse(status_code=500, content=error.model_dump())

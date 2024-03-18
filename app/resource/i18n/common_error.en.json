@@ -1,0 +1,8 @@
+{
+    "not_found": "Not found",
+    "not_found_user": "User not found",
+    "expired_token": "Authentication has expired",
+    "internal_server_error": "An internal server error has occurred",
+    "internal_server_error_massage": "An unexpected error has occurred. Please try again later",
+    "invalid_user_agent": "Invalid access"
+}

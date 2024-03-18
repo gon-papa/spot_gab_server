@@ -42,6 +42,30 @@
         "documentation": {}
     },
     {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -114,6 +138,22 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "op",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
+        "documentation": {}
+    },
+    {
         "label": "op",
         "importPath": "alembic",
         "description": "alembic",
@@ -156,6 +196,14 @@
     },
     {
         "label": "Engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -252,6 +300,54 @@
         "documentation": {}
     },
     {
+        "label": "Column",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "TIMESTAMP",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
         "label": "Boolean",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
@@ -317,6 +413,14 @@
     },
     {
         "label": "TIMESTAMP",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "SQLModel",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
         "isExtraImport": true,
@@ -429,6 +533,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -469,6 +581,14 @@
         "documentation": {}
     },
     {
+        "label": "DatabaseConnection",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -490,6 +610,14 @@
         "description": "app.db.db",
         "isExtraImport": true,
         "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -693,11 +821,43 @@
         "documentation": {}
     },
     {
-        "label": "*",
-        "importPath": "app.resource.model.users",
-        "description": "app.resource.model.users",
+        "label": "PasswordResetVerifications",
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
         "isExtraImport": true,
-        "detail": "app.resource.model.users",
+        "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerifications",
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
+        "isExtraImport": true,
+        "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerifications",
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
+        "isExtraImport": true,
+        "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerifications",
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
+        "isExtraImport": true,
+        "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerifications",
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
+        "isExtraImport": true,
+        "detail": "app.resource.model.password_reset_verifications",
         "documentation": {}
     },
     {
@@ -870,6 +1030,14 @@
         "documentation": {}
     },
     {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "Request",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -911,6 +1079,14 @@
     },
     {
         "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Form",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -1006,6 +1182,110 @@
         "documentation": {}
     },
     {
+        "label": "ValidationError",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "field_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "common_header",
         "importPath": "app.resource.middleware.header",
         "description": "app.resource.middleware.header",
@@ -1031,6 +1311,22 @@
     },
     {
         "label": "RefreshTokenRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "ResetPasswordRequest",
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "ResetPasswordVerifyRequest",
         "importPath": "app.resource.request.auth_request",
         "description": "app.resource.request.auth_request",
         "isExtraImport": true,
@@ -1303,99 +1599,11 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
+        "label": "get_current_language",
+        "importPath": "app.resource.util.lang",
+        "description": "app.resource.util.lang",
         "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "field_validator",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "EmailStr",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
+        "detail": "app.resource.util.lang",
         "documentation": {}
     },
     {
@@ -1405,6 +1613,22 @@
         "importPath": "contextvars",
         "description": "contextvars",
         "detail": "contextvars",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -1584,6 +1808,14 @@
         "documentation": {}
     },
     {
+        "label": "select",
+        "importPath": "sqlalchemy.future",
+        "description": "sqlalchemy.future",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.future",
+        "documentation": {}
+    },
+    {
         "label": "SQLAlchemyError",
         "importPath": "sqlalchemy.exc",
         "description": "sqlalchemy.exc",
@@ -1665,11 +1897,35 @@
         "documentation": {}
     },
     {
+        "label": "PasswordReset",
+        "importPath": "app.resource.util.mailer.templetes.password_reset",
+        "description": "app.resource.util.mailer.templetes.password_reset",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.templetes.password_reset",
+        "documentation": {}
+    },
+    {
         "label": "VerifyEmail",
         "importPath": "app.resource.util.mailer.templetes.verify_email",
         "description": "app.resource.util.mailer.templetes.verify_email",
         "isExtraImport": true,
         "detail": "app.resource.util.mailer.templetes.verify_email",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerificationRepository",
+        "importPath": "app.resource.repository.password_reset_verification_repository",
+        "description": "app.resource.repository.password_reset_verification_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.password_reset_verification_repository",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerificationRepository",
+        "importPath": "app.resource.repository.password_reset_verification_repository",
+        "description": "app.resource.repository.password_reset_verification_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.password_reset_verification_repository",
         "documentation": {}
     },
     {
@@ -1703,6 +1959,14 @@
         "description": "passlib.context",
         "isExtraImport": true,
         "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "BaseTempleteInterface",
+        "importPath": "app.resource.util.mailer.templetes.base_template",
+        "description": "app.resource.util.mailer.templetes.base_template",
+        "isExtraImport": true,
+        "detail": "app.resource.util.mailer.templetes.base_template",
         "documentation": {}
     },
     {
@@ -1845,6 +2109,24 @@
         "description": "app.config.logging_config",
         "peekOfCode": "LOGGING_CONFIG = {\n    'version': 1,\n    'disable_existing_loggers': False,\n    'formatters': {\n        'default': {\n            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',\n        },\n    },\n    'handlers': {\n        'access_log': {",
         "detail": "app.config.logging_config",
+        "documentation": {}
+    },
+    {
+        "label": "upgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.4b72a833bdc3_create_password_reset",
+        "description": "app.db.migration.versions.4b72a833bdc3_create_password_reset",
+        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('password_reset_verifications',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('user_id', sa.Integer(), nullable=False, comment='ユーザーID'),\n    sa.Column('email', sa.String(length=100), nullable=False, comment='メールアドレス'),\n    sa.Column('verify_token', sa.String(length=100), nullable=True, comment='パスワードリセットトークン'),\n    sa.Column('verified_expired_at', sa.TIMESTAMP(timezone=True), nullable=True, comment='パスワードリセット有効期限'),\n    sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=True),\n    sa.Column('updated_at', sa.TIMESTAMP(timezone=True), nullable=True),",
+        "detail": "app.db.migration.versions.4b72a833bdc3_create_password_reset",
+        "documentation": {}
+    },
+    {
+        "label": "downgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.4b72a833bdc3_create_password_reset",
+        "description": "app.db.migration.versions.4b72a833bdc3_create_password_reset",
+        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('password_reset_verifications')\n    # ### end Alembic commands ###",
+        "detail": "app.db.migration.versions.4b72a833bdc3_create_password_reset",
         "documentation": {}
     },
     {
@@ -2050,7 +2332,7 @@
         "kind": 6,
         "importPath": "app.resource.middleware.http",
         "description": "app.resource.middleware.http",
-        "peekOfCode": "class LanguageMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        # ヘッダーから言語設定を取得し、コンテキスト変数にセット\n        language = request.headers.get(\"x-language\", \"en\")\n        token = current_language.set(language)\n        response = await call_next(request)\n        current_language.reset(token)\n        return response",
+        "peekOfCode": "class LanguageMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        # ヘッダーから言語設定を取得し、コンテキスト変数にセット\n        language = request.headers.get(\"x-language\")\n        if not language:\n            language = request.query_params.get(\"language\", \"en\")\n        token = current_language.set(language)\n        response = await call_next(request)\n        current_language.reset(token)\n        return response",
         "detail": "app.resource.middleware.http",
         "documentation": {}
     },
@@ -2059,7 +2341,7 @@
         "kind": 5,
         "importPath": "app.resource.middleware.http",
         "description": "app.resource.middleware.http",
-        "peekOfCode": "app = FastAPI()\n# コンテキスト変数の定義\ncurrent_language = contextvars.ContextVar(\"current_language\", default=\"en\")\nclass LanguageMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        # ヘッダーから言語設定を取得し、コンテキスト変数にセット\n        language = request.headers.get(\"x-language\", \"en\")\n        token = current_language.set(language)\n        response = await call_next(request)\n        current_language.reset(token)",
+        "peekOfCode": "app = FastAPI()\n# コンテキスト変数の定義\ncurrent_language = contextvars.ContextVar(\"current_language\", default=\"en\")\nclass LanguageMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        # ヘッダーから言語設定を取得し、コンテキスト変数にセット\n        language = request.headers.get(\"x-language\")\n        if not language:\n            language = request.query_params.get(\"language\", \"en\")\n        token = current_language.set(language)",
         "detail": "app.resource.middleware.http",
         "documentation": {}
     },
@@ -2068,7 +2350,7 @@
         "kind": 5,
         "importPath": "app.resource.middleware.http",
         "description": "app.resource.middleware.http",
-        "peekOfCode": "current_language = contextvars.ContextVar(\"current_language\", default=\"en\")\nclass LanguageMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        # ヘッダーから言語設定を取得し、コンテキスト変数にセット\n        language = request.headers.get(\"x-language\", \"en\")\n        token = current_language.set(language)\n        response = await call_next(request)\n        current_language.reset(token)\n        return response",
+        "peekOfCode": "current_language = contextvars.ContextVar(\"current_language\", default=\"en\")\nclass LanguageMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        # ヘッダーから言語設定を取得し、コンテキスト変数にセット\n        language = request.headers.get(\"x-language\")\n        if not language:\n            language = request.query_params.get(\"language\", \"en\")\n        token = current_language.set(language)\n        response = await call_next(request)\n        current_language.reset(token)",
         "detail": "app.resource.middleware.http",
         "documentation": {}
     },
@@ -2079,6 +2361,15 @@
         "description": "app.resource.model.email_verification",
         "peekOfCode": "class EmailVerification(SQLModel, table=True):\n    __tablename__ = \"email_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(\n        default=None,\n        sa_column=Column(\n            Integer,\n            ForeignKey(\"users.id\"),\n            nullable=False,\n            unique=True,",
         "detail": "app.resource.model.email_verification",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerifications",
+        "kind": 6,
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
+        "peekOfCode": "class PasswordResetVerifications(SQLModel, table=True):\n    __tablename__ = \"password_reset_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(\n        default=None,\n        sa_column=Column(\n            Integer,\n            ForeignKey(\"users.id\"),\n            nullable=False,\n            unique=True,",
+        "detail": "app.resource.model.password_reset_verifications",
         "documentation": {}
     },
     {
@@ -2115,6 +2406,15 @@
         "description": "app.resource.repository.email_varification_repository",
         "peekOfCode": "class EmailVerificationRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # email_verify_tokenからemail_verification取得\n    async def get_email_verification_by_token(self, token: str) -> EmailVerification:\n        async with self.db.get_db() as session:\n            result = await session.exec(\n                select(EmailVerification).filter(EmailVerification.email_verify_token == token)\n            )\n            email_verification = result.scalars().first()",
         "detail": "app.resource.repository.email_varification_repository",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerificationRepository",
+        "kind": 6,
+        "importPath": "app.resource.repository.password_reset_verification_repository",
+        "description": "app.resource.repository.password_reset_verification_repository",
+        "peekOfCode": "class PasswordResetVerificationRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # パスワードリセットトークンを登録\n    async def create_password_reset_verification(\n        self,\n        password_reset_verification: PasswordResetVerifications\n    ) -> PasswordResetVerifications:\n        async with self.db.get_db() as session:\n            result = await session.exec(",
+        "detail": "app.resource.repository.password_reset_verification_repository",
         "documentation": {}
     },
     {
@@ -2158,7 +2458,25 @@
         "kind": 6,
         "importPath": "app.resource.request.auth_request",
         "description": "app.resource.request.auth_request",
-        "peekOfCode": "class RefreshTokenRequest(BaseModel):\n    refresh_token: str = Field(\n        ...,\n        title=\"リフレッシュトークン\",\n        description=\"リフレッシュトークン\",\n    )",
+        "peekOfCode": "class RefreshTokenRequest(BaseModel):\n    refresh_token: str = Field(\n        ...,\n        title=\"リフレッシュトークン\",\n        description=\"リフレッシュトークン\",\n    )\nclass ResetPasswordRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",",
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "ResetPasswordRequest",
+        "kind": 6,
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "peekOfCode": "class ResetPasswordRequest(BaseModel):\n    email: str = Field(\n        ...,\n        title=\"メールアドレス\",\n        description=\"メールアドレス\",\n    )\n    @field_validator(\"email\")\n    def email_validator(cls, value):\n        return CustomValidator.email_validator(cls, value)\nclass ResetPasswordVerifyRequest(BaseModel):",
+        "detail": "app.resource.request.auth_request",
+        "documentation": {}
+    },
+    {
+        "label": "ResetPasswordVerifyRequest",
+        "kind": 6,
+        "importPath": "app.resource.request.auth_request",
+        "description": "app.resource.request.auth_request",
+        "peekOfCode": "class ResetPasswordVerifyRequest(BaseModel):\n    password: str = Form(\n        ...,\n        title=\"パスワード\",\n        description=\"パスワード\",\n    )\n    @field_validator(\"password\")\n    def password_validator(cls, value):\n        return CustomValidator.password_validator(cls, value)",
         "detail": "app.resource.request.auth_request",
         "documentation": {}
     },
@@ -2212,7 +2530,7 @@
         "kind": 6,
         "importPath": "app.resource.response.error_response",
         "description": "app.resource.response.error_response",
-        "peekOfCode": "class ErrorDetail(BaseModel):\n    loc: List[str] = Field(..., description=\"エラー箇所\")\n    msg: str = Field(..., description=\"エラーメッセージ\")\n    type: str = Field(..., description=\"エラータイプ\")\n    class Config:\n        schema_extra = {\n            \"example\": {\n                \"loc\": [],\n                \"msg\": \"1文字以上である必要があります。\",\n                \"type\": \"value_error\",",
+        "peekOfCode": "class ErrorDetail(BaseModel):\n    loc: List[str] = Field(..., description=\"エラー箇所\")\n    msg: str = Field(..., description=\"エラーメッセージ\")\n    type: str = Field(..., description=\"エラータイプ\")\n    class ConfigDict:\n        json_schema_extra = {\n            \"example\": {\n                \"loc\": [],\n                \"msg\": \"1文字以上である必要があります。\",\n                \"type\": \"value_error\",",
         "detail": "app.resource.response.error_response",
         "documentation": {}
     },
@@ -2239,7 +2557,7 @@
         "kind": 6,
         "importPath": "app.resource.service.auth_service",
         "description": "app.resource.service.auth_service",
-        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(self, repository: UserRepository, emailVerificationRepository: EmailVerificationRepository):\n        self.repository = repository\n        self.emailVerificationRepository = emailVerificationRepository\n    # サインアップ\n    async def sign_up(self, request: SignUpRequest, bk: BackgroundTasks) -> SignUpUser:\n        is_email_exist = await self.email_exist(request.email)\n        is_id_account_exist = await self.id_account_exist(request.id_account)\n        if is_email_exist:",
+        "peekOfCode": "class AuthService:\n    @inject\n    def __init__(\n        self,\n        repository: UserRepository,\n        emailVerificationRepository: EmailVerificationRepository,\n        passwordResetVerificationRepository: PasswordResetVerificationRepository,\n    ):\n        self.repository = repository\n        self.emailVerificationRepository = emailVerificationRepository",
         "detail": "app.resource.service.auth_service",
         "documentation": {}
     },
@@ -2370,6 +2688,15 @@
         "documentation": {}
     },
     {
+        "label": "PasswordReset",
+        "kind": 6,
+        "importPath": "app.resource.util.mailer.templetes.password_reset",
+        "description": "app.resource.util.mailer.templetes.password_reset",
+        "peekOfCode": "class PasswordReset(BaseTempleteInterface):\n    def get_html_ja(self, verify_token: str, suppout_url: str) -> str:\n        return f\"\"\"\n        <!DOCTYPE html>\n        <html lang=\"ja\">\n            <head>\n                <meta charset=\"UTF-8\">\n                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n                <title>パスワードリセットのURL</title>\n                <style>",
+        "detail": "app.resource.util.mailer.templetes.password_reset",
+        "documentation": {}
+    },
+    {
         "label": "VerifyEmail",
         "kind": 6,
         "importPath": "app.resource.util.mailer.templetes.verify_email",
@@ -2392,7 +2719,7 @@
         "kind": 2,
         "importPath": "app.resource.util.lang",
         "description": "app.resource.util.lang",
-        "peekOfCode": "def get_current_language():\n    return current_language.get()\n# i18nの言語変換を行う keyは言語ファイル名.key名\ndef convert_lang(key: str) -> str:\n    return i18n.t(key, locale=get_current_language())",
+        "peekOfCode": "def get_current_language():\n    return current_language.get()\n# i18nの言語変換を行う keyは言語ファイル名.key名\ndef convert_lang(key: str, lang: Optional[str] = None) -> str:\n    lang = lang if lang else get_current_language()\n    return i18n.t(key, locale=get_current_language())",
         "detail": "app.resource.util.lang",
         "documentation": {}
     },
@@ -2401,7 +2728,7 @@
         "kind": 2,
         "importPath": "app.resource.util.lang",
         "description": "app.resource.util.lang",
-        "peekOfCode": "def convert_lang(key: str) -> str:\n    return i18n.t(key, locale=get_current_language())",
+        "peekOfCode": "def convert_lang(key: str, lang: Optional[str] = None) -> str:\n    lang = lang if lang else get_current_language()\n    return i18n.t(key, locale=get_current_language())",
         "detail": "app.resource.util.lang",
         "documentation": {}
     },

@@ -7,6 +7,7 @@ from sqlalchemy.future import select
 from app.db.db import DatabaseConnection
 from app.resource.depends.depends import get_di_class
 from app.resource.model.email_verification import EmailVerification
+from app.resource.model.password_reset_verifications import PasswordResetVerifications
 from app.resource.model.users import Users
 
 
@@ -106,6 +107,27 @@ class UserRepository:
                 ev.email_verified_expired_at = None
                 session.add(user)
                 session.add(ev)
+                await session.commit()
+                await session.refresh(user)
+                return user
+            except SQLAlchemyError as e:
+                session.rollback()
+                raise e
+
+    # パスワード更新
+    async def password_reset_update(
+        self,
+        user: Users,
+        pr: PasswordResetVerifications,
+        hashed_password: str
+    ) -> Users:
+        async with self.db.get_db() as session:
+            user.hashed_password = hashed_password
+            pr.verify_token = None
+            pr.verified_expired_at = None
+            try:
+                session.add(user)
+                session.add(pr)
                 await session.commit()
                 await session.refresh(user)
                 return user
