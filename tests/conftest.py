@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncEngine
 
 from app.db.db import AppConfig, DatabaseConnection, TestAppConfig
 from app.resource.depends.depends import get_di_class, update_injector
-from app.resource.model.users import *
+from sqlmodel import SQLModel
 
 
 # functionごとに実行される
@@ -14,13 +14,14 @@ async def set_up_test():
         async with engine.begin() as conn:
             # SQLModel.metadata.create_all でテーブルを作成
             await conn.run_sync(SQLModel.metadata.create_all)
-        
+
         yield
     finally:
         async with engine.begin() as conn:
             await conn.run_sync(SQLModel.metadata.drop_all)
         await change_db(AppConfig())
-    
+
+
 async def change_db(_class) -> AsyncEngine:
     db_connection = get_di_class(DatabaseConnection)
     await db_connection.close_engine()
