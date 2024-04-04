@@ -5,6 +5,12 @@ from app.resource.util.lang import convert_lang
 
 class CustomValidator:
     @staticmethod
+    def required_validator(cls, value):
+        if not value:
+            raise ValueError(convert_lang("common_error.validation.required"))
+        return value
+    
+    @staticmethod
     def email_validator(cls, value):
         email_regex = r"^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
         if not re.match(email_regex, value):

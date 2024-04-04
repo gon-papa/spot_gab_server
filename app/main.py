@@ -1,6 +1,7 @@
 import i18n
 from dotenv import load_dotenv
 
+from app.resource.controller import user_location_controller
 import app.resource.controller.auth_controller as auth_controller
 from app.app import app
 from app.resource.middleware.handler import EnhancedTracebackMiddleware
@@ -15,5 +16,6 @@ i18n.set("fallback", "ja")
 i18n.set("skip_locale_root_data", True)
 
 app.include_router(auth_controller.router)
+app.include_router(user_location_controller.router)
 app.add_middleware(EnhancedTracebackMiddleware)
 app.add_middleware(LanguageMiddleware)

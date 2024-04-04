@@ -58,6 +58,38 @@
         "documentation": {}
     },
     {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -162,6 +194,14 @@
         "documentation": {}
     },
     {
+        "label": "op",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
+        "documentation": {}
+    },
+    {
         "label": "context",
         "importPath": "alembic",
         "description": "alembic",
@@ -212,6 +252,22 @@
     },
     {
         "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Numeric",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -348,6 +404,54 @@
         "documentation": {}
     },
     {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "TIMESTAMP",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
         "label": "Boolean",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
@@ -425,6 +529,23 @@
         "description": "sqlmodel",
         "isExtraImport": true,
         "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "geoalchemy2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "geoalchemy2",
+        "description": "geoalchemy2",
+        "detail": "geoalchemy2",
+        "documentation": {}
+    },
+    {
+        "label": "Geometry",
+        "importPath": "geoalchemy2",
+        "description": "geoalchemy2",
+        "isExtraImport": true,
+        "detail": "geoalchemy2",
         "documentation": {}
     },
     {
@@ -589,6 +710,14 @@
         "documentation": {}
     },
     {
+        "label": "DatabaseConnection",
+        "importPath": "app.db.db",
+        "description": "app.db.db",
+        "isExtraImport": true,
+        "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -610,6 +739,22 @@
         "description": "app.db.db",
         "isExtraImport": true,
         "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -773,6 +918,14 @@
         "documentation": {}
     },
     {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
         "label": "SignUpUser",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
@@ -821,11 +974,11 @@
         "documentation": {}
     },
     {
-        "label": "PasswordResetVerifications",
-        "importPath": "app.resource.model.password_reset_verifications",
-        "description": "app.resource.model.password_reset_verifications",
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
         "isExtraImport": true,
-        "detail": "app.resource.model.password_reset_verifications",
+        "detail": "app.resource.model.users",
         "documentation": {}
     },
     {
@@ -858,6 +1011,38 @@
         "description": "app.resource.model.password_reset_verifications",
         "isExtraImport": true,
         "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetVerifications",
+        "importPath": "app.resource.model.password_reset_verifications",
+        "description": "app.resource.model.password_reset_verifications",
+        "isExtraImport": true,
+        "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocations",
+        "importPath": "app.resource.model.user_locations",
+        "description": "app.resource.model.user_locations",
+        "isExtraImport": true,
+        "detail": "app.resource.model.user_locations",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocations",
+        "importPath": "app.resource.model.user_locations",
+        "description": "app.resource.model.user_locations",
+        "isExtraImport": true,
+        "detail": "app.resource.model.user_locations",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocations",
+        "importPath": "app.resource.model.user_locations",
+        "description": "app.resource.model.user_locations",
+        "isExtraImport": true,
+        "detail": "app.resource.model.user_locations",
         "documentation": {}
     },
     {
@@ -935,6 +1120,14 @@
     },
     {
         "label": "Injector",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
+        "label": "inject",
         "importPath": "injector",
         "description": "injector",
         "isExtraImport": true,
@@ -1046,6 +1239,46 @@
         "documentation": {}
     },
     {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "WebSocket",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "WebSocketDisconnect",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "WebSocketException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1127,6 +1360,14 @@
     },
     {
         "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "WebSocket",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -1246,6 +1487,30 @@
         "documentation": {}
     },
     {
+        "label": "field_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "BaseModel",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -1283,6 +1548,14 @@
         "description": "pydantic",
         "isExtraImport": true,
         "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "common_header",
+        "importPath": "app.resource.middleware.header",
+        "description": "app.resource.middleware.header",
+        "isExtraImport": true,
+        "detail": "app.resource.middleware.header",
         "documentation": {}
     },
     {
@@ -1398,6 +1671,22 @@
         "documentation": {}
     },
     {
+        "label": "ErrorJsonResponse",
+        "importPath": "app.resource.response.error_response",
+        "description": "app.resource.response.error_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.error_response",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
         "label": "JsonResponse",
         "importPath": "app.resource.response.json_response",
         "description": "app.resource.response.json_response",
@@ -1419,6 +1708,14 @@
         "description": "app.resource.service.auth_service",
         "isExtraImport": true,
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_active_user",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {
@@ -1492,6 +1789,38 @@
         "importPath": "traceback",
         "description": "traceback",
         "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationRequest",
+        "importPath": "app.resource.request.user_location_request",
+        "description": "app.resource.request.user_location_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.user_location_request",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationRequest",
+        "importPath": "app.resource.request.user_location_request",
+        "description": "app.resource.request.user_location_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.user_location_request",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationSercice",
+        "importPath": "app.resource.service.user_location_service",
+        "description": "app.resource.service.user_location_service",
+        "isExtraImport": true,
+        "detail": "app.resource.service.user_location_service",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationManager",
+        "importPath": "app.resource.service_domain.user_location_manager_service_domain",
+        "description": "app.resource.service_domain.user_location_manager_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.user_location_manager_service_domain",
         "documentation": {}
     },
     {
@@ -1648,6 +1977,22 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -1681,6 +2026,86 @@
     },
     {
         "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1720,67 +2145,27 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
         "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "decimal",
         "documentation": {}
     },
     {
-        "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
         "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "decimal",
         "documentation": {}
     },
     {
-        "label": "timezone",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
         "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "timezone",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -1821,6 +2206,22 @@
         "description": "sqlalchemy.exc",
         "isExtraImport": true,
         "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "CustomValidator",
+        "importPath": "app.resource.request.common_validate",
+        "description": "app.resource.request.common_validate",
+        "isExtraImport": true,
+        "detail": "app.resource.request.common_validate",
         "documentation": {}
     },
     {
@@ -1929,6 +2330,14 @@
         "documentation": {}
     },
     {
+        "label": "UserLocationRepository",
+        "importPath": "app.resource.repository.user_location_repository",
+        "description": "app.resource.repository.user_location_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_location_repository",
+        "documentation": {}
+    },
+    {
         "label": "secrets",
         "kind": 6,
         "isExtraImport": true,
@@ -2027,6 +2436,22 @@
         "documentation": {}
     },
     {
+        "label": "user_location_controller",
+        "importPath": "app.resource.controller",
+        "description": "app.resource.controller",
+        "isExtraImport": true,
+        "detail": "app.resource.controller",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.resource.controller",
+        "description": "app.resource.controller",
+        "isExtraImport": true,
+        "detail": "app.resource.controller",
+        "documentation": {}
+    },
+    {
         "label": "app.resource.controller.auth_controller",
         "kind": 6,
         "isExtraImport": true,
@@ -2074,14 +2499,6 @@
         "description": "app.main",
         "isExtraImport": true,
         "detail": "app.main",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "app.resource.controller",
-        "description": "app.resource.controller",
-        "isExtraImport": true,
-        "detail": "app.resource.controller",
         "documentation": {}
     },
     {
@@ -2145,6 +2562,24 @@
         "description": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
         "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('email_verifications')\n    op.drop_table('users')\n    # ### end Alembic commands ###",
         "detail": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
+        "documentation": {}
+    },
+    {
+        "label": "upgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.862c735e6585_create_user_locations",
+        "description": "app.db.migration.versions.862c735e6585_create_user_locations",
+        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.create_table('user_locations',\n    sa.Column('id', sa.Integer(), nullable=False, comment='ID'),\n    sa.Column('uuid', sa.String(length=36), nullable=False, comment='UUID'),\n    sa.Column('user_id', sa.Integer(), nullable=False, comment='ユーザーID'),\n    sa.Column('lat', sa.Numeric(precision=10, scale=8), nullable=False, comment='緯度'),\n    sa.Column('lng', sa.Numeric(precision=11, scale=8), nullable=False, comment='経度'),\n    sa.Column('point', geoalchemy2.types.Geometry(geometry_type='POINT', srid=4326, from_text='ST_GeomFromEWKT', name='geometry', nullable=False), nullable=False, comment='位置情報'),\n    sa.Column('geo_hash', sa.String(length=12), nullable=False, comment='ジオハッシュ'),",
+        "detail": "app.db.migration.versions.862c735e6585_create_user_locations",
+        "documentation": {}
+    },
+    {
+        "label": "downgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.862c735e6585_create_user_locations",
+        "description": "app.db.migration.versions.862c735e6585_create_user_locations",
+        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_index('idx_user_locations_point', table_name='user_locations', postgresql_using='gist')\n    op.drop_table('user_locations')\n    # ### end Alembic commands ###",
+        "detail": "app.db.migration.versions.862c735e6585_create_user_locations",
         "documentation": {}
     },
     {
@@ -2265,6 +2700,33 @@
         "documentation": {}
     },
     {
+        "label": "router",
+        "kind": 5,
+        "importPath": "app.resource.controller.user_location_controller",
+        "description": "app.resource.controller.user_location_controller",
+        "peekOfCode": "router = APIRouter()\nlogger = logging.getLogger(\"app.exception\")\nmanager = UserLocationManager()\n@router.post(\n    \"/user-location\",\n    tags=[\"user_location\"],\n    response_model=JsonResponse,\n    name=\"ユーザーの位置情報を保存する\",\n    description=\"ユーザーの位置情報を保存します。\",\n    operation_id=\"post_user_location\",",
+        "detail": "app.resource.controller.user_location_controller",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "app.resource.controller.user_location_controller",
+        "description": "app.resource.controller.user_location_controller",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\nmanager = UserLocationManager()\n@router.post(\n    \"/user-location\",\n    tags=[\"user_location\"],\n    response_model=JsonResponse,\n    name=\"ユーザーの位置情報を保存する\",\n    description=\"ユーザーの位置情報を保存します。\",\n    operation_id=\"post_user_location\",\n    responses={",
+        "detail": "app.resource.controller.user_location_controller",
+        "documentation": {}
+    },
+    {
+        "label": "manager",
+        "kind": 5,
+        "importPath": "app.resource.controller.user_location_controller",
+        "description": "app.resource.controller.user_location_controller",
+        "peekOfCode": "manager = UserLocationManager()\n@router.post(\n    \"/user-location\",\n    tags=[\"user_location\"],\n    response_model=JsonResponse,\n    name=\"ユーザーの位置情報を保存する\",\n    description=\"ユーザーの位置情報を保存します。\",\n    operation_id=\"post_user_location\",\n    responses={\n        401: {",
+        "detail": "app.resource.controller.user_location_controller",
+        "documentation": {}
+    },
+    {
         "label": "get_di_class",
         "kind": 2,
         "importPath": "app.resource.depends.depends",
@@ -2368,8 +2830,17 @@
         "kind": 6,
         "importPath": "app.resource.model.password_reset_verifications",
         "description": "app.resource.model.password_reset_verifications",
-        "peekOfCode": "class PasswordResetVerifications(SQLModel, table=True):\n    __tablename__ = \"password_reset_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(\n        default=None,\n        sa_column=Column(\n            Integer,\n            ForeignKey(\"users.id\"),\n            nullable=False,\n            unique=True,",
+        "peekOfCode": "class PasswordResetVerifications(SQLModel, table=True):\n    __tablename__ = \"password_reset_verifications\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    user_id: int = Field(\n        default=None,\n        sa_column=Column(Integer, ForeignKey(\"users.id\"), nullable=False, unique=True, comment=\"ユーザーID\"),\n    )\n    email: str = Field(sa_column=Column(String(100), nullable=False, comment=\"メールアドレス\"))\n    verify_token: str = Field(sa_column=Column(String(100), nullable=True, comment=\"パスワードリセットトークン\"))\n    verified_expired_at: Optional[datetime] = Field(",
         "detail": "app.resource.model.password_reset_verifications",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocations",
+        "kind": 6,
+        "importPath": "app.resource.model.user_locations",
+        "description": "app.resource.model.user_locations",
+        "peekOfCode": "class UserLocations(SQLModel, table=True):\n    __tablename__ = \"user_locations\"\n    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, comment=\"ID\"))\n    uuid: str = Field(\n        default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=False, unique=True, comment=\"UUID\")\n    )\n    user_id: int = Field(\n        default=None,\n        sa_column=Column(Integer, ForeignKey(\"users.id\"), nullable=False, unique=False, comment=\"ユーザーID\"),\n    )",
+        "detail": "app.resource.model.user_locations",
         "documentation": {}
     },
     {
@@ -2415,6 +2886,15 @@
         "description": "app.resource.repository.password_reset_verification_repository",
         "peekOfCode": "class PasswordResetVerificationRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    # パスワードリセットトークンを登録\n    async def create_password_reset_verification(\n        self,\n        password_reset_verification: PasswordResetVerifications\n    ) -> PasswordResetVerifications:\n        async with self.db.get_db() as session:\n            result = await session.exec(",
         "detail": "app.resource.repository.password_reset_verification_repository",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationRepository",
+        "kind": 6,
+        "importPath": "app.resource.repository.user_location_repository",
+        "description": "app.resource.repository.user_location_repository",
+        "peekOfCode": "class UserLocationRepository:\n    def __init__(self) -> None:\n        self.db = get_di_class(DatabaseConnection)\n    async def save_location(self, location: UserLocations) -> UserLocations:\n        async with self.db.get_db() as session:\n            try:\n                session.add(location)\n                await session.commit()\n                await session.refresh(location)\n                return location",
+        "detail": "app.resource.repository.user_location_repository",
         "documentation": {}
     },
     {
@@ -2485,8 +2965,17 @@
         "kind": 6,
         "importPath": "app.resource.request.common_validate",
         "description": "app.resource.request.common_validate",
-        "peekOfCode": "class CustomValidator:\n    @staticmethod\n    def email_validator(cls, value):\n        email_regex = r\"^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b\"\n        if not re.match(email_regex, value):\n            raise ValueError(convert_lang(\"auth.validation.invalid_email\"))\n        return value\n    @staticmethod\n    def password_validator(cls, value):\n        if len(value) < 8:",
+        "peekOfCode": "class CustomValidator:\n    @staticmethod\n    def required_validator(cls, value):\n        if not value:\n            raise ValueError(convert_lang(\"common_error.validation.required\"))\n        return value\n    @staticmethod\n    def email_validator(cls, value):\n        email_regex = r\"^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b\"\n        if not re.match(email_regex, value):",
         "detail": "app.resource.request.common_validate",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationRequest",
+        "kind": 6,
+        "importPath": "app.resource.request.user_location_request",
+        "description": "app.resource.request.user_location_request",
+        "peekOfCode": "class UserLocationRequest(BaseModel):\n    lat: Decimal = Field(\n        ...,\n        title=\"緯度\",\n        description=\"緯度\",\n        examples=[35.681236],\n    )\n    lng: Decimal = Field(\n        ...,\n        title=\"経度\",",
+        "detail": "app.resource.request.user_location_request",
         "documentation": {}
     },
     {
@@ -2559,6 +3048,15 @@
         "description": "app.resource.service.auth_service",
         "peekOfCode": "class AuthService:\n    @inject\n    def __init__(\n        self,\n        repository: UserRepository,\n        emailVerificationRepository: EmailVerificationRepository,\n        passwordResetVerificationRepository: PasswordResetVerificationRepository,\n    ):\n        self.repository = repository\n        self.emailVerificationRepository = emailVerificationRepository",
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "UserLocationSercice",
+        "kind": 6,
+        "importPath": "app.resource.service.user_location_service",
+        "description": "app.resource.service.user_location_service",
+        "peekOfCode": "class UserLocationSercice:\n    @inject\n    def __init__(\n        self,\n        repository: UserLocationRepository,\n    ):\n        self.repository = repository\n    async def save_location(self, request: UserLocationRequest, current_user: Users):\n        location = UserLocations(\n            user_id=current_user.id,",
+        "detail": "app.resource.service.user_location_service",
         "documentation": {}
     },
     {
@@ -2679,6 +3177,15 @@
         "documentation": {}
     },
     {
+        "label": "UserLocationManager",
+        "kind": 6,
+        "importPath": "app.resource.service_domain.user_location_manager_service_domain",
+        "description": "app.resource.service_domain.user_location_manager_service_domain",
+        "peekOfCode": "class UserLocationManager:\n    def __init__(self):\n        self.active_connections: dict[str, WebSocket] = {}\n    # 接続\n    async def connect(self, websocket: WebSocket, user_uuid: str):\n        await websocket.accept()\n        self.active_connections.append(user_uuid, websocket)\n    # 切断\n    def disconnect(self, websocket: WebSocket, user_uuid: str):\n        self.active_connections.remove(user_uuid, websocket)",
+        "detail": "app.resource.service_domain.user_location_manager_service_domain",
+        "documentation": {}
+    },
+    {
         "label": "BaseTempleteInterface",
         "kind": 6,
         "importPath": "app.resource.util.mailer.templetes.base_template",
@@ -2746,7 +3253,7 @@
         "kind": 5,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "app = app\ni18n.load_path.append(\"app/resource/i18n/\")\ni18n.set(\"file_format\", \"json\")\ni18n.set(\"locale\", \"ja\")\ni18n.set(\"fallback\", \"ja\")\ni18n.set(\"skip_locale_root_data\", True)\napp.include_router(auth_controller.router)\napp.add_middleware(EnhancedTracebackMiddleware)\napp.add_middleware(LanguageMiddleware)",
+        "peekOfCode": "app = app\ni18n.load_path.append(\"app/resource/i18n/\")\ni18n.set(\"file_format\", \"json\")\ni18n.set(\"locale\", \"ja\")\ni18n.set(\"fallback\", \"ja\")\ni18n.set(\"skip_locale_root_data\", True)\napp.include_router(auth_controller.router)\napp.include_router(user_location_controller.router)\napp.add_middleware(EnhancedTracebackMiddleware)\napp.add_middleware(LanguageMiddleware)",
         "detail": "app.main",
         "documentation": {}
     },

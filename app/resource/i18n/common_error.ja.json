@@ -4,5 +4,8 @@
     "expired_token": "認証の有効期限が切れています",
     "internal_server_error": "内部サーバーエラーが発生しました",
     "internal_server_error_massage": "予期せぬエラーが発生しました。後ほど再度お試しください",
-    "invalid_user_agent": "不正なアクセスです"
+    "invalid_user_agent": "不正なアクセスです",
+    "validation": {
+      "required": "必須項目です"
+    }
   }

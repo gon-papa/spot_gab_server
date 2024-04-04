@@ -25,26 +25,22 @@ class Users(SQLModel, table=True):
         sa_column=Column(String(36), nullable=True, comment="他ユーザー招待コード"),
     )
     refresh_token: str = Field(sa_column=Column(String(100), nullable=True, comment="リフレッシュトークン"))
-    expires_at: datetime = Field(sa_column=Column(TIMESTAMP(True), nullable=True, comment="リフレッシュトークン有効期限"))
+    expires_at: datetime = Field(
+        sa_column=Column(TIMESTAMP(True), nullable=True, comment="リフレッシュトークン有効期限")
+    )
     email_verified: bool = Field(
         sa_column=Column(Boolean, nullable=False, default=False, comment="メール認証フラグ True:認証済 False:未認証")
     )
-    deleted_at: Optional[datetime] = Field(sa_column=Column(TIMESTAMP(True), nullable=True, comment="削除日時とフラグ"))
+    deleted_at: Optional[datetime] = Field(
+        sa_column=Column(TIMESTAMP(True), nullable=True, comment="削除日時とフラグ")
+    )
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
-        sa_column=Column(
-            TIMESTAMP(True),
-            nullable=True,
-            default=datetime.now(timezone.utc)
-        )
+        sa_column=Column(TIMESTAMP(True), nullable=True, default=datetime.now(timezone.utc)),
     )
     updated_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
-        sa_column=Column(
-            TIMESTAMP(True),
-            nullable=True,
-            onupdate=datetime.now(timezone.utc)
-        )
+        sa_column=Column(TIMESTAMP(True), nullable=True, onupdate=datetime.now(timezone.utc)),
     )
     # リレーション
     email_verifications: Optional["EmailVerification"] = Relationship(back_populates="user")  # type: ignore  # noqa: F821 E501
