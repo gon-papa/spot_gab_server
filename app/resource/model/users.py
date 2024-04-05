@@ -29,6 +29,8 @@ class Users(SQLModel, table=True):
     email_verified: bool = Field(
         sa_column=Column(Boolean, nullable=False, default=False, comment="メール認証フラグ True:認証済 False:未認証")
     )
+    profile: Optional[str] = Field(sa_column=Column(String(130), nullable=True, comment="プロフィール"))
+    image_path: Optional[str] = Field(sa_column=Column(String(1024), nullable=True, comment="画像パス"))
     deleted_at: Optional[datetime] = Field(sa_column=Column(TIMESTAMP(True), nullable=True, comment="削除日時とフラグ"))
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),

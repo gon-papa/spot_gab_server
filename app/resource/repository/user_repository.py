@@ -115,12 +115,7 @@ class UserRepository:
                 raise e
 
     # パスワード更新
-    async def password_reset_update(
-        self,
-        user: Users,
-        pr: PasswordResetVerifications,
-        hashed_password: str
-    ) -> Users:
+    async def password_reset_update(self, user: Users, pr: PasswordResetVerifications, hashed_password: str) -> Users:
         async with self.db.get_db() as session:
             user.hashed_password = hashed_password
             pr.verify_token = None
@@ -133,4 +128,22 @@ class UserRepository:
                 return user
             except SQLAlchemyError as e:
                 session.rollback()
+                raise e
+
+    async def save_profile(
+        self, user_uuid: str, profile: Optional[str] = None, image_path: Optional[str] = None
+    ) -> Users:
+        async with self.db.get_db() as session:
+            try:
+                user = await self.get_user_by_uuid(user_uuid)
+                if profile is not None:  # profileに値がある場合のみ更新
+                    user.profile = profile
+                if image_path is not None:  # image_dataに値がある場合のみ更新
+                    user.image_path = image_path
+                session.add(user)
+                await session.commit()
+                await session.refresh(user)
+                return user
+            except SQLAlchemyError as e:
+                await session.rollback()
                 raise e
