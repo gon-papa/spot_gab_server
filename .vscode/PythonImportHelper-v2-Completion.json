@@ -58,6 +58,22 @@
         "documentation": {}
     },
     {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -143,6 +159,14 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "op",
+        "importPath": "alembic",
+        "description": "alembic",
+        "isExtraImport": true,
+        "detail": "alembic",
         "documentation": {}
     },
     {
@@ -541,6 +565,30 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConnection",
         "importPath": "app.db.db",
         "description": "app.db.db",
@@ -610,6 +658,14 @@
         "description": "app.db.db",
         "isExtraImport": true,
         "detail": "app.db.db",
+        "documentation": {}
+    },
+    {
+        "label": "get_di_class",
+        "importPath": "app.resource.depends.depends",
+        "description": "app.resource.depends.depends",
+        "isExtraImport": true,
+        "detail": "app.resource.depends.depends",
         "documentation": {}
     },
     {
@@ -773,6 +829,14 @@
         "documentation": {}
     },
     {
+        "label": "Users",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
         "label": "SignUpUser",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
@@ -782,6 +846,14 @@
     },
     {
         "label": "SignUpUser",
+        "importPath": "app.resource.model.users",
+        "description": "app.resource.model.users",
+        "isExtraImport": true,
+        "detail": "app.resource.model.users",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
         "importPath": "app.resource.model.users",
         "description": "app.resource.model.users",
         "isExtraImport": true,
@@ -958,6 +1030,14 @@
         "documentation": {}
     },
     {
+        "label": "inject",
+        "importPath": "injector",
+        "description": "injector",
+        "isExtraImport": true,
+        "detail": "injector",
+        "documentation": {}
+    },
+    {
         "label": "AsyncEngine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
@@ -1046,6 +1126,46 @@
         "documentation": {}
     },
     {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1094,6 +1214,14 @@
         "documentation": {}
     },
     {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "BackgroundTasks",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1134,6 +1262,46 @@
         "documentation": {}
     },
     {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1143,6 +1311,14 @@
     },
     {
         "label": "HTMLResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
         "importPath": "fastapi.responses",
         "description": "fastapi.responses",
         "isExtraImport": true,
@@ -1294,6 +1470,14 @@
         "documentation": {}
     },
     {
+        "label": "common_header",
+        "importPath": "app.resource.middleware.header",
+        "description": "app.resource.middleware.header",
+        "isExtraImport": true,
+        "detail": "app.resource.middleware.header",
+        "documentation": {}
+    },
+    {
         "label": "EmailExistsRequest",
         "importPath": "app.resource.request.auth_request",
         "description": "app.resource.request.auth_request",
@@ -1398,6 +1582,30 @@
         "documentation": {}
     },
     {
+        "label": "ErrorJsonResponse",
+        "importPath": "app.resource.response.error_response",
+        "description": "app.resource.response.error_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.error_response",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorDetail",
+        "importPath": "app.resource.response.error_response",
+        "description": "app.resource.response.error_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.error_response",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "app.resource.response.json_response",
+        "description": "app.resource.response.json_response",
+        "isExtraImport": true,
+        "detail": "app.resource.response.json_response",
+        "documentation": {}
+    },
+    {
         "label": "JsonResponse",
         "importPath": "app.resource.response.json_response",
         "description": "app.resource.response.json_response",
@@ -1419,6 +1627,14 @@
         "description": "app.resource.service.auth_service",
         "isExtraImport": true,
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_active_user",
+        "importPath": "app.resource.service_domain.auth_service_domain",
+        "description": "app.resource.service_domain.auth_service_domain",
+        "isExtraImport": true,
+        "detail": "app.resource.service_domain.auth_service_domain",
         "documentation": {}
     },
     {
@@ -1492,6 +1708,30 @@
         "importPath": "traceback",
         "description": "traceback",
         "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfileRequest",
+        "importPath": "app.resource.request.user_request",
+        "description": "app.resource.request.user_request",
+        "isExtraImport": true,
+        "detail": "app.resource.request.user_request",
+        "documentation": {}
+    },
+    {
+        "label": "UserService",
+        "importPath": "app.resource.service.user_service",
+        "description": "app.resource.service.user_service",
+        "isExtraImport": true,
+        "detail": "app.resource.service.user_service",
         "documentation": {}
     },
     {
@@ -1889,6 +2129,14 @@
         "documentation": {}
     },
     {
+        "label": "UserRepository",
+        "importPath": "app.resource.repository.user_repository",
+        "description": "app.resource.repository.user_repository",
+        "isExtraImport": true,
+        "detail": "app.resource.repository.user_repository",
+        "documentation": {}
+    },
+    {
         "label": "Mailer",
         "importPath": "app.resource.util.mailer.mailer",
         "description": "app.resource.util.mailer.mailer",
@@ -1926,6 +2174,14 @@
         "description": "app.resource.repository.password_reset_verification_repository",
         "isExtraImport": true,
         "detail": "app.resource.repository.password_reset_verification_repository",
+        "documentation": {}
+    },
+    {
+        "label": "storageUtil",
+        "importPath": "app.resource.util.storage.storage",
+        "description": "app.resource.util.storage.storage",
+        "isExtraImport": true,
+        "detail": "app.resource.util.storage.storage",
         "documentation": {}
     },
     {
@@ -2002,6 +2258,39 @@
         "documentation": {}
     },
     {
+        "label": "boto3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "boto3",
+        "description": "boto3",
+        "detail": "boto3",
+        "documentation": {}
+    },
+    {
+        "label": "NoCredentialsError",
+        "importPath": "botocore.exceptions",
+        "description": "botocore.exceptions",
+        "isExtraImport": true,
+        "detail": "botocore.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "LocalStorage",
+        "importPath": "app.resource.util.storage.local_storage",
+        "description": "app.resource.util.storage.local_storage",
+        "isExtraImport": true,
+        "detail": "app.resource.util.storage.local_storage",
+        "documentation": {}
+    },
+    {
+        "label": "S3Storage",
+        "importPath": "app.resource.util.storage.s3_storage",
+        "description": "app.resource.util.storage.s3_storage",
+        "isExtraImport": true,
+        "detail": "app.resource.util.storage.s3_storage",
+        "documentation": {}
+    },
+    {
         "label": "i18n",
         "kind": 6,
         "isExtraImport": true,
@@ -2024,6 +2313,30 @@
         "description": "app.resource.middleware.http",
         "isExtraImport": true,
         "detail": "app.resource.middleware.http",
+        "documentation": {}
+    },
+    {
+        "label": "StaticFiles",
+        "importPath": "fastapi.staticfiles",
+        "description": "fastapi.staticfiles",
+        "isExtraImport": true,
+        "detail": "fastapi.staticfiles",
+        "documentation": {}
+    },
+    {
+        "label": "user_controller",
+        "importPath": "app.resource.controller",
+        "description": "app.resource.controller",
+        "isExtraImport": true,
+        "detail": "app.resource.controller",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.resource.controller",
+        "description": "app.resource.controller",
+        "isExtraImport": true,
+        "detail": "app.resource.controller",
         "documentation": {}
     },
     {
@@ -2074,14 +2387,6 @@
         "description": "app.main",
         "isExtraImport": true,
         "detail": "app.main",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "app.resource.controller",
-        "description": "app.resource.controller",
-        "isExtraImport": true,
-        "detail": "app.resource.controller",
         "documentation": {}
     },
     {
@@ -2145,6 +2450,24 @@
         "description": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
         "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_table('email_verifications')\n    op.drop_table('users')\n    # ### end Alembic commands ###",
         "detail": "app.db.migration.versions.5c3fa0bfa365_create_change_timestamp",
+        "documentation": {}
+    },
+    {
+        "label": "upgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.b23edcf6856b_add_column_users",
+        "description": "app.db.migration.versions.b23edcf6856b_add_column_users",
+        "peekOfCode": "def upgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.add_column('users', sa.Column('profile', sa.String(length=130), nullable=True, comment='プロフィール'))\n    op.add_column('users', sa.Column('image_path', sa.String(length=1024), nullable=True, comment='画像パス'))\n    # ### end Alembic commands ###\ndef downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_column('users', 'image_path')\n    op.drop_column('users', 'profile')\n    # ### end Alembic commands ###",
+        "detail": "app.db.migration.versions.b23edcf6856b_add_column_users",
+        "documentation": {}
+    },
+    {
+        "label": "downgrade",
+        "kind": 2,
+        "importPath": "app.db.migration.versions.b23edcf6856b_add_column_users",
+        "description": "app.db.migration.versions.b23edcf6856b_add_column_users",
+        "peekOfCode": "def downgrade() -> None:\n    # ### commands auto generated by Alembic - please adjust! ###\n    op.drop_column('users', 'image_path')\n    op.drop_column('users', 'profile')\n    # ### end Alembic commands ###",
+        "detail": "app.db.migration.versions.b23edcf6856b_add_column_users",
         "documentation": {}
     },
     {
@@ -2262,6 +2585,24 @@
         "description": "app.resource.controller.auth_controller",
         "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n@router.post(\n    \"/sign-up\",\n    tags=[\"auth\"],\n    response_model=SignUpResponse,\n    name=\"サインアップ\",\n    description=\"サインアップ\",\n    operation_id=\"sign_up\",\n    responses={\n        400: {",
         "detail": "app.resource.controller.auth_controller",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "app.resource.controller.user_controller",
+        "description": "app.resource.controller.user_controller",
+        "peekOfCode": "router = APIRouter()\nlogger = logging.getLogger(\"app.exception\")\n@router.post(\n    \"/user/profile\",\n    response_model=JsonResponse,\n    tags=[\"user\"],\n    name=\"ユーザープロフィール保存\",\n    description=\"ユーザープロフィールを保存します。\",\n    operation_id=\"save_user_profile\",\n    dependencies=[Depends(common_header)],",
+        "detail": "app.resource.controller.user_controller",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "app.resource.controller.user_controller",
+        "description": "app.resource.controller.user_controller",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\n@router.post(\n    \"/user/profile\",\n    response_model=JsonResponse,\n    tags=[\"user\"],\n    name=\"ユーザープロフィール保存\",\n    description=\"ユーザープロフィールを保存します。\",\n    operation_id=\"save_user_profile\",\n    dependencies=[Depends(common_header)],\n)",
+        "detail": "app.resource.controller.user_controller",
         "documentation": {}
     },
     {
@@ -2490,6 +2831,15 @@
         "documentation": {}
     },
     {
+        "label": "UserProfileRequest",
+        "kind": 6,
+        "importPath": "app.resource.request.user_request",
+        "description": "app.resource.request.user_request",
+        "peekOfCode": "class UserProfileRequest:\n    async def validation(self, profile: str, image: UploadFile):\n        errors = []\n        profile_result = await self.profile_validator(profile)\n        if isinstance(profile_result, ErrorDetail):\n            errors.append(profile_result)\n        image_result = await self.validate_image(image)\n        if isinstance(image_result, ErrorDetail):\n            errors.append(image_result)\n        if errors != []:",
+        "detail": "app.resource.request.user_request",
+        "documentation": {}
+    },
+    {
         "label": "EmailExistsResponse",
         "kind": 6,
         "importPath": "app.resource.response.auth_response",
@@ -2559,6 +2909,15 @@
         "description": "app.resource.service.auth_service",
         "peekOfCode": "class AuthService:\n    @inject\n    def __init__(\n        self,\n        repository: UserRepository,\n        emailVerificationRepository: EmailVerificationRepository,\n        passwordResetVerificationRepository: PasswordResetVerificationRepository,\n    ):\n        self.repository = repository\n        self.emailVerificationRepository = emailVerificationRepository",
         "detail": "app.resource.service.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "UserService",
+        "kind": 6,
+        "importPath": "app.resource.service.user_service",
+        "description": "app.resource.service.user_service",
+        "peekOfCode": "class UserService:\n    @inject\n    def __init__(\n        self,\n        repository: UserRepository,\n    ):\n        self.repository = repository\n    async def save_profile(self, user: Users, profile: str, image_data: bytes) -> Users:\n        image_path = None\n        # 画像保存処理",
+        "detail": "app.resource.service.user_service",
         "documentation": {}
     },
     {
@@ -2715,6 +3074,51 @@
         "documentation": {}
     },
     {
+        "label": "LocalStorage",
+        "kind": 6,
+        "importPath": "app.resource.util.storage.local_storage",
+        "description": "app.resource.util.storage.local_storage",
+        "peekOfCode": "class LocalStorage:\n    def __init__(self) -> None:\n        self.dir_base_path = \"app/public/upload_files\"\n        self.base_url = os.getenv(\"BASE_URL\", \"http://localhost:8000\")\n        self.http_access_base_path = f\"{self.base_url}/public/upload_files\"\n    async def save_file(self, file: UploadFile, uuid: str) -> str:\n        try:\n            file_name = file.filename\n            # ディレクトリパスを構築(uuidごとにディレクトリを作成する)\n            dir_path = os.path.dirname(f\"{self.dir_base_path}/{uuid}/\")",
+        "detail": "app.resource.util.storage.local_storage",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "app.resource.util.storage.local_storage",
+        "description": "app.resource.util.storage.local_storage",
+        "peekOfCode": "logger = logging.getLogger(\"app.exception\")\nclass LocalStorage:\n    def __init__(self) -> None:\n        self.dir_base_path = \"app/public/upload_files\"\n        self.base_url = os.getenv(\"BASE_URL\", \"http://localhost:8000\")\n        self.http_access_base_path = f\"{self.base_url}/public/upload_files\"\n    async def save_file(self, file: UploadFile, uuid: str) -> str:\n        try:\n            file_name = file.filename\n            # ディレクトリパスを構築(uuidごとにディレクトリを作成する)",
+        "detail": "app.resource.util.storage.local_storage",
+        "documentation": {}
+    },
+    {
+        "label": "S3Storage",
+        "kind": 6,
+        "importPath": "app.resource.util.storage.s3_storage",
+        "description": "app.resource.util.storage.s3_storage",
+        "peekOfCode": "class S3Storage:\n    def __init__(self) -> None:\n        self.bucket_name = os.getenv(\"S3_BUCKET_NAME\")\n        self.aws_access_key = os.getenv(\"AWS_ACCESS_KEY_ID\")\n        self.aws_secret_access_key = os.getenv(\"AWS_SECRET_ACCESS_KEY\")\n    async def save_file_s3(self, file: UploadFile, file_path: str):\n        s3 = boto3.client(\n            \"s3\", aws_access_key_id=self.aws_access_key, aws_secret_access_key=self.aws_secret_access_key\n        )\n        try:",
+        "detail": "app.resource.util.storage.s3_storage",
+        "documentation": {}
+    },
+    {
+        "label": "StorageUtil",
+        "kind": 6,
+        "importPath": "app.resource.util.storage.storage",
+        "description": "app.resource.util.storage.storage",
+        "peekOfCode": "class StorageUtil:\n    def __init__(self):\n        self.env = os.getenv(\"ENV\", \"development\")\n    async def upload_file(self, uuid: str, file: UploadFile = File(...)) -> str:\n        file_path = f\"{uuid}\"\n        if self.env == \"development\":\n            return await LocalStorage().save_file(file, uuid)\n        else:\n            return await S3Storage().save_file_s3(file, file_path)\nstorageUtil = StorageUtil()",
+        "detail": "app.resource.util.storage.storage",
+        "documentation": {}
+    },
+    {
+        "label": "storageUtil",
+        "kind": 5,
+        "importPath": "app.resource.util.storage.storage",
+        "description": "app.resource.util.storage.storage",
+        "peekOfCode": "storageUtil = StorageUtil()",
+        "detail": "app.resource.util.storage.storage",
+        "documentation": {}
+    },
+    {
         "label": "get_current_language",
         "kind": 2,
         "importPath": "app.resource.util.lang",
@@ -2746,7 +3150,7 @@
         "kind": 5,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "app = app\ni18n.load_path.append(\"app/resource/i18n/\")\ni18n.set(\"file_format\", \"json\")\ni18n.set(\"locale\", \"ja\")\ni18n.set(\"fallback\", \"ja\")\ni18n.set(\"skip_locale_root_data\", True)\napp.include_router(auth_controller.router)\napp.add_middleware(EnhancedTracebackMiddleware)\napp.add_middleware(LanguageMiddleware)",
+        "peekOfCode": "app = app\ni18n.load_path.append(\"app/resource/i18n/\")\ni18n.set(\"file_format\", \"json\")\ni18n.set(\"locale\", \"ja\")\ni18n.set(\"fallback\", \"ja\")\ni18n.set(\"skip_locale_root_data\", True)\n# 静的ファイルマウント\napp.mount(\"/public\", StaticFiles(directory=\"app/public\"), name=\"public\")\napp.include_router(auth_controller.router)\napp.include_router(user_controller.router)",
         "detail": "app.main",
         "documentation": {}
     },
