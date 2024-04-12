@@ -31,6 +31,7 @@ class Users(SQLModel, table=True):
     )
     profile: Optional[str] = Field(sa_column=Column(String(130), nullable=True, comment="プロフィール"))
     image_path: Optional[str] = Field(sa_column=Column(String(1024), nullable=True, comment="画像パス"))
+    link: Optional[str] = Field(sa_column=Column(String(1024), nullable=True, comment="リンク"))
     deleted_at: Optional[datetime] = Field(sa_column=Column(TIMESTAMP(True), nullable=True, comment="削除日時とフラグ"))
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
@@ -62,6 +63,9 @@ class UserRead(SQLModel):
     birth_date: date
     other_user_invitation_code: Optional[str] = None
     email_verified: bool
+    profile: Optional[str] = None
+    image_path: Optional[str] = None
+    link: Optional[str] = None
     deleted_at: Optional[datetime] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
@@ -79,6 +83,9 @@ class UserRead(SQLModel):
                 "birth_date": "2021-01-01",
                 "other_user_invitation_code": "string",
                 "email_verified": True,
+                "profile": "string",
+                "image_path": "string",
+                "link": "string",
                 "deleted_at": "2021-01-01T00:00:00",
                 "created_at": "2021-01-01T00:00:00",
                 "updated_at": "2021-01-01T00:00:00",
@@ -86,21 +93,24 @@ class UserRead(SQLModel):
         }
 
 
-class SignUpUser(SQLModel):
+class AuthenticatedUser(SQLModel):
     id: int
     uuid: str
     account_name: str
     id_account: str
     email: str
     birth_date: date
-    other_user_invitation_code: Optional[str] = None
-    token: Optional[str] = None
+    other_user_invitation_code: str | None = None
+    token: str | None = None
     refresh_token: str
     expires_at: datetime
     email_verified: bool
-    deleted_at: Optional[datetime] = None
-    created_at: Optional[datetime] = None
-    updated_at: Optional[datetime] = None
+    profile: str | None = None
+    image_path: str | None = None
+    link: str | None = None
+    deleted_at: datetime | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
 
     class ConfigDict:
         from_attributes = True
@@ -117,6 +127,9 @@ class SignUpUser(SQLModel):
                 "refresh_token": "string",
                 "expires_at": "2021-01-01T00:00:00",
                 "email_verified": True,
+                "profile": "string",
+                "image_path": "string",
+                "link": "string",
                 "deleted_at": "2021-01-01T00:00:00",
                 "created_at": "2021-01-01T00:00:00",
                 "updated_at": "2021-01-01T00:00:00",

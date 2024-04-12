@@ -58,7 +58,8 @@ class UserRepository:
     # uuidからuser取得
     async def get_user_by_uuid(self, uuid: str) -> Optional[Users]:
         async with self.db.get_db() as session:
-            result = await session.exec(select(Users).filter(Users.uuid == uuid))
+            result = await session.exec(select(Users).filter(Users.uuid == uuid, Users.deleted_at.is_(None)))
+            # TODO フォロー、フォロワー数も入れ込む
             user = result.scalars().first()
             return user
 
@@ -131,15 +132,24 @@ class UserRepository:
                 raise e
 
     async def save_profile(
-        self, user_uuid: str, profile: Optional[str] = None, image_path: Optional[str] = None
+        self,
+        user_uuid: str,
+        accountName: Optional[str] = None,
+        link: Optional[str] = None,
+        profile: Optional[str] = None,
+        image_path: Optional[str] = None,
     ) -> Users:
         async with self.db.get_db() as session:
             try:
                 user = await self.get_user_by_uuid(user_uuid)
+                if accountName is not None:  # accountNameに値がある場合のみ更新
+                    user.account_name = accountName
                 if profile is not None:  # profileに値がある場合のみ更新
                     user.profile = profile
                 if image_path is not None:  # image_dataに値がある場合のみ更新
                     user.image_path = image_path
+                # linkは空文字でも更新
+                user.link = link
                 session.add(user)
                 await session.commit()
                 await session.refresh(user)

@@ -7,7 +7,7 @@ from injector import inject
 from app.resource.depends.depends import get_di_class
 from app.resource.model.email_verification import EmailVerification
 from app.resource.model.password_reset_verifications import PasswordResetVerifications
-from app.resource.model.users import SignUpUser, Users
+from app.resource.model.users import AuthenticatedUser, Users
 from app.resource.repository.email_varification_repository import EmailVerificationRepository
 from app.resource.repository.user_repository import UserRepository
 from app.resource.request.auth_request import SignUpRequest
@@ -40,7 +40,7 @@ class AuthService:
         self.passwordResetVerificationRepository = passwordResetVerificationRepository
 
     # サインアップ
-    async def sign_up(self, request: SignUpRequest, bk: BackgroundTasks) -> SignUpUser:
+    async def sign_up(self, request: SignUpRequest, bk: BackgroundTasks) -> AuthenticatedUser:
         is_email_exist = await self.email_exist(request.email)
         is_id_account_exist = await self.id_account_exist(request.id_account)
         if is_email_exist:
@@ -70,7 +70,7 @@ class AuthService:
         # アクセストークン作成
         claim = crate_user_claim(user)
         token = create_access_token(claim)
-        user = SignUpUser.model_validate(user)
+        user = AuthenticatedUser.model_validate(user)
         user.token = token
         # 認証メール送付
         if get_current_language() == "en":
@@ -109,7 +109,7 @@ class AuthService:
         return True
 
     # リフレッシュトークンユーザー認証
-    async def get_refresh_token(self, token: str) -> SignUpUser:
+    async def get_refresh_token(self, token: str) -> AuthenticatedUser:
         user = await self.repository.get_user_by_refresh_token(token)
         if user is None:
             raise HTTPException(status_code=403, detail=convert_lang("auth.error.invalid_refresh_token"))
@@ -124,7 +124,7 @@ class AuthService:
         refresh_token = create_refresh_token()
         expires_at = create_expire_at()
         user = await self.repository.active_update(user.id, refresh_token, expires_at)  # type: ignore
-        user = SignUpUser.model_validate(user)
+        user = AuthenticatedUser.model_validate(user)
         user.token = token
         return user
 
