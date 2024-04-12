@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.resource.model.users import SignUpUser
+from app.resource.model.users import AuthenticatedUser
 from app.resource.response.json_response import JsonResponse
 
 
@@ -20,7 +20,7 @@ class IdAccountExistsResponse(JsonResponse):
 
 class SignUpResponse(JsonResponse):
     class SignUpResponseItem(BaseModel):
-        user: SignUpUser = Field(None, description="サインアップユーザー情報")
+        user: AuthenticatedUser = Field(None, description="サインアップユーザー情報")
 
     data: SignUpResponseItem = Field(None, description="サインアップユーザー情報")
 
