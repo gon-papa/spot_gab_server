@@ -29,7 +29,7 @@ def common_header(
         ...,
         alias="X-User-Agent",
         description="カスタムUser-Agent",
-        openapi_examples={"spot-gab-app": {"summary": "アプリからのリクエスト", "value": "spot-gab-app"}},
+        openapi_examples={"now-go-app": {"summary": "アプリからのリクエスト", "value": "now-go-app"}},
     ),
 ) -> None:
     if x_language not in os.getenv("LOCALE").split(","):

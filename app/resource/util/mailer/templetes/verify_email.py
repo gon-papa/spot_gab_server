@@ -16,7 +16,7 @@ class VerifyEmail(BaseTempleteInterface):
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>SpotGabへの招待</title>
+                <title>NowGoへの招待</title>
                 <style>
                     body {{
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,9 +72,9 @@ class VerifyEmail(BaseTempleteInterface):
             </head>
             <body>
                 <div class="container">
-                    <h1>SpotGabへようこそ！</h1>
+                    <h1>NowGoへようこそ！</h1>
                     <p>{account_name}さん</p>
-                    <p>あなたをSpotGabの世界に招待します。SpotGabは、同じ興味や趣味を持つ人々が集まり、情報を共有し合えるプラットフォームです。ここでは、新しい友達を見つけたり、様々なトピックについて話し合ったりすることができます。</p>
+                    <p>あなたをNowGoの世界に招待します。NowGoは、同じ興味や趣味を持つ人々が集まり、情報を共有し合えるプラットフォームです。ここでは、新しい友達を見つけたり、様々なトピックについて話し合ったりすることができます。</p>
                     <p>ご参加いただくには、<span class="highlight">下記のボタンをクリックしてメール認証を完了</span>させる必要があります。認証プロセスを通じて、安全なコミュニティ環境を保ち、あなたの体験を最大限に引き出すことができます。</p>
                     <div class="verify-button">
                         <a href="{self.get_verify_url(verify_token)}">認証する</a>
@@ -98,7 +98,7 @@ class VerifyEmail(BaseTempleteInterface):
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Welcome to SpotGab</title>
+                <title>Welcome to NowGo</title>
                 <style>
                     body {{
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -154,9 +154,9 @@ class VerifyEmail(BaseTempleteInterface):
             </head>
             <body>
                 <div class="container">
-                    <h1>Welcome to SpotGab!</h1>
+                    <h1>Welcome to NowGo!</h1>
                     <p>Dear {account_name},</p>
-                    <p>You are invited to join the world of SpotGab. SpotGab is a platform where people with similar interests and hobbies come together to share information. Here, you can find new friends and discuss various topics.</p>
+                    <p>You are invited to join the world of NowGo. NowGo is a platform where people with similar interests and hobbies come together to share information. Here, you can find new friends and discuss various topics.</p>
                     <p>To join us, you need to <span class="highlight">click the button below to complete your email verification</span>. Through the verification process, we maintain a safe community environment and maximize your experience.</p>
                     <div class="verify-button">
                         <a href="{self.get_verify_url(verify_token)}">Verify</a>

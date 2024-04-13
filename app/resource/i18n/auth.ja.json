@@ -2,7 +2,7 @@
     "email": {
         "subject": "メールアドレスの確認",
         "email_verified": "メールアドレスが確認されました",
-        "passwordResetSubject": "SpotGab パスワードのリセット"
+        "passwordResetSubject": "NowGo パスワードのリセット"
     },
     "error": {
         "exsist_email": "このメールアドレスは利用できません",

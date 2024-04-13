@@ -1,4 +1,6 @@
 from datetime import date, datetime, timedelta, timezone
+from email.mime import image
+import profile
 
 import pytest
 import pytest_asyncio
@@ -30,6 +32,9 @@ class TestAuthController:
             refresh_token="test",
             expires_at=datetime(2000, 1, 1, tzinfo=timezone.utc),
             email_verified=True,
+            image_path=None,
+            link=None,
+            profile=None,
         )
         repository = get_di_class(UserRepository)
         await repository.create_user(self.user)
@@ -72,6 +77,9 @@ class TestAuthController:
                     "refresh_token": user.refresh_token,
                     "expires_at": user.expires_at.isoformat(),
                     "email_verified": user.email_verified,
+                    "image_path": user.image_path,
+                    "link": user.link,
+                    "profile": user.profile,
                     "deleted_at": None,
                     "created_at": user.created_at.isoformat(),
                     "updated_at": user.updated_at.isoformat(),
@@ -419,7 +427,7 @@ class TestAuthController:
         mock_mail_send.assert_called_once()
         call_args = mock_mail_send.call_args[1]
         assert call_args["to"] == ["test@test.com"]
-        assert "SpotGab パスワードのリセット" == call_args["subject"]
+        assert "NowGo パスワードのリセット" == call_args["subject"]
 
         user = await userRepository.get_user_by_email("test@test.com")
         pr = await prRepositoery.get_by_user_id(user.id)
