@@ -2,7 +2,7 @@
     "email": {
         "subject": "Email Verification",
         "email_verified": "Your email has been verified",
-        "passwordResetSubject": "SpotGab Password Reset"
+        "passwordResetSubject": "NowGo Password Reset"
     },
     "error": {
         "exsist_email": "This email address is not available",

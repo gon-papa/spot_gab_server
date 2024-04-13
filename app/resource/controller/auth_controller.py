@@ -267,7 +267,7 @@ async def reset_password_page(request: Request, token: str, lang: str) -> HTMLRe
             }
         )
     except Exception as e:
-        tb_str = traceback.format_exception(etype=type(e), value=e, tb=e.__traceback__)
+        tb_str = traceback.format_exception(type(e), e, e.__traceback__)
         logger.error("".join(tb_str))
         if lang == "en":
             return templates.TemplateResponse(
@@ -336,7 +336,7 @@ async def password_reset_verify(
             }
         )
     except Exception as e:
-        tb_str = traceback.format_exception(etype=type(e), value=e, tb=e.__traceback__)
+        tb_str = traceback.format_exception(type(e), e, e.__traceback__)
         logger.error("".join(tb_str))
         if lang == "en":
             return templates.TemplateResponse(
