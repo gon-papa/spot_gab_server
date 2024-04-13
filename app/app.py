@@ -2,8 +2,8 @@
 from fastapi import FastAPI
 
 app = FastAPI(
-    title="spot_gab_api",
-    description="API for spot_gab_app",
+    title="now_go_api",
+    description="API for now_go_api",
     verion="0.1.0",
     servers=[
         {

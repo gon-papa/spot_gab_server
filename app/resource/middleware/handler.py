@@ -43,7 +43,7 @@ class EnhancedTracebackMiddleware(BaseHTTPMiddleware):
             return response
         except Exception as exc:
             logger.error(f"Unhandled exception: {exc}")
-            tb_lines = traceback.format_exception(etype=type(exc), value=exc, tb=exc.__traceback__)
+            tb_lines = traceback.format_exception(type(exc), exc, exc.__traceback__)
             detailed_tb = "".join(tb_lines[::-1])  # スタックトレースを逆順に
 
             # 本番環境ではスタックトレースをレスポンスに含めない

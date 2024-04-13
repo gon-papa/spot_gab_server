@@ -28,7 +28,7 @@ async def async_client():
 async def get_header() -> dict[str, str]:
     return {
         "X-Language": "ja",
-        "X-User-Agent": "spot-gab-app",
+        "X-User-Agent": "now-go-app",
     }
 
 

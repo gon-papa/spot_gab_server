@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "spot-gab-api"
+name = "now-go1-api"
 version = "0.1.0"
-description = "spot-gab-api"
+description = "now-go-api"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
