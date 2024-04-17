@@ -9,11 +9,11 @@ from app.resource.request.common_validate import CustomValidator
 
 # formデータをモデルに変換する
 async def get_post_form_data(
-    body: str = Form(..., example="こんにちは"),
-    lat: float = Form(..., example=35.689487),
-    lng: float = Form(..., example=139.691706),
-    point: str = Form(..., example="POINT(139.691706 35.689487)"),
-    geo_hash: str = Form(..., example="xn7n7"),
+    body: str = Form(..., examples=["こんにちは"]),
+    lat: float = Form(..., examples=[35.689487]),
+    lng: float = Form(..., examples=[139.691706]),
+    point: str = Form(..., examples=["POINT(139.691706 35.689487)"]),
+    geo_hash: str = Form(..., examples=["xn7n7"]),
     country: Optional[str] = Form(None),
     administrative_area: Optional[str] = Form(None),
     sub_administrative_area: Optional[str] = Form(None),
