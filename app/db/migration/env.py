@@ -18,6 +18,7 @@ from app.resource.model.post_images import PostImages
 from app.resource.model.hash_tags import HashTags
 from app.resource.model.hash_tag_posts import HashTagPosts
 from app.resource.model.user_locations import UserLocations
+from app.resource.model.files import Files
 
 load_dotenv()
 

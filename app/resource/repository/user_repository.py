@@ -3,6 +3,7 @@ from typing import Optional
 
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.future import select
+from sqlalchemy.orm import joinedload
 
 from app.db.db import DatabaseConnection
 from app.resource.depends.depends import get_di_class
@@ -58,7 +59,10 @@ class UserRepository:
     # uuidからuser取得
     async def get_user_by_uuid(self, uuid: str) -> Optional[Users]:
         async with self.db.get_db() as session:
-            result = await session.exec(select(Users).filter(Users.uuid == uuid, Users.deleted_at.is_(None)))
+            result = await session.exec(
+                select(Users).options(
+                    joinedload(Users.file)).filter(Users.uuid == uuid, Users.deleted_at.is_(None))
+            )
             # TODO フォロー、フォロワー数も入れ込む
             user = result.scalars().first()
             return user
@@ -137,7 +141,7 @@ class UserRepository:
         accountName: Optional[str] = None,
         link: Optional[str] = None,
         profile: Optional[str] = None,
-        image_path: Optional[str] = None,
+        image_id: Optional[int] = None,
     ) -> Users:
         async with self.db.get_db() as session:
             try:
@@ -146,8 +150,8 @@ class UserRepository:
                     user.account_name = accountName
                 if profile is not None:  # profileに値がある場合のみ更新
                     user.profile = profile
-                if image_path is not None:  # image_dataに値がある場合のみ更新
-                    user.image_path = image_path
+                if image_id is not None:  # image_dataに値がある場合のみ更新
+                    user.image_id = image_id
                 # linkは空文字でも更新
                 user.link = link
                 session.add(user)
