@@ -54,7 +54,7 @@ class Users(SQLModel, table=True):
     )
     # リレーション
     email_verifications: Optional["EmailVerification"] = Relationship(back_populates="user")  # type: ignore  # noqa: F821 E501
-    file: Optional["Files"] = Relationship()  # type: ignore  # noqa: F821 E501
+    file: Optional["Files"] = Relationship(sa_relationship_kwargs={"lazy": "joined"})  # type: ignore  # noqa: F821 E501
 
 
 class UserRead(SQLModel):
@@ -100,7 +100,6 @@ class UserRead(SQLModel):
                 "other_user_invitation_code": "string",
                 "email_verified": True,
                 "profile": "string",
-                "image_path": "string",
                 "link": "string",
                 "deleted_at": "2021-01-01T00:00:00",
                 "created_at": "2021-01-01T00:00:00",
@@ -124,7 +123,6 @@ class AuthenticatedUser(SQLModel):
     expires_at: datetime
     email_verified: bool
     profile: str | None = None
-    image_path: str | None = None
     link: str | None = None
     deleted_at: datetime | None = None
     created_at: datetime | None = None
@@ -156,10 +154,60 @@ class AuthenticatedUser(SQLModel):
                 "expires_at": "2021-01-01T00:00:00",
                 "email_verified": True,
                 "profile": "string",
-                "image_path": "string",
                 "link": "string",
                 "deleted_at": "2021-01-01T00:00:00",
                 "created_at": "2021-01-01T00:00:00",
                 "updated_at": "2021-01-01T00:00:00",
             }
         }
+
+
+class Me(SQLModel):
+    id: int
+    image_id: Optional[int] = None
+    uuid: str
+    file: Optional[Files] = None
+    account_name: str
+    id_account: str
+    email: str
+    birth_date: date
+    other_user_invitation_code: str | None = None
+    expires_at: datetime
+    email_verified: bool
+    profile: str | None = None
+    link: str | None = None
+    deleted_at: datetime | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
+
+    class ConfigDict:
+        from_attributes = True
+        json_schema_extra = {
+            "example": {
+                "id": 1,
+                "image_id": 1,
+                "uuid": "string",
+                "file": {
+                    "id": 1,
+                    "uuid": "string",
+                    "name": "string",
+                    "path": "string",
+                    "is_used": True,
+                    "created_at": "2021-01-01T00:00:00",
+                    "updated_at": "2021-01-01T00:00:00",
+                },
+                "account_name": "string",
+                "id_account": "string",
+                "email": "string",
+                "birth_date": "2021-01-01",
+                "other_user_invitation_code": "string",
+                "expires_at": "2021-01-01T00:00:00",
+                "email_verified": True,
+                "profile": "string",
+                "link": "string",
+                "deleted_at": "2021-01-01T00:00:00",
+                "created_at": "2021-01-01T00:00:00",
+                "updated_at": "2021-01-01T00:00:00",
+            }
+        }
+

@@ -13,19 +13,19 @@ class UserProfileRequest(BaseModel):
         None,
         title="リンク",
         description="リンク",
-        nullable=True
+        json_schema_extra={'nullable': True}
     )
     profile: str = Field(
         None,
         title="プロフィール",
         description="プロフィール",
-        nullable=True
+        json_schema_extra={'nullable': True}
     )
     image_uuid: str = Field(
         None,
         title="画像UUID",
         description="画像UUID",
-        nullable=True
+        json_schema_extra={'nullable': True}
     )
 
     @field_validator("account_name")
