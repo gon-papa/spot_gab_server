@@ -11,11 +11,14 @@ from app.db.db import DatabaseConnection
 from app.resource.depends.depends import get_di_class
 from app.resource.model.email_verification import EmailVerification
 from app.resource.model.users import Users
+from app.resource.model.locations import Locations
 from app.resource.model.password_reset_verifications import PasswordResetVerifications
-
-# import app.resource.model.users
-
-
+from app.resource.model.posts import Posts
+from app.resource.model.post_images import PostImages
+from app.resource.model.hash_tags import HashTags
+from app.resource.model.hash_tag_posts import HashTagPosts
+from app.resource.model.user_locations import UserLocations
+from app.resource.model.files import Files
 
 load_dotenv()
 
@@ -47,6 +50,7 @@ target_metadata = SQLModel.metadata
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
+
 
 def render_item(type_, obj, autogen_context):
     """Apply custom rendering for selected items."""

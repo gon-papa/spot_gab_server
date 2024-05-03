@@ -1,6 +1,4 @@
 from datetime import date, datetime, timedelta, timezone
-from email.mime import image
-import profile
 
 import pytest
 import pytest_asyncio
@@ -23,6 +21,8 @@ class TestAuthController:
     @pytest_asyncio.fixture
     async def setup_user(self):
         self.user = Users(
+            image_id=None,
+            file=None,
             account_name="test",
             id_account="test",
             email="test@test.com",
@@ -32,7 +32,6 @@ class TestAuthController:
             refresh_token="test",
             expires_at=datetime(2000, 1, 1, tzinfo=timezone.utc),
             email_verified=True,
-            image_path=None,
             link=None,
             profile=None,
         )
@@ -68,6 +67,8 @@ class TestAuthController:
             "data": {
                 "user": {
                     "id": user.id,
+                    "image_id": None,
+                    "file": None,
                     "uuid": user.uuid,
                     "account_name": user.account_name,
                     "id_account": user.id_account,
@@ -77,7 +78,6 @@ class TestAuthController:
                     "refresh_token": user.refresh_token,
                     "expires_at": user.expires_at.isoformat(),
                     "email_verified": user.email_verified,
-                    "image_path": user.image_path,
                     "link": user.link,
                     "profile": user.profile,
                     "deleted_at": None,
