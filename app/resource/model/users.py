@@ -1,5 +1,5 @@
 from datetime import date, datetime, timezone
-from typing import Optional
+from typing import List, Optional
 from uuid import uuid4
 
 from sqlalchemy import ForeignKey
@@ -55,6 +55,7 @@ class Users(SQLModel, table=True):
     # リレーション
     email_verifications: Optional["EmailVerification"] = Relationship(back_populates="user")  # type: ignore  # noqa: F821 E501
     file: Optional["Files"] = Relationship(sa_relationship_kwargs={"lazy": "joined"})  # type: ignore  # noqa: F821 E501
+    posts: List["Posts"] = Relationship(back_populates="user")  # type: ignore  # noqa: F821 E501
 
 
 class UserRead(SQLModel):

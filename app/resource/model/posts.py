@@ -1,8 +1,9 @@
 from datetime import datetime, timezone
-from typing import Optional
+from typing import List, Optional
 from uuid import uuid4
 from sqlalchemy import Column, ForeignKey
 from sqlmodel import Field, SQLModel, Integer, String, Text, TIMESTAMP, Relationship
+from app.resource.model.hash_tag_posts import HashTagPosts
 from app.resource.model.users import Users
 from app.resource.model.locations import Locations
 
@@ -16,7 +17,7 @@ class Posts(SQLModel, table=True):
     user_id: int = Field(
         sa_column=Column(
             Integer,
-            ForeignKey('users.id'),
+            ForeignKey("users.id"),
             nullable=False,
             comment="ユーザーID",
         )
@@ -24,30 +25,22 @@ class Posts(SQLModel, table=True):
     location_id: int = Field(
         sa_column=Column(
             Integer,
-            ForeignKey('locations.id'),
+            ForeignKey("locations.id"),
             nullable=False,
             comment="位置情報ID",
         )
     )
-    body: str = Field(
-        sa_column=Column(Text, nullable=False, comment="本文")
-    )
+    body: str = Field(sa_column=Column(Text, nullable=False, comment="本文"))
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
-        sa_column=Column(
-            TIMESTAMP(True),
-            nullable=True,
-            default=datetime.now(timezone.utc)
-        )
+        sa_column=Column(TIMESTAMP(True), nullable=True, default=datetime.now(timezone.utc)),
     )
     updated_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
-        sa_column=Column(
-            TIMESTAMP(True),
-            nullable=True,
-            onupdate=datetime.now(timezone.utc)
-        )
+        sa_column=Column(TIMESTAMP(True), nullable=True, onupdate=datetime.now(timezone.utc)),
     )
-    user: Optional[Users] = Relationship(back_populates="user")
-    location: Optional[Locations] = Relationship(back_populates="location")
-    images: Optional["PostImages"] = Relationship(back_populates="post_images")  # type: ignore  # noqa: F821 E501
+    user: Optional[Users] = Relationship(back_populates="posts")
+    location: Optional[Locations] = Relationship(back_populates="post")
+    images: List["PostImages"] | None = Relationship(back_populates="post")  # type: ignore  # noqa: F821 E501
+    hash_tags: List["HashTags"] = Relationship(back_populates="posts", link_model=HashTagPosts)  # type: ignore  # noqa: F821 E501
+    hash_tag_posts: List["HashTagPosts"] = Relationship(back_populates="post")  # type: ignore  # noqa: F821 E501

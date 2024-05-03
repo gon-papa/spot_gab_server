@@ -34,4 +34,4 @@ class PostImages(SQLModel, table=True):
             onupdate=datetime.now(timezone.utc)
         )
     )
-    post: Optional[Posts] = Relationship(back_populates="location")
+    post: Optional[Posts] = Relationship(back_populates="images")
