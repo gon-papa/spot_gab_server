@@ -1,10 +1,11 @@
 
 from datetime import timezone, datetime
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
 from sqlmodel import SQLModel, Field, Column, Integer, ForeignKey, TIMESTAMP, Relationship
 
-from app.resource.model.hash_tags import HashTags
-from app.resource.model.posts import Posts
+if TYPE_CHECKING:
+    from app.resource.model.hash_tags import HashTags
+    from app.resource.model.posts import Posts
 
 
 class HashTagPosts(SQLModel, table=True):
@@ -42,6 +43,5 @@ class HashTagPosts(SQLModel, table=True):
             onupdate=datetime.now(timezone.utc)
         )
     )
-    post: Optional[Posts] = Relationship(back_populates="posts")
-    hash_tag: Optional[HashTags] = Relationship(back_populates="hash_tags")
-
+    post: "Posts" = Relationship(back_populates="hash_tag_posts")
+    hash_tag: "HashTags" = Relationship(back_populates="hash_tag_posts")

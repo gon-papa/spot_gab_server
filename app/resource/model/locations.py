@@ -4,7 +4,7 @@ from decimal import Decimal
 from uuid import uuid4
 from geoalchemy2 import Geometry
 from sqlalchemy import Numeric
-from sqlmodel import SQLModel, Column, Integer, Field, String, TIMESTAMP
+from sqlmodel import Relationship, SQLModel, Column, Integer, Field, String, TIMESTAMP
 
 
 class Locations(SQLModel, table=True):
@@ -94,3 +94,4 @@ class Locations(SQLModel, table=True):
             onupdate=datetime.now(timezone.utc)
         )
     )
+    post: Optional["Posts"] = Relationship(back_populates="location")  # type: ignore  # noqa: F821 E501

@@ -1,8 +1,10 @@
 
 from datetime import datetime, timezone
-from typing import Optional
+from typing import List, Optional
 from sqlalchemy import Column
-from sqlmodel import Field, SQLModel, Integer, String, TIMESTAMP
+from sqlmodel import Field, Relationship, SQLModel, Integer, String, TIMESTAMP
+
+from app.resource.model.hash_tag_posts import HashTagPosts
 
 
 class HashTags(SQLModel, table=True):
@@ -25,3 +27,5 @@ class HashTags(SQLModel, table=True):
             onupdate=datetime.now(timezone.utc)
         )
     )
+    posts: List["Posts"] = Relationship(back_populates="hash_tags", link_model=HashTagPosts)  # type: ignore  # noqa: F821 E501
+    hash_tag_posts: List["HashTagPosts"] = Relationship(back_populates="hash_tag")  # type: ignore  # noqa: F821 E501
