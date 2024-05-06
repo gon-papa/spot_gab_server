@@ -59,23 +59,14 @@ class Users(SQLModel, table=True):
 
 
 class UserRead(SQLModel):
-    id: int
     uuid: str
-    image_id: Optional[int] = None
-    file: Optional[Files] = None
     account_name: str
     id_account: str
-    email: str
-    is_active: bool
-    birth_date: date
-    other_user_invitation_code: Optional[str] = None
-    email_verified: bool
-    profile: Optional[str] = None
-    
-    link: Optional[str] = None
     deleted_at: Optional[datetime] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+    image_id: Optional[int] = None
+    file: Optional[Files] = None
 
     class ConfigDict:
         from_attributes = True
@@ -211,4 +202,3 @@ class Me(SQLModel):
                 "updated_at": "2021-01-01T00:00:00",
             }
         }
-

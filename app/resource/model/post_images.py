@@ -35,3 +35,11 @@ class PostImages(SQLModel, table=True):
         )
     )
     post: Optional[Posts] = Relationship(back_populates="images")
+
+
+class ShowPostImage(SQLModel):
+    image_path: str
+    created_at: datetime
+
+    class Config:
+        orm_mode = True

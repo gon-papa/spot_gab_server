@@ -26,6 +26,27 @@ class PostService:
     ):
         self.repository = repository
 
+    """_summary_
+    投稿一覧取得
+    Args:
+    request : PostRequest
+        リクエスト
+    user : Users
+        ユーザー
+    Returns:
+        投稿一覧
+    """
+
+    async def index(self, request: PostRequest, user: Users) -> List[Posts]:
+        try:
+            return await self.repository.getPostList(
+                geo_hash=request.geo_hash, keyword=request.keyword, page=request.page, size=request.size
+            )
+        except Exception as e:
+            tb = traceback.format_exc()
+            logger.error(f"An error occurred: {e}\n{tb}")
+            raise HTTPException(status_code=500, detail="Internal Server Error")
+
     # 投稿保存
     async def store(self, request: PostRequest, user: Users) -> boolean:
         try:
