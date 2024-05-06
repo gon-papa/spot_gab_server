@@ -35,8 +35,6 @@ async def index(
         )
         responseArray = []
         for result in results:
-            print('PPAP')
-            print(result.images)
             result.images
             responseArray.append(
                 PostResponse.PostResponseItem(
