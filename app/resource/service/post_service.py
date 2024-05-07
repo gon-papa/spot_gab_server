@@ -1,8 +1,6 @@
 from datetime import datetime, timezone
 from decimal import Decimal
-import traceback
 from fastapi import HTTPException
-import logging
 from typing import List
 from xmlrpc.client import boolean
 from app.resource.model.hash_tags import HashTags
@@ -12,10 +10,9 @@ from injector import inject
 from app.resource.model.post_images import PostImages
 from app.resource.model.posts import Posts
 from app.resource.model.users import Users
+from app.resource.repository.hash_tag_repository import HashTagRepository
 from app.resource.repository.post_repository import PostRepository
 from app.resource.request.post_request import PostRequest
-
-logger = logging.getLogger("app.exception")
 
 
 class PostService:
@@ -23,8 +20,10 @@ class PostService:
     def __init__(
         self,
         repository: PostRepository,
+        hashTagRepository: HashTagRepository,
     ):
         self.repository = repository
+        self.hashTagRepository = hashTagRepository
 
     """_summary_
     投稿一覧取得
@@ -42,9 +41,7 @@ class PostService:
             return await self.repository.getPostList(
                 geo_hash=request.geo_hash, keyword=request.keyword, page=request.page, size=request.size
             )
-        except Exception as e:
-            tb = traceback.format_exc()
-            logger.error(f"An error occurred: {e}\n{tb}")
+        except Exception:
             raise HTTPException(status_code=500, detail="Internal Server Error")
 
     # 投稿保存
@@ -69,6 +66,7 @@ class PostService:
             )
             posts = await self._createPostObject(request.body)
             post_images = await self._createPostImageObject(request.images)
+            # 同一のハッシュタグは保存せずに、既存のものを取得する(この際に前後の空白を削除する)
             tags = await self._createTagObject(request.hashtags)
 
             # リレーション込みで保存
@@ -78,9 +76,7 @@ class PostService:
             posts.hash_tags = tags
             result = await self.repository.createPost(posts)
             return result
-        except Exception as e:
-            tb = traceback.format_exc()
-            logger.error(f"An error occurred: {e}\n{tb}")
+        except Exception:
             raise HTTPException(status_code=500, detail="Internal Server Error")
 
     async def _createLocationObject(
@@ -144,9 +140,6 @@ class PostService:
         self,
         tags: List[str],
     ) -> List[HashTags]:
-        return [
-            HashTags(
-                tag=tag,
-            )
-            for tag in tags
-        ]
+        if not tags:
+            return []
+        return await self.hashTagRepository.findHashTag(tags)

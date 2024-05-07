@@ -1,4 +1,3 @@
-import logging
 import os
 
 from dotenv import load_dotenv
@@ -29,11 +28,11 @@ from app.resource.response.error_response import ErrorJsonResponse
 from app.resource.response.json_response import JsonResponse
 from app.resource.service.auth_service import AuthService
 from app.resource.service_domain.auth_service_domain import get_current_active_user
-import traceback
+
+from app.resource.util.logging import Log
 
 router = APIRouter()
 load_dotenv()
-logger = logging.getLogger("app.exception")
 
 
 @router.post(
@@ -90,6 +89,7 @@ async def sign_in(request: OAuth2PasswordRequestForm = Depends()) -> SignInRespo
         password = request.password
         tokens = await get_di_class(AuthService).sign_in(email, password)
     except Exception:
+        Log().errorLog(Exception)
         raise
     return SignInResponse(access_token=tokens["token"], token_type="bearer", refresh_token=tokens["refresh_token"])
 
@@ -117,6 +117,7 @@ async def sign_out(current_user: Users = Depends(get_current_active_user)) -> Js
     try:
         result = await get_di_class(AuthService).sign_out(current_user)
     except Exception:
+        Log().errorLog(Exception)
         raise
     return JsonResponse(status=200, data={"result": result}, message="ok")
 
@@ -144,6 +145,7 @@ async def refresh_token(request: RefreshTokenRequest) -> SignUpResponse:
     try:
         user = await get_di_class(AuthService).get_refresh_token(request.refresh_token)
     except Exception:
+        Log().errorLog(Exception)
         raise
     return SignUpResponse(status=200, data=SignUpResponse.SignUpResponseItem(user=user), message="ok")
 
@@ -167,6 +169,7 @@ async def email_exists(request: EmailExistsRequest) -> EmailExistsResponse:
             status=200, data=EmailExistsResponse.EmailExistsResponseItem(exists=result), message="ok"
         )
     except Exception:
+        Log().errorLog(Exception)
         raise
 
 
@@ -207,7 +210,7 @@ async def verify_email(request: Request, token: str, lang: str) -> HTMLResponse:
             )
         return templates.TemplateResponse(request, "verify-email-ja.html", {"suppout_url": os.getenv("SUPPORT_URL")})
     except Exception:
-        logger.error(Exception)
+        Log().errorLog(Exception)
         if lang == "en":
             return templates.TemplateResponse(
                 request, "faild-verify-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
@@ -229,6 +232,7 @@ async def reset_password_send_mail(request: ResetPasswordRequest, bk: Background
         await get_di_class(AuthService).reset_password_send_mail(request.email, bk)
         return JsonResponse(status=200, data={"result": "ok"}, message="ok")
     except Exception:
+        Log().errorLog(Exception)
         raise
 
 
@@ -267,8 +271,7 @@ async def reset_password_page(request: Request, token: str, lang: str) -> HTMLRe
             }
         )
     except Exception as e:
-        tb_str = traceback.format_exception(type(e), e, e.__traceback__)
-        logger.error("".join(tb_str))
+        Log().errorLog(e)
         if lang == "en":
             return templates.TemplateResponse(
                 request, "faild-verify-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}
@@ -336,8 +339,7 @@ async def password_reset_verify(
             }
         )
     except Exception as e:
-        tb_str = traceback.format_exception(type(e), e, e.__traceback__)
-        logger.error("".join(tb_str))
+        Log().errorLog(e)
         if lang == "en":
             return templates.TemplateResponse(
                 request, "faild-verify-en.html", {"suppout_url": os.getenv("SUPPORT_URL")}

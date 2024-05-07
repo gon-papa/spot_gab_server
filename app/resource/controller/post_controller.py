@@ -1,4 +1,3 @@
-import logging
 from fastapi import APIRouter, Depends
 
 from app.resource.depends.depends import get_di_class
@@ -9,10 +8,10 @@ from app.resource.response.json_response import JsonResponse
 from app.resource.response.post_response import PostResponse
 from app.resource.service.post_service import PostService
 from app.resource.service_domain.auth_service_domain import get_current_active_user
+from app.resource.util.logging import Log
 
 
 router = APIRouter()
-logger = logging.getLogger("app.exception")
 
 
 @router.get(
@@ -46,6 +45,7 @@ async def index(
             )
         return JsonResponse(status_code=200, message="投稿一覧を取得しました。", data=responseArray)
     except Exception:
+        Log().errorLog(Exception)
         raise
 
 
@@ -68,5 +68,6 @@ async def store(
             request=request,
         )
     except Exception:
+        Log().errorLog(Exception)
         raise
     return JsonResponse(status_code=201, message="投稿しました。")

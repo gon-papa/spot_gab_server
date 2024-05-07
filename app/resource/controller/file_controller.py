@@ -1,6 +1,5 @@
 
 
-import logging
 from typing import List
 from fastapi import APIRouter, Depends, UploadFile, File
 
@@ -14,9 +13,9 @@ from fastapi.responses import JSONResponse as FastApiJsonResponse
 
 from app.resource.service.file_service import FileService
 from app.resource.service_domain.auth_service_domain import get_current_active_user
+from app.resource.util.logging import Log
 
 router = APIRouter()
-logger = logging.getLogger("app.exception")
 
 
 @router.post(
@@ -52,6 +51,7 @@ async def image_upload(
                 )
             )
     except Exception:
+        Log().errorLog(Exception)
         raise
     return ImageResponse(
         status=200,

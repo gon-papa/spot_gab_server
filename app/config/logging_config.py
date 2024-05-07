@@ -1,6 +1,4 @@
-import logging
 import os
-from logging.handlers import TimedRotatingFileHandler
 
 # ログファイルのディレクトリを作成（存在しない場合）
 log_directory = "logs"
