@@ -7,7 +7,7 @@ services:
     volumes:
       - .:/app
       - bash-data:/root/.local/bin
-      - python-lib-data:/usr/local/lib/python3.9
+      - python-lib-data:/usr/local/lib/python3.10
     ports:
       - "8000:8000"
     depends_on:

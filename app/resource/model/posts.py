@@ -1,14 +1,11 @@
 from datetime import datetime, timezone
-from typing import TYPE_CHECKING, List, Optional
+from typing import List, Optional
 from uuid import uuid4
 from sqlalchemy import Column, ForeignKey
 from sqlmodel import Field, SQLModel, Integer, String, Text, TIMESTAMP, Relationship
 from app.resource.model.hash_tag_posts import HashTagPosts
 from app.resource.model.locations import Locations
 from app.resource.model.users import Users
-
-if TYPE_CHECKING:
-    from app.resource.model.post_images import ShowPostImage
 
 
 class Posts(SQLModel, table=True):
@@ -54,5 +51,12 @@ class ShowPosts(SQLModel):
     body: str
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    class ConfigDict:
+        from_attributes = True
+        json_schema_extra = {
+            "example": {
+                "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "body": "本文",
+                "created_at": "2021-01-01T00:00:00",
+            }
+        }

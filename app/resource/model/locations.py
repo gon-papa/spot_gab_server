@@ -55,8 +55,21 @@ class ShowLocation(SQLModel):
     uuid: str = Field(
         default_factory=lambda: str(uuid4()), sa_column=Column(String(36), nullable=False, unique=True, comment="UUID")
     )
-    lat: Decimal = Field(default=None, sa_column=Column(Numeric(10, 8), nullable=False, comment="緯度"))
-    lng: Decimal = Field(default=None, sa_column=Column(Numeric(11, 8), nullable=False, comment="経度"))
-    geo_hash: str = Field(default=None, sa_column=Column(String(12), nullable=False, comment="ジオハッシュ"))
-    srid: str = Field(default=None, sa_column=Column(String(10), nullable=False, comment="SRID"))
+    lat: Decimal = Field(sa_column=Column(Numeric(10, 8), nullable=False, comment="緯度"))
+    lng: Decimal = Field(sa_column=Column(Numeric(11, 8), nullable=False, comment="経度"))
+    geo_hash: str = Field(sa_column=Column(String(12), nullable=False, comment="ジオハッシュ"))
+    srid: str = Field(sa_column=Column(String(10), nullable=False, comment="SRID"))
     save_datetime: datetime = Field(sa_column=Column(TIMESTAMP(True), nullable=True, comment="保存日時"))
+
+    class ConfigDict:
+        from_attributes = True
+        json_schema_extra = {
+            "example": {
+                "uuid": "UUID",
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "geo_hash": "u4pruydqqvj",
+                "srid": "4326",
+                "save_datetime": "2021-01-01T00:00:00+00:00",
+            }
+        }

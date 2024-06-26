@@ -16,7 +16,7 @@ router = APIRouter()
 
 @router.get(
     "/post",
-    response_model=JsonResponse,
+    response_model=PostResponse,
     tags=["post"],
     name="投稿一覧",
     description="投稿一覧を取得します。",
@@ -43,7 +43,7 @@ async def index(
                     location=result.location,
                 )
             )
-        return JsonResponse(status_code=200, message="投稿一覧を取得しました。", data=responseArray)
+        return PostResponse(data=responseArray)
     except Exception:
         Log().errorLog(Exception)
         raise

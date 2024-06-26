@@ -9,15 +9,18 @@ WORKDIR /app
 # 必要なファイルのコピー
 COPY ./pyproject.toml /app/pyproject.toml
 
+RUN apt-get update && \
+    apt-get install -y build-essential libffi-dev && \
+    apt-get install -y sqlite3
+
+RUN pip install --upgrade pip
+
 # Poetryのインストールと設定
 RUN curl -sSL https://install.python-poetry.org | python - && \
     echo "export PATH=\$PATH:/root/.local/bin" >> ~/.bashrc && \
     . ~/.bashrc && \
     poetry config virtualenvs.create false && \
     poetry install
-
-RUN apt-get update && \
-    apt-get install -y sqlite3
 
 # アプリケーションのコードをコピー
 COPY . /app

@@ -10,8 +10,8 @@ from app.resource.response.json_response import JsonResponse
 
 class PostResponse(JsonResponse):
     class PostResponseItem(BaseModel):
-        post: ShowPosts = Field(None, description="投稿情報")
+        post: ShowPosts = Field(..., description="投稿情報")
         postImages: List[ShowPostImage] = Field([], description="画像情報")
-        user: UserRead = Field(None, description="ユーザー情報")
-        location: ShowLocation = Field(None, description="位置情報")
+        user: UserRead = Field(..., description="ユーザー情報")
+        location: ShowLocation = Field(..., description="位置情報")
     data: List[PostResponseItem] = Field(None, description="投稿情報リスト")

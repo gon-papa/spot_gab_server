@@ -42,4 +42,10 @@ class ShowPostImage(SQLModel):
     created_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+        json_schema_extra = {
+            "example": {
+                "image_path": "https://example.com/image.jpg",
+                "created_at": "2021-01-01T00:00:00+00:00"
+            }
+        }

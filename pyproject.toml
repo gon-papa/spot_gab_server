@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "now-go1-api"
+name = "now-go-api"
 version = "0.1.0"
 description = "now-go-api"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 fastapi = "^0.109.0"
 uvicorn = "^0.27.0.post1"
 alembic = "^1.13.1" # マイグレーションツール
